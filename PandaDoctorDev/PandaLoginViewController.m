@@ -39,4 +39,14 @@
     _registerViewController = [[PandaRegisterViewController alloc]initWithNibName:nil bundle:nil];
     [self.navigationController pushViewController:_registerViewController animated:YES];
 }
+
+- (IBAction)goToTabBiew:(UIButton *)sender {
+    
+//    _tabViewController = [[PandaTabViewController alloc]initWithNibName:nil bundle:nil];
+//    [self.navigationController pushViewController:_tabViewController animated:YES];
+    
+    UIStoryboard *storyBorad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    self.view.window.rootViewController = [storyBorad instantiateInitialViewController];
+    
+}
 @end
