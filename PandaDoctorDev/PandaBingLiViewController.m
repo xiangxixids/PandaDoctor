@@ -1,18 +1,18 @@
 //
-//  PandaTabViewController.m
+//  PandaBingLiViewController.m
 //  PandaDoctorDev
 //
-//  Created by xiangxixids on 14/7/22.
+//  Created by xiangxixids on 14/7/23.
 //  Copyright (c) 2014年 xiangxixids. All rights reserved.
 //
 
-#import "PandaTabViewController.h"
+#import "PandaBingLiViewController.h"
 
-@interface PandaTabViewController ()
+@interface PandaBingLiViewController ()
 
 @end
 
-@implementation PandaTabViewController
+@implementation PandaBingLiViewController
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    // Do any additional setup after loading the view.
+    NSLog(@"PandaBingLiViewController view did load");
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,9 +47,13 @@
 }
 */
 
-- (IBAction)back:(UIBarButtonItem *)sender {
+- (IBAction)showBingLiHistory:(UIButton *)sender {
     
-    [self.navigationController popViewControllerAnimated:YES];
+    _bingliHistoryController = [[PandaBingLiHistoryViewController alloc]initWithNibName:nil bundle:nil];
+    _bingliHistoryController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:_bingliHistoryController animated:YES];
+    
+    
     
 }
 @end

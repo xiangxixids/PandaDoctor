@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="n2U-2k-q5Z">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
     <scenes>
@@ -44,10 +43,10 @@
             </objects>
             <point key="canvasLocation" x="417" y="264"/>
         </scene>
-        <!--View Controller - 我的病历-->
+        <!--Panda Bing Li View Controller - 我的病历-->
         <scene sceneID="ElR-LW-xZ7">
             <objects>
-                <viewController id="TUE-e7-Zmn" sceneMemberID="viewController">
+                <viewController id="TUE-e7-Zmn" customClass="PandaBingLiViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JLz-Ca-KVo"/>
                         <viewControllerLayoutGuide type="bottom" id="M2u-T1-0MV"/>
@@ -56,9 +55,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="McG-4y-zTG">
-                                <rect key="frame" x="0.0" y="190" width="320" height="229"/>
-                            </scrollView>
                             <pageControl appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="5hW-qd-Bst">
                                 <rect key="frame" x="141" y="405" width="39" height="37"/>
                                 <color key="pageIndicatorTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -72,7 +68,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我的病例" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1o7-8f-gHH">
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="历史病例" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1o7-8f-gHH">
                                 <rect key="frame" x="20" y="129" width="68" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -101,12 +97,18 @@
                                 <state key="normal" image="u118_normal.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="showBingLiHistory:" destination="TUE-e7-Zmn" eventType="touchUpInside" id="S9u-5Q-Zui"/>
+                                </connections>
                             </button>
                             <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEw-UY-Esj">
                                 <rect key="frame" x="103" y="92" width="35" height="35"/>
                                 <state key="normal" image="u86_normal.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="bin-8h-iz0" kind="push" id="sar-eI-9Nf"/>
+                                </connections>
                             </button>
                             <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="064-6q-2xL">
                                 <rect key="frame" x="180" y="92" width="35" height="35"/>
@@ -120,6 +122,9 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <scrollView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="McG-4y-zTG">
+                                <rect key="frame" x="0.0" y="190" width="320" height="229"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -129,6 +134,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1M-YJ-A84" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1020" y="264"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ikg-26-70L">
+            <objects>
+                <viewController id="bin-8h-iz0" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Md-0Q-mbj"/>
+                        <viewControllerLayoutGuide type="bottom" id="OSI-Sd-Ygs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fw6-YJ-coz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar appearanceType="aqua" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Mb-cj-CZv">
+                                <rect key="frame" x="0.0" y="21" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="健康曲线" id="CVg-Hm-jGd">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="51e-vE-PJi"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="曲线, 曲线" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0S-sM-NAi">
+                                <rect key="frame" x="121" y="142" width="78" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="q21-vb-YlP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MCe-tM-qdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1578" y="446"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="SkK-ec-aWb">
@@ -141,6 +180,22 @@
                     <view key="view" contentMode="scaleToFill" id="Sj6-c8-TbZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar appearanceType="aqua" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LDq-nb-Eko">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="历史病历" id="Cmy-js-hU7">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="3Xp-b2-hOg"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="病历, 病历" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3S-Ld-IZW">
+                                <rect key="frame" x="121" y="169" width="78" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="e8M-8F-3Ec">
@@ -149,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bqx-1T-HZj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1595" y="264"/>
+            <point key="canvasLocation" x="1579" y="-210"/>
         </scene>
         <!--Navigation Controller - 拍化验单-->
         <scene sceneID="kXE-q4-Wul">
