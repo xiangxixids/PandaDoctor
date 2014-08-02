@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "PandaBingLiHistoryTableViewCell.h"
+#import "PandaBingLiHistoryDetailViewController.h"
 
 @interface PandaBingLiHistoryViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property PandaBingLiHistoryDetailViewController *bingliDetailViewController;
+
 
 - (IBAction)back:(UIBarButtonItem *)sender;
 @end

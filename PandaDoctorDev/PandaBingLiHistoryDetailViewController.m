@@ -66,4 +66,15 @@
 }
 */
 
+- (IBAction)showResult:(UIBarButtonItem *)sender {
+    
+    _bingliHistoryResultViewController = [[PandaBingLiHistoryDetailResultViewController alloc]initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:_bingliHistoryResultViewController animated:YES];
+    
+}
+
+- (IBAction)back:(UIBarButtonItem *)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

@@ -71,6 +71,11 @@
 // Called after the user changes the selection.
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"select %d", indexPath.row);
+    
+    _bingliDetailViewController = [[PandaBingLiHistoryDetailViewController alloc] initWithNibName:nil bundle:nil];
+    
+    [self.navigationController pushViewController:_bingliDetailViewController animated:YES];
+    
 }
 
 

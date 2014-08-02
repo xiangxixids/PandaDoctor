@@ -47,6 +47,14 @@
 }
 */
 
+- (IBAction)showDataGram:(UIButton *)sender {
+    
+    _datagramController = [[PandaDatagramViewController alloc]initWithNibName:nil bundle:nil];
+    _datagramController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:_datagramController animated:YES];
+    
+}
+
 - (IBAction)showBingLiHistory:(UIButton *)sender {
     
     _bingliHistoryController = [[PandaBingLiHistoryViewController alloc]initWithNibName:nil bundle:nil];
@@ -54,6 +62,22 @@
     [self.navigationController pushViewController:_bingliHistoryController animated:YES];
     
     
+    
+}
+
+- (IBAction)personalSetting:(UIButton *)sender {
+    
+    _personalSettingController = [[PandaPersonalSettingViewController alloc]initWithNibName:nil bundle:nil];
+    _personalSettingController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:_personalSettingController animated:YES];
+    
+}
+
+- (IBAction)modifyPassword:(UIButton *)sender {
+    
+    _modifyPasswordController = [[PandaModifyPasswordViewController alloc]initWithNibName:nil bundle:nil];
+    _modifyPasswordController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:_modifyPasswordController animated:YES];
     
 }
 @end

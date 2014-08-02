@@ -1,0 +1,28 @@
+//
+//  PandaHuaYanDanMainViewController.h
+//  PandaDoctorDev
+//
+//  Created by xiangxixids on 14/8/2.
+//  Copyright (c) 2014年 xiangxixids. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "PandaTapGestureRecognizer.h"
+
+@interface PandaHuaYanDanMainViewController : UIViewController<UISearchControllerDelegate,UITableViewDelegate,UITableViewDataSource>
+
+
+@property (weak, nonatomic) IBOutlet UIImageView *sanDaChangGuiImage;
+@property (weak, nonatomic) IBOutlet UIImageView *ganZangXiangMuImage;
+@property (weak, nonatomic) IBOutlet UIImageView *xueTangXueZhiImage;
+@property (weak, nonatomic) IBOutlet UIImageView *shenZangXiangMuImage;
+@property (weak, nonatomic) IBOutlet UIImageView *jiaZhuangXianImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *zhongLiuImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *youShengXiangMuImage;
+@property (weak, nonatomic) IBOutlet UIImageView *fuKeImage;
+@property (weak, nonatomic) IBOutlet UIImageView *otherImage;
+
+
+
+
+@end

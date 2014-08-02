@@ -26,13 +26,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="umol/L" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYa-ww-jNp">
-                        <rect key="frame" x="174" y="4" width="48" height="21"/>
+                        <rect key="frame" x="167" y="4" width="48" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00-0.000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ji-iS-7pL">
-                        <rect key="frame" x="249" y="4" width="65" height="21"/>
+                        <rect key="frame" x="236" y="5" width="78" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -45,7 +45,7 @@
                 <outlet property="unit" destination="lYa-ww-jNp" id="xqD-hB-Q66"/>
                 <outlet property="value" destination="lQY-16-7mz" id="Dil-Ri-WsZ"/>
             </connections>
-            <point key="canvasLocation" x="220" y="259"/>
+            <point key="canvasLocation" x="220" y="258"/>
         </tableViewCell>
     </objects>
 </document>
