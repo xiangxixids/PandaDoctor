@@ -12,6 +12,7 @@
 
 
 @property NSInteger mid;
-
+@property NSArray *itemList;
+@property NSString *title;
 
 @end

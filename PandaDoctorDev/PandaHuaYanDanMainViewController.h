@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "PandaTapGestureRecognizer.h"
+#import "PandaHuaYanDanXiangMuListViewController.h"
+#import "PandaConstantData.h"
 
 @interface PandaHuaYanDanMainViewController : UIViewController<UISearchControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -22,7 +24,11 @@
 @property (weak, nonatomic) IBOutlet UIImageView *fuKeImage;
 @property (weak, nonatomic) IBOutlet UIImageView *otherImage;
 
+@property PandaConstantData *huaYanDanConstData;
 
+
+
+@property PandaHuaYanDanXiangMuListViewController *huaYanDanXiangMuListViewController;
 
 
 @end
