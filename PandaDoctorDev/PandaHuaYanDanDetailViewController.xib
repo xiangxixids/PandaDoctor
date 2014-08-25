@@ -46,6 +46,7 @@
                                     <action selector="back:" destination="-1" id="PYB-oF-uQQ"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem key="rightBarButtonItem" title="一键拍照" id="BHY-sJ-XVq"/>
                         </navigationItem>
                     </items>
                 </navigationBar>
