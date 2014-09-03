@@ -78,4 +78,47 @@
     
     
 }
+
+- (IBAction)takePhoto:(UIBarButtonItem *)sender {
+    
+    NSLog(@"take photo..");
+    
+    // UIImagePickerControllerCameraDeviceRear 后置摄像头
+    // UIImagePickerControllerCameraDeviceFront 前置摄像头
+    BOOL isCamera = [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear];
+    if (!isCamera) {
+        NSLog(@"没有摄像头");
+        return ;
+    }
+    
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    imagePicker.delegate = self;
+    // 编辑模式
+    //imagePicker.allowsEditing = YES;
+    
+    [self  presentViewController:imagePicker animated:YES completion:^{
+    }];
+    
+}
+
+// 选中照片
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    NSLog(@"%@", info);
+    NSLog(@"take photo over");
+    UIImageView  *imageView = (UIImageView *)[self.view viewWithTag:101];
+    // UIImagePickerControllerOriginalImage 原始图片
+    // UIImagePickerControllerEditedImage 编辑后图片
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    //imageView.image = image;
+    
+    
+    _takePhotoPreviewViewController = [[PandaTakePhotoPreviewViewController alloc]initWithNibName:nil bundle:nil];
+    //_takePhotoPreviewViewController.photoPreview.image = image;
+    _takePhotoPreviewViewController.image = image;
+    _takePhotoPreviewViewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:_takePhotoPreviewViewController animated:YES];
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+}
 @end

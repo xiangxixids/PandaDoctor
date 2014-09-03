@@ -11,7 +11,7 @@
 #import "PandaHuaYanDanXiangMuListViewController.h"
 #import "PandaConstantData.h"
 
-@interface PandaHuaYanDanMainViewController : UIViewController<UISearchControllerDelegate,UITableViewDelegate,UITableViewDataSource>
+@interface PandaHuaYanDanMainViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 
 @property (weak, nonatomic) IBOutlet UIImageView *sanDaChangGuiImage;

@@ -116,7 +116,7 @@
     NSLog(@"select id: %d",indexPath.row);
     
     _huaYanDanDetailViewController = [[PandaHuaYanDanDetailViewController alloc]initWithNibName:nil bundle:nil];
-    
+    _huaYanDanDetailViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:_huaYanDanDetailViewController animated:YES];
     
 }
