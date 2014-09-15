@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PandaOCRRecongnizeViewController.h"
 
 @interface PandaTakePhotoPreviewViewController : UIViewController
 

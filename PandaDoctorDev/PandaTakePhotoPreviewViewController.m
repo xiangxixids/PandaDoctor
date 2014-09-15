@@ -44,8 +44,10 @@
     NSString *recongnize = [self OCRrecongnize:_image];
     
     // 那个项目的照片; 大项->小项->具体
+    PandaOCRRecongnizeViewController *controller = [[PandaOCRRecongnizeViewController alloc]initWithNibName:nil bundle:nil];
+    controller.image = _image;
     
-    
+    [self.navigationController pushViewController:controller animated:YES];
     
 }
 
@@ -54,6 +56,9 @@
 }
 
 - (NSString *)OCRrecongnize:(UIImage *)image{
+    
+    
+    
     return nil;
 }
 

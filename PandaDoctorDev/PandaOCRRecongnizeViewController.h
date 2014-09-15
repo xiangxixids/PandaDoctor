@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Client.h"
 
-@interface PandaOCRRecongnizeViewController : UIViewController
+@interface PandaOCRRecongnizeViewController : UIViewController<ClientDelegate>
+
+
+@property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+
+@property UIImage *image;
+
+- (IBAction)confirm:(UIBarButtonItem *)sender;
+
+- (IBAction)back:(UIBarButtonItem *)sender;
 
 @end

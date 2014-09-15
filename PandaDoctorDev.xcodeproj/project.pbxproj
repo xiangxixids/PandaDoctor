@@ -95,6 +95,14 @@
 		D7C53DBD1987A8540063C79E /* PandaAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C53DBC1987A8540063C79E /* PandaAboutUsViewController.m */; };
 		D7D2785C19876EBE00BAB90F /* PandaDatagramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D2785A19876EBE00BAB90F /* PandaDatagramViewController.m */; };
 		D7D2785D19876EBE00BAB90F /* PandaDatagramViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7D2785B19876EBE00BAB90F /* PandaDatagramViewController.xib */; };
+		D7E8A57F19C71E41009A3CE0 /* ActivationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8A57E19C71E41009A3CE0 /* ActivationInfo.m */; };
+		D7E8A58219C71E4E009A3CE0 /* Client.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8A58119C71E4E009A3CE0 /* Client.m */; };
+		D7E8A58B19C71E5C009A3CE0 /* HTTPOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8A58419C71E5C009A3CE0 /* HTTPOperation.m */; };
+		D7E8A58C19C71E5C009A3CE0 /* ProcessingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8A58619C71E5C009A3CE0 /* ProcessingOperation.m */; };
+		D7E8A58D19C71E5C009A3CE0 /* ProcessingParams.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8A58819C71E5C009A3CE0 /* ProcessingParams.m */; };
+		D7E8A58E19C71E5C009A3CE0 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8A58A19C71E5C009A3CE0 /* Task.m */; };
+		D7E8A59219C72C8C009A3CE0 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8A59119C72C8C009A3CE0 /* NSData+Base64.m */; };
+		D7E8A59519C72C95009A3CE0 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8A59419C72C95009A3CE0 /* NSString+Base64.m */; };
 		D7FB52E4197236B900667643 /* PandaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7FB52E3197236B900667643 /* PandaViewController.xib */; };
 /* End PBXBuildFile section */
 
@@ -233,6 +241,22 @@
 		D7D2785919876EBE00BAB90F /* PandaDatagramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaDatagramViewController.h; sourceTree = "<group>"; };
 		D7D2785A19876EBE00BAB90F /* PandaDatagramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaDatagramViewController.m; sourceTree = "<group>"; };
 		D7D2785B19876EBE00BAB90F /* PandaDatagramViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PandaDatagramViewController.xib; sourceTree = "<group>"; };
+		D7E8A57D19C71E3C009A3CE0 /* ActivationInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivationInfo.h; sourceTree = "<group>"; };
+		D7E8A57E19C71E41009A3CE0 /* ActivationInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivationInfo.m; sourceTree = "<group>"; };
+		D7E8A58019C71E4E009A3CE0 /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Client.h; sourceTree = "<group>"; };
+		D7E8A58119C71E4E009A3CE0 /* Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Client.m; sourceTree = "<group>"; };
+		D7E8A58319C71E5C009A3CE0 /* HTTPOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPOperation.h; sourceTree = "<group>"; };
+		D7E8A58419C71E5C009A3CE0 /* HTTPOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPOperation.m; sourceTree = "<group>"; };
+		D7E8A58519C71E5C009A3CE0 /* ProcessingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessingOperation.h; sourceTree = "<group>"; };
+		D7E8A58619C71E5C009A3CE0 /* ProcessingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessingOperation.m; sourceTree = "<group>"; };
+		D7E8A58719C71E5C009A3CE0 /* ProcessingParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessingParams.h; sourceTree = "<group>"; };
+		D7E8A58819C71E5C009A3CE0 /* ProcessingParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessingParams.m; sourceTree = "<group>"; };
+		D7E8A58919C71E5C009A3CE0 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		D7E8A58A19C71E5C009A3CE0 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
+		D7E8A59019C72C8C009A3CE0 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		D7E8A59119C72C8C009A3CE0 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		D7E8A59319C72C95009A3CE0 /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
+		D7E8A59419C72C95009A3CE0 /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
 		D7FB52E3197236B900667643 /* PandaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PandaViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -393,6 +417,8 @@
 		D76A69681972365800D536FF /* PandaDoctorDev */ = {
 			isa = PBXGroup;
 			children = (
+				D7E8A58F19C72C77009A3CE0 /* Base64 */,
+				D7E8A57919C71A78009A3CE0 /* Abbyy */,
 				D7328792198E31CF00064A12 /* HuaYanDan */,
 				D7615985197FB66900ECF978 /* StroyBoardController */,
 				D7615984197FB64500ECF978 /* CP */,
@@ -477,6 +503,36 @@
 				D76A698A1972365800D536FF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D7E8A57919C71A78009A3CE0 /* Abbyy */ = {
+			isa = PBXGroup;
+			children = (
+				D7E8A57D19C71E3C009A3CE0 /* ActivationInfo.h */,
+				D7E8A57E19C71E41009A3CE0 /* ActivationInfo.m */,
+				D7E8A58019C71E4E009A3CE0 /* Client.h */,
+				D7E8A58119C71E4E009A3CE0 /* Client.m */,
+				D7E8A58319C71E5C009A3CE0 /* HTTPOperation.h */,
+				D7E8A58419C71E5C009A3CE0 /* HTTPOperation.m */,
+				D7E8A58519C71E5C009A3CE0 /* ProcessingOperation.h */,
+				D7E8A58619C71E5C009A3CE0 /* ProcessingOperation.m */,
+				D7E8A58719C71E5C009A3CE0 /* ProcessingParams.h */,
+				D7E8A58819C71E5C009A3CE0 /* ProcessingParams.m */,
+				D7E8A58919C71E5C009A3CE0 /* Task.h */,
+				D7E8A58A19C71E5C009A3CE0 /* Task.m */,
+			);
+			name = Abbyy;
+			sourceTree = "<group>";
+		};
+		D7E8A58F19C72C77009A3CE0 /* Base64 */ = {
+			isa = PBXGroup;
+			children = (
+				D7E8A59019C72C8C009A3CE0 /* NSData+Base64.h */,
+				D7E8A59119C72C8C009A3CE0 /* NSData+Base64.m */,
+				D7E8A59319C72C95009A3CE0 /* NSString+Base64.h */,
+				D7E8A59419C72C95009A3CE0 /* NSString+Base64.m */,
+			);
+			name = Base64;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -627,6 +683,7 @@
 				D732879A198E452D00064A12 /* PandaConstantData.m in Sources */,
 				D732D42F19B3279300F632C1 /* PandaOCRRecongnizeViewController.m in Sources */,
 				D7A30A7F198CDE3B00423666 /* PandaHealthJiangTangDetailViewController.m in Sources */,
+				D7E8A59519C72C95009A3CE0 /* NSString+Base64.m in Sources */,
 				D7C53DBD1987A8540063C79E /* PandaAboutUsViewController.m in Sources */,
 				D70C28EE1977705B007BEDB2 /* PandaHttpErrorCode.m in Sources */,
 				D70D3526198102B2006F431A /* PandaBingLiHistoryDetailViewController.m in Sources */,
@@ -635,19 +692,26 @@
 				D70D352B19810A41006F431A /* PandaBingLiHistoryDetailTableViewCell.m in Sources */,
 				D79DEE2C197250EA009FCAC6 /* PandaMainViewController.m in Sources */,
 				D761597E197FA39400ECF978 /* PandaBingLiViewController.m in Sources */,
+				D7E8A58C19C71E5C009A3CE0 /* ProcessingOperation.m in Sources */,
+				D7E8A58219C71E4E009A3CE0 /* Client.m in Sources */,
 				D76A696F1972365800D536FF /* main.m in Sources */,
 				D70159D819911E7B004D8179 /* PandaHuaYanDanDetailViewController.m in Sources */,
 				D7A30A71198C9AA800423666 /* PandaShareTableViewCell.m in Sources */,
 				D70C28E41977702C007BEDB2 /* UtilTool.m in Sources */,
+				D7E8A58E19C71E5C009A3CE0 /* Task.m in Sources */,
+				D7E8A58D19C71E5C009A3CE0 /* ProcessingParams.m in Sources */,
 				D7A30A83198CDE9200423666 /* PandaHealthJiangTangViewController.m in Sources */,
 				D7D2785C19876EBE00BAB90F /* PandaDatagramViewController.m in Sources */,
 				D7615982197FAEFB00ECF978 /* PandaBingLiHistoryTableViewCell.m in Sources */,
+				D7E8A58B19C71E5C009A3CE0 /* HTTPOperation.m in Sources */,
 				D7051DE7197D0BAF0001BA6C /* PandaGetPasswordViewController.m in Sources */,
 				D732D42A19B2F93600F632C1 /* PandaTakePhotoPreviewViewController.m in Sources */,
 				D7A30A86198CDEB200423666 /* PandaHuaYanDanMainViewController.m in Sources */,
 				D76A69731972365800D536FF /* PandaAppDelegate.m in Sources */,
+				D7E8A59219C72C8C009A3CE0 /* NSData+Base64.m in Sources */,
 				D7A30A6F198C9AA800423666 /* ScrollTableViewCell.m in Sources */,
 				D76A69791972365800D536FF /* PandaViewController.m in Sources */,
+				D7E8A57F19C71E41009A3CE0 /* ActivationInfo.m in Sources */,
 				D70C28ED1977705B007BEDB2 /* PandaResponse.m in Sources */,
 				D745CE95197CFC32008C1082 /* PandaRegisterViewController.m in Sources */,
 				D70C28EC1977705B007BEDB2 /* HttpService.m in Sources */,
