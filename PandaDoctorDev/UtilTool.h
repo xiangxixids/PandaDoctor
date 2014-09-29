@@ -22,4 +22,6 @@
 +(Boolean)saveFileInDocument:(NSString *)fileName content:(NSData *)content;
 +(NSData *)readFileInDocument:(NSString *)fileName;
 
++(BOOL)validateMobile:(NSString *)mobileNum;
+
 @end

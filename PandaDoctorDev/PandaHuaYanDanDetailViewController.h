@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PandaBingLiHistoryTableViewCell.h"
 #import "PandaTakePhotoPreviewViewController.h"
+#import "PandaRPCInterface.h"
 
 @interface PandaHuaYanDanDetailViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
@@ -16,11 +17,13 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *meaningTitle;
 
-@property (weak, nonatomic) IBOutlet UITextView *description;
-
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property PandaTakePhotoPreviewViewController *takePhotoPreviewViewController;
+
+@property NSInteger checkItemId;
+
+@property NSArray *tableViewDataList;
 
 
 - (IBAction)back:(UIBarButtonItem *)sender;

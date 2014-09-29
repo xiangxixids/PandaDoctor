@@ -28,15 +28,22 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    NSLog(@"view did load!!");
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
+    PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
+    NSMutableData *data = [rpcInterface checkItemsForApp:_checkItemId];
+    NSString *datastr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    _tableViewDataList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    NSLog(@"%@", _tableViewDataList);
     
     
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return _tableViewDataList.count;
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -45,8 +52,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     PandaBingLiHistoryTableViewCell *cell = [[[NSBundle mainBundle]loadNibNamed:@"PandaBingLiHistoryTableViewCell" owner:self options:nil] objectAtIndex:0];
-    cell.date.text = @"乙肝表面抗原";
-    cell.item.text = @"已感染乙肝病毒的标志";
+    cell.date.text = [[_tableViewDataList objectAtIndex:indexPath.row] valueForKey:ITEM_NM];
+    cell.item.text = [[_tableViewDataList objectAtIndex:indexPath.row] valueForKey:SIGNIFICANCE];
     
     return cell;
 }
@@ -118,6 +125,7 @@
     //_takePhotoPreviewViewController.photoPreview.image = image;
     _takePhotoPreviewViewController.image = image;
     _takePhotoPreviewViewController.hidesBottomBarWhenPushed = YES;
+    _takePhotoPreviewViewController.checkItemId = _checkItemId;
     [self.navigationController pushViewController:_takePhotoPreviewViewController animated:YES];
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }

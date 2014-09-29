@@ -15,6 +15,8 @@
 
 @property UIImage *image;
 
+@property NSInteger checkItemId;
+
 - (IBAction)photoConfirm:(UIBarButtonItem *)sender;
 
 - (IBAction)back:(UIBarButtonItem *)sender;

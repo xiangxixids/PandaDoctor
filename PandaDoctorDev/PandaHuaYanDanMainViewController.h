@@ -27,6 +27,7 @@
 @property PandaConstantData *huaYanDanConstData;
 
 
+- (IBAction)touchDown:(UIControl *)sender;
 
 @property PandaHuaYanDanXiangMuListViewController *huaYanDanXiangMuListViewController;
 

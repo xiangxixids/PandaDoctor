@@ -14,26 +14,29 @@
 {
     // Override point for customization after application launch.
     
+    self.mainViewController = [[PandaViewController alloc]initWithNibName:nil bundle:nil];
+    self.loginViewController = [[PandaLoginViewController alloc]initWithNibName:nil bundle:nil];
+    
+    [self initWindows:self.loginViewController];
+    
+    return YES;
+}
+
+- (void)initWindows:(UIViewController*)_controller
+{
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     
     self.window.backgroundColor = [UIColor whiteColor];
     
-    self.mainViewController = [[PandaViewController alloc]initWithNibName:nil bundle:nil];
-    self.loginViewController = [[PandaLoginViewController alloc]initWithNibName:nil bundle:nil];
+    self.navigationController = [[UINavigationController alloc]initWithRootViewController:_controller];
     
-    self.navigationController = [[UINavigationController alloc]initWithRootViewController:self.loginViewController];
-
     [self.navigationController.navigationBar setHidden:YES];
     
     self.window.rootViewController = self.navigationController;
     
-    
     [self.window setRootViewController:self.navigationController];
     
     [self.window makeKeyAndVisible];
-    
-    
-    return YES;
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

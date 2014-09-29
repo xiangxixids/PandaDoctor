@@ -46,7 +46,7 @@
     // 那个项目的照片; 大项->小项->具体
     PandaOCRRecongnizeViewController *controller = [[PandaOCRRecongnizeViewController alloc]initWithNibName:nil bundle:nil];
     controller.image = _image;
-    
+    controller.checkItemId = _checkItemId;
     [self.navigationController pushViewController:controller animated:YES];
     
 }

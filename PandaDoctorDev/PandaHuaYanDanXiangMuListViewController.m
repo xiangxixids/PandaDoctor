@@ -7,6 +7,7 @@
 //
 
 #import "PandaHuaYanDanXiangMuListViewController.h"
+#import "PandaRPCInterface.h"
 
 @interface PandaHuaYanDanXiangMuListViewController ()
 {
@@ -59,38 +60,20 @@
     item.title = _titleString;
     
     
-    _currentData = [self getHuaYanDanData:_itemId];
-    _tableViewItemList = _currentData.itemList;
-    
+    //_currentData = [self getHuaYanDanData:_itemId];
+    _tableViewItemList = [self getHuaYanDanData:_itemId];
     
     
     
 }
 
-- (PandaHuaYanDanData *)getHuaYanDanData:(NSInteger)mid{
-    PandaHuaYanDanData *data;
-    switch (mid) {
-        case SANDACHANGGUI:
-            return _huaYanDanConstData.sanDaChangGui;
-        case GANZANGXIANGMU:
-            return _huaYanDanConstData.ganZangXiangMu;
-        case XUETANGXUEZHI:
-            return _huaYanDanConstData.xueTangXueZhi;
-        case SHENZANGXIANGMU:
-            return _huaYanDanConstData.shenZangXiangMu;
-        case JIAZHUANGXIANGONGNENG:
-            return _huaYanDanConstData.jiaZhuangXianGongNeng;
-        case ZHONGLIUXIANGMU:
-            return _huaYanDanConstData.zhongLiuXiangMu;
-        case YOUSHENGXIANGMU:
-            return _huaYanDanConstData.youShengXiangMu;
-        case FUKEXIANGMU:
-            return _huaYanDanConstData.fuKeXiangMu;
-        case OTHERXIANGMU:
-            return _huaYanDanConstData.otherXiangMu;
-        default:
-            return nil;
-    }
+- (NSArray *)getHuaYanDanData:(int)mid{
+    PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
+    NSMutableData *data = [rpcInterface paperForApp:mid];
+    NSString *datastr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    NSArray *jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    NSLog(@"%@", jsonData);
+    return jsonData;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -106,17 +89,21 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellname];
     }
-    cell.textLabel.text = [_tableViewItemList objectAtIndex:indexPath.row];
+    
+    NSDictionary *dict = [_tableViewItemList objectAtIndex:indexPath.row];
+    cell.textLabel.text = [dict valueForKey:SLB_NM];
 //    cell.huaYanDanData = _currentData;
 //    cell.mid = indexPath.row;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"select id: %d",indexPath.row);
+    NSLog(@"select id: %d",  (int)indexPath.row);
     
     _huaYanDanDetailViewController = [[PandaHuaYanDanDetailViewController alloc]initWithNibName:nil bundle:nil];
     _huaYanDanDetailViewController.hidesBottomBarWhenPushed = YES;
+    _huaYanDanDetailViewController.checkItemId = [[[_tableViewItemList objectAtIndex:indexPath.row] valueForKey:RCRD_ID] intValue];
+    
     [self.navigationController pushViewController:_huaYanDanDetailViewController animated:YES];
     
 }
