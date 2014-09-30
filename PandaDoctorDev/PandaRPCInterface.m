@@ -67,9 +67,32 @@ static NSString *loginForAPP = @"loginForAPP.html";
     
     return data;
 }
-- (NSMutableData*)resultForApp:(int)item checkItemIds:(NSArray*)item_list ItemIds:(NSArray *)id_list
+- (NSMutableData*)resultForApp:(int)item checkItemIds:(NSArray*)postData
 {
-    return nil;
+    NSMutableData *data;
+    NSURLResponse *response;
+    NSError *error;
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+    NSMutableString *checkItemIds = [[NSMutableString alloc]initWithCapacity:3];
+    NSMutableString *resultItemIds = [[NSMutableString alloc]initWithCapacity:3];
+    
+    for (int i=0; i<postData.count; i++) {
+        [checkItemIds appendString:[[postData objectAtIndex:i] valueForKey:RCRD_ID]];
+        [resultItemIds appendString:[[postData objectAtIndex:i] valueForKey:RESULT]];
+        if (i<(postData.count-1)) {
+            [checkItemIds appendString:@","];
+            [resultItemIds appendString:@","];
+        }
+    }
+    
+    NSString *string = [NSString stringWithFormat:@"http://%@/%@?SLB_ID=%d&checkItemIds=%@&res=%@", url, resultForApp,item, checkItemIds, resultItemIds];
+    NSURL *url = [NSURL URLWithString:string];
+    
+    [request setURL:url];
+    [request setHTTPMethod:@"GET"];
+    data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    
+    return data;
 }
 - (NSMutableData*)registerForAPP:(NSString *)phone passwd:(NSString *)passwd confirm:(NSString *)confirmPasswd
 {

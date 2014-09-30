@@ -19,13 +19,15 @@ static NSString *UNIT = @"UNIT";
 static NSString *REF_LOW = @"ref_low";
 static NSString *REF_HIGH = @"ref_high";
 
+static NSString *RESULT = @"result";
+
 @interface PandaRPCInterface : NSObject
 
 
 - (NSMutableData*)paperSortForApp;
 - (NSMutableData*)paperForApp:(int)item;
 - (NSMutableData*)checkItemsForApp:(int)item;
-- (NSMutableData*)resultForApp:(int)item checkItemIds:(NSArray*)item_list ItemIds:(NSArray *)id_list;
+- (NSMutableData*)resultForApp:(int)item checkItemIds:(NSArray*)postData;
 - (NSMutableData*)registerForAPP:(NSString *)phone passwd:(NSString *)passwd confirm:(NSString *)confirmPasswd;
 - (NSMutableData*)loginForAPP:(NSString *)phone passwd:(NSString *)passwd;
 

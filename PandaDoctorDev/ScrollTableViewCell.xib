@@ -27,7 +27,7 @@
                 <outlet property="pageControl" destination="Vu4-au-gf9" id="cVj-zi-ODX"/>
                 <outlet property="scrollView" destination="1Pn-lI-ANs" id="3km-A1-7cN"/>
             </connections>
-            <point key="canvasLocation" x="206" y="183"/>
+            <point key="canvasLocation" x="222" y="174"/>
         </tableViewCell>
     </objects>
 </document>

@@ -8,6 +8,7 @@
 
 #import "PandaOCRRecongnizeViewController.h"
 #import "PandaRPCInterface.h"
+#import "PandaOCRResultViewController.h"
 
 //error Provide Application ID and Password
 // To create an application and obtain a password,
@@ -43,12 +44,29 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
     _textView.hidden = YES;
     
     _label.hidden = NO;
+    _ocrTableView.delegate = self;
+    _ocrTableView.dataSource = self;
+    _ocrTableView.hidden = YES;
     
     PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
     NSMutableData *data = [rpcInterface checkItemsForApp:_checkItemId];
     NSString *datastr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
     _dataList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-    NSLog(@"%@", _dataList);
+    NSLog(@"%lu", (unsigned long)_dataList.count);
+    
+    // init post data
+    _postArray = [[NSMutableArray alloc]initWithCapacity:3];
+    
+    for (int i=0; i<_dataList.count; i++)
+    {
+        // 字典中, 存放两个值 , 一个是RCRD_ID  也就是post时, checkItemIds的内容,
+        // 第二个值, 就是该项的一个化验单值 , 这个值是0,1,3, 我们给定默认值0, 在检查时, 动态修改postArray 里面的值.
+        NSMutableDictionary *dict = [[NSMutableDictionary alloc]initWithCapacity:3];
+        [dict setValue:[[_dataList objectAtIndex:i] valueForKey:RCRD_ID] forKey:RCRD_ID];
+        [dict setValue:@"0" forKey:RESULT];
+        [_postArray addObject:dict]; // dict 存放在array 中
+    }
+    
     
     NSString *result = @"湖南邵阳县城关镇医院生化检验报告单\r\n姓名：罗文 科别：门诊	性别：男	年龄：22岁 ^号：	标本类型：血		检验编号：100003 备注：	\r\n项目名称	代号	结果	参考值	单位\r\n谷草转氨酶	AST	27.2	5-40	U/L\r\n谷丙转氨酶	ALT	39.9	0-40	U/L\r\n谷草/谷丙	AST/ALT	0.7	1	1-2.5	\r\n碱性磷酸酶	ALP	165.0	1 0-100	U/L |\r\n总蛋白	TP	82.2	60-83	g/L\r\n白蛋白.	ALB	45.8	35-55	g/L\r\n球蛋白	GLB	36.4	20-40	g/L\r\n白/球比例	A/G	1.25	1-2. 5	\r\n总胆红素	TBIL	7.9	0-20. 7	umol/L\r\n直接胆红素	DBIL	3.2	0-6	umol/L\r\n间接红素 乙肝表面抗原	IBIL HBsAg	4.7 . 阳性	0-10	umol/L\r\n送检医生伍小凤	检验日期2010督05	报告日期2010-03-05 检验者刘玲玲\r\n此检验结果仅对此标本负责！";
     
@@ -68,7 +86,7 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
         }
         
     }
-    NSMutableArray *assResultList = [[NSMutableArray alloc]initWithCapacity:3];
+    _assResultList = [[NSMutableArray alloc]initWithCapacity:3];
     
     for(int i=0; i<_dataList.count; i++) // 循环从server 实际含有的值开始. 每一轮结束, 必须要存入assResultList;
     {
@@ -76,6 +94,7 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
         NSMutableDictionary *result_dict = [[NSMutableDictionary alloc]initWithCapacity:3]; // 存放结果的字典
         [result_dict setValue:[[_dataList objectAtIndex:i] valueForKey:ITEM_NM] forKey:ITEM_NM]; // 检查项名字填入
         [result_dict setValue:nil forKey:VALUE]; // 初始化检查值为nil
+        [result_dict setValue:[[_dataList objectAtIndex:i] valueForKey:RCRD_ID] forKey:RCRD_ID]; // rcrd_id存入字典
         
         for (int j=0; j<assList.count; j++) {
             NSLog(@"j=%d",j);
@@ -156,10 +175,12 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
             NSLog(@"not found the unit,set default is g/l");
             [result_dict setValue:@"g/L" forKey:UNIT];
         }
-        [assResultList addObject:result_dict];
+        [_assResultList addObject:result_dict];
         
     }
-    NSLog(@"%@", assResultList);
+    NSLog(@"%@", _assResultList);
+    
+    [self updatePostArrayALL];
     
     NSLog(@"hello here");
 }
@@ -222,8 +243,9 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
 //	ProcessingParams* params = [[ProcessingParams alloc] init];
 //	
 //	[client processImage:_image withParams:params];
-	
-	_label.text = @"Uploading image...";
+//	
+//	_label.text = @"Uploading image...";
+    _ocrTableView.hidden = NO;
 	
     [super viewDidAppear:animated];
     
@@ -278,7 +300,20 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
 - (IBAction)confirm:(UIBarButtonItem *)sender {
     
     NSLog(@"confirming...");
+    [self.view endEditing:YES];
     
+    PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
+    NSMutableData *data = [rpcInterface resultForApp:_checkItemId checkItemIds:_postArray];
+    NSString *datastr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    _dataList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    NSLog(@"%lu", (unsigned long)_dataList.count);
+    
+    PandaOCRResultViewController *ocrResultViewController = [[PandaOCRResultViewController alloc]initWithNibName:nil bundle:nil];
+    ocrResultViewController.postArray = _postArray;
+    ocrResultViewController.checkItemId = _checkItemId;
+    ocrResultViewController.datastr = datastr;
+    
+    [self.navigationController pushViewController:ocrResultViewController animated:YES];
     
 }
 
@@ -287,4 +322,149 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
     [self.navigationController popViewControllerAnimated:YES];
     
 }
+
+//mark for pandaUITextField
+
+- (void)textFieldDidBeginEditing:(PandaUITextField *)textField
+{
+    CGRect frame = textField.frame;
+    int offset = frame.origin.y+32 - (self.view.frame.size.height - 216.0);//键盘高度216
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    
+    //将视图的Y坐标向上移动offset个单位，以使下面腾出地方用于软键盘的显示
+    if(offset > 0)
+        self.view.frame = CGRectMake(0.0f, -offset, self.view.frame.size.width, self.view.frame.size.height);
+    
+    [UIView commitAnimations];
+}
+
+- (void)textFieldDidEndEditing:(PandaUITextField *)textField
+{
+    NSLog(@"textFieldDidEndEditing, %d : value = %@", textField.mid,textField.text);
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:textField.mid inSection:0];
+    PandaOCRTableViewCell *cell = [_ocrTableView cellForRowAtIndexPath:indexPath];
+    NSLog(@"value = %@, high = %@, low = %@",cell.OCR_value.text, cell.REF_high.text, cell.REF_low.text);
+    
+    //update _assResultList
+    [self updateAssResultList:textField.mid value:cell.OCR_value.text refLow:cell.REF_low.text refHight:cell.REF_high.text unit:cell.OCR_unit.text];
+    //update _postArray
+    [self updatePostArray:textField.mid value:cell.OCR_value.text refLow:cell.REF_low.text refHight:cell.REF_high.text];
+    [_ocrTableView reloadData];
+}
+
+- (void)updateAssResultList:(NSInteger)index value:(NSString *)value refLow:(NSString *)low refHight:(NSString *)high unit:(NSString*)unit
+{
+    NSDictionary *dict = [_assResultList objectAtIndex:index];
+    [dict setValue:value forKey:VALUE];
+    [dict setValue:low forKey:REF_LOW];
+    [dict setValue:high forKey:REF_HIGH];
+    [dict setValue:unit forKey:UNIT];
+    [_assResultList replaceObjectAtIndex:index withObject:dict];
+}
+
+- (void)updatePostArray:(NSInteger)index value:(NSString *)value refLow:(NSString *)low refHight:(NSString *)high
+{
+    NSDictionary *dict = [_postArray objectAtIndex:index];
+
+    // 首先判断是否为空
+    if (value == nil || low == nil || high == nil) {
+        [dict setValue:@"0" forKey:RESULT]; // 如果value / low / high 任何一样是nil, 表示用户不想输入什么值, 那么认为该项是正常的
+        return;
+    }
+    
+    // 再次, 过滤空格
+    [value stringByReplacingOccurrencesOfString:@" " withString:@""];
+    [low stringByReplacingOccurrencesOfString:@" " withString:@""];
+    [high stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    if (value == @"" || low == @"" || high == @"") // 任何一项是空值
+    {
+        [dict setValue:@"0" forKey:RESULT];
+        return;
+    }
+    
+    float value_f = [value floatValue];
+    float low_f   = [low floatValue];
+    float high_f  = [high floatValue];
+    if (value_f<low_f) {
+        [dict setValue:@"3" forKey:RESULT]; // 偏低
+    }else if (value_f > high_f)
+    {
+        [dict setValue:@"1" forKey:RESULT];
+    }else if (value_f >= low_f && value_f<=high_f)
+    {
+        [dict setValue:@"0" forKey:RESULT];
+    }else //any other value
+    {
+        [dict setValue:@"0" forKey:RESULT];
+    }
+}
+
+- (void)updatePostArrayALL
+{
+    for (int i=0; i<_assResultList.count; i++) {
+        NSDictionary *dict = [_assResultList objectAtIndex:i];
+        NSString *value = [dict valueForKey:VALUE];
+        NSString *low  = [dict  valueForKey:REF_LOW];
+        NSString *high = [dict valueForKey:REF_HIGH];
+        
+        [self updatePostArray:i value:value refLow:low refHight:high];
+    }
+}
+
+- (BOOL)textField:(PandaUITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    NSLog(@"shouldChangeCharactersInRange, value now is %d: %@",textField.mid, textField.text);
+    return YES;
+}
+
+//当用户按下return键或者按回车键，keyboard消失
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (IBAction)touchDown:(UIControl *)sender {
+    [self.view endEditing:YES];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _assResultList.count;
+}
+
+// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
+// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+
+- (PandaOCRTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *cellName = @"cell";
+    PandaOCRTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"PandaOCRTableViewCell" owner:self options:nil] objectAtIndex:0];
+    NSDictionary *dict = [_assResultList objectAtIndex:indexPath.row];
+    cell.OCR_name.text = [dict valueForKey:ITEM_NM];
+    cell.OCR_unit.text = [dict valueForKey:UNIT];
+    cell.OCR_unit.mid = indexPath.row;
+    cell.OCR_unit.delegate = self;
+    cell.REF_low.text = [dict valueForKey:REF_LOW];
+    cell.REF_low.mid = indexPath.row;
+    cell.REF_low.delegate = self;
+    cell.REF_high.text = [dict valueForKey:REF_HIGH];
+    cell.REF_high.mid = indexPath.row;
+    cell.REF_high.delegate = self;
+    cell.OCR_value.text = [dict valueForKey:VALUE];
+    cell.OCR_value.mid = indexPath.row;
+    cell.OCR_value.delegate = self;
+    [self.view endEditing:YES]; // 只要listview 发生滑动 , 立刻取消输入
+    NSLog(@"index = %d", indexPath.row);
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 99;
+}
+
 @end

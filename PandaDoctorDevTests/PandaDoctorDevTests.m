@@ -72,4 +72,36 @@
     
 }
 
+-(void)testResultForapp
+{
+    rpcInterface = [[PandaRPCInterface alloc]init];
+    NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:3];
+    
+    for (int i=1; i<6; i++) {
+        NSMutableDictionary *dict = [[NSMutableDictionary alloc]initWithCapacity:3];
+        [dict setValue:@"0" forKey:RESULT];
+        if (i==1) {
+            [dict setValue:@"1" forKey:RCRD_ID];
+        }
+        if (i==2) {
+            [dict setValue:@"2" forKey:RCRD_ID];
+        }
+        if (i==3) {
+            [dict setValue:@"3" forKey:RCRD_ID];
+        }
+        if (i==4) {
+            [dict setValue:@"4" forKey:RCRD_ID];
+        }
+        if (i==5) {
+            [dict setValue:@"5" forKey:RCRD_ID];
+        }
+//        [dict setValue:[[_dataList objectAtIndex:i] valueForKey:RCRD_ID] forKey:RCRD_ID];
+//        [dict setValue:@"0" forKey:RESULT];
+        [array addObject:dict];
+    }
+    [rpcInterface resultForApp:1 checkItemIds:array];
+    
+    
+}
+
 @end
