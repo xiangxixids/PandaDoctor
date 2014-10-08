@@ -8,7 +8,7 @@
 
 #import "PandaRPCInterface.h"
 
-static NSString *url = @"192.168.2.109:8080";
+static NSString *url = @"www.13xm.com";
 static NSString *paperSortForApp = @"paperSortForApp.html";
 static NSString *paperForApp = @"paperForApp.html";
 static NSString *checkItemsForApp = @"checkItemsForApp.html";

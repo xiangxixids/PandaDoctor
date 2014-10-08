@@ -104,4 +104,29 @@
     
 }
 
+- (void)testContains
+{
+    NSString *string1 = @"this is hello world!";
+    NSString *string2 = @"iso";
+    if ([self containString:string1 contains:string2]) {
+        NSLog(@"contain");
+    }else{
+        NSLog(@"not contain");
+    }
+}
+
+- (Boolean)containString:(NSString *)orignal contains:(NSString*)string
+{
+    NSRange range = [orignal rangeOfString:string];
+    if (range.location != NSNotFound) {
+        return true;
+    }
+    if (range.length > 0) {
+        return true;
+    }else{
+        return false;
+    }
+    return false;
+}
+
 @end

@@ -76,8 +76,16 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
     for (int i=assList.count-1; i>-1; i--) {
         Boolean contain = NO;
         for (int j=0;j<_dataList.count; j++) {
-            if ([[assList objectAtIndex:i] containsString:[[_dataList objectAtIndex:j] valueForKey:ITEM_NM]] || [[assList objectAtIndex:i] containsString:[[_dataList objectAtIndex:j] valueForKey:ENG_NM]]) {
+//            if ([[assList objectAtIndex:i] containsString:[[_dataList objectAtIndex:j] valueForKey:ITEM_NM]] || [[assList objectAtIndex:i] containsString:[[_dataList objectAtIndex:j] valueForKey:ENG_NM]]) {
+//                contain = YES;
+//                break;
+//            }
+            
+            if ([self containString:[assList objectAtIndex:i] contains:[[_dataList objectAtIndex:j] valueForKey:ITEM_NM]]
+                || [self containString:[assList objectAtIndex:i] contains:[[_dataList objectAtIndex:j] valueForKey:ENG_NM]])
+            {
                 contain = YES;
+                NSLog(@"contains");
                 break;
             }
         }
@@ -99,7 +107,10 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
         for (int j=0; j<assList.count; j++) {
             NSLog(@"j=%d",j);
             //去看每一行这一样里有没有对应的英文缩写或者中文，有就认为找到了对应行
-            if ([[assList objectAtIndex:j] containsString:[[_dataList objectAtIndex:i] valueForKey:ITEM_NM]] || [[assList objectAtIndex:j] containsString:[[_dataList objectAtIndex:i] valueForKey:ENG_NM]]) {
+            //if ([[assList objectAtIndex:j] containsString:[[_dataList objectAtIndex:i] valueForKey:ITEM_NM]] || [[assList objectAtIndex:j] containsString:[[_dataList objectAtIndex:i] valueForKey:ENG_NM]])
+            if ([self containString:[assList objectAtIndex:j] contains:[[_dataList objectAtIndex:i] valueForKey:ITEM_NM]]
+                || [self containString:[assList objectAtIndex:j] contains:[[_dataList objectAtIndex:i] valueForKey:ENG_NM]])
+            {
                 //把每一行按列切分开
                 NSArray *test = [[assList objectAtIndex:j]componentsSeparatedByString:@"\t"];
                 for (int k=0; k<test.count; k++) {
@@ -129,7 +140,9 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
                     //通常认为参考范围也是至少是在第三个位置以后
                     if (k>=2) {
                         //判断是不是上下限，通过"-"连接的，如20-70
-                        if ([string_k containsString:@"-"]) {
+                        //if ([string_k containsString:@"-"])
+                        if ([self containString:string_k contains:@"-"])
+                        {
                             NSArray *array = [string_k componentsSeparatedByString:@"-"];
                             if (array!=nil && array.count>=2) {
                                 [result_dict setValue:[array objectAtIndex:0] forKey:REF_LOW];
@@ -137,7 +150,9 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
                             }
                         }
                         //也有可能是通过"~"关联，如20~70
-                        if ([string_k containsString:@"~"]) {
+                        //if ([string_k containsString:@"~"])
+                        if ([self containString:string_k contains:@"~"])
+                        {
                             NSArray *array = [string_k componentsSeparatedByString:@"~"];
                             if (array!=nil && array.count>=2) {
                                 [result_dict setValue:[array objectAtIndex:0] forKey:REF_LOW];
@@ -145,7 +160,9 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
                             }
                         }
                         //也有可能是>如>20，变成20-10000
-                        if ([string_k containsString:@">"]) {
+                        //if ([string_k containsString:@">"])
+                        if ([self containString:string_k contains:@">"])
+                        {
                             NSArray *array = [string_k componentsSeparatedByString:@"~"];
                             if (array!=nil && array.count>=2) {
                                 if ([array[0] isEqualToString:array[1]]) {
@@ -161,7 +178,10 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
                     }// 寻找范围结束
                     
                     //寻找单位，一般单位在第三个位置以后，可能包含/ fL pg %等字符
-                    if (k>=2 && ([string_k containsString:@"/"] || [string_k containsString:@"fL"] || [string_k containsString:@"pg"])) {
+                    //if (k>=2 && ([string_k containsString:@"/"] || [string_k containsString:@"fL"] || [string_k containsString:@"pg"]))
+                    if (k>=2 && (([self containString:string_k contains:@"/"])||([self containString:string_k contains:@"fL"])
+                                 ||([self containString:string_k contains:@"pg"])))
+                    {
                         [string_k stringByReplacingOccurrencesOfString:@"|" withString:@""];
                         [result_dict setValue:string_k forKey:UNIT];
                     }
@@ -185,6 +205,20 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
     NSLog(@"hello here");
 }
 
+- (Boolean)containString:(NSString *)orignal contains:(NSString*)string
+{
+    NSRange range = [orignal rangeOfString:string];
+    if (range.location != NSNotFound) {
+        return true;
+    }
+    if (range.length > 0) {
+        return true;
+    }else{
+        return false;
+    }
+    return false;
+}
+
 - (Boolean)isNumber:(NSString *)string
 {
     if( ![self isPureInt:string] || ![self isPureFloat:string])
@@ -202,7 +236,9 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
     NSScanner* scan = [NSScanner scannerWithString:string];
     int val;
     //return[scan scanInt:&val] && [scan isAtEnd];
-    if ([string containsString:@"-"] || [string containsString:@"~"]) {
+    //if ([string containsString:@"-"] || [string containsString:@"~"])
+    if ([self  containString:string contains:@"-"]||[self containString:string contains:@"~"])
+    {
         return false;
     }
     return [scan scanInt:&val];
@@ -214,7 +250,9 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
     NSScanner* scan = [NSScanner scannerWithString:string];
     float val;
     //return[scan scanFloat:&val] && [scan isAtEnd];
-    if ([string containsString:@"-"] || [string containsString:@"~"]) {
+    //if ([string containsString:@"-"] || [string containsString:@"~"])
+    if ([self containString:string contains:@"-"] || [self containString:string contains:@"~"])
+    {
         return false;
     }
     return [scan scanFloat:&val];
