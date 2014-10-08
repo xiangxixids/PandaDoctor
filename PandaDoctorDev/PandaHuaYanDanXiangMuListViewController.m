@@ -103,7 +103,7 @@
     _huaYanDanDetailViewController = [[PandaHuaYanDanDetailViewController alloc]initWithNibName:nil bundle:nil];
     _huaYanDanDetailViewController.hidesBottomBarWhenPushed = YES;
     _huaYanDanDetailViewController.checkItemId = [[[_tableViewItemList objectAtIndex:indexPath.row] valueForKey:RCRD_ID] intValue];
-    
+    _huaYanDanDetailViewController.titleName = [[_tableViewItemList objectAtIndex:indexPath.row] valueForKey:SLB_NM];
     [self.navigationController pushViewController:_huaYanDanDetailViewController animated:YES];
     
 }

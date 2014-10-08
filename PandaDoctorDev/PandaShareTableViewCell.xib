@@ -15,7 +15,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1.pic.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="LaZ-TT-Mum">
-                        <rect key="frame" x="6" y="0.0" width="60" height="55"/>
+                        <rect key="frame" x="6" y="5" width="60" height="55"/>
                     </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="如何才能有效防止宝宝近视?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYZ-7J-ZV4">
                         <rect key="frame" x="78" y="22" width="200" height="21"/>
@@ -30,7 +30,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="049-XS-v1o">
-                        <rect key="frame" x="274" y="48" width="30" height="30"/>
+                        <rect key="frame" x="274" y="18" width="30" height="30"/>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" red="0.61767530144262861" green="0.97283881592173116" blue="1" alpha="1" colorSpace="calibratedRGB"/>

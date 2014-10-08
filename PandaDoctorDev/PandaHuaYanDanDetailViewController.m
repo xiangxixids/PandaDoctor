@@ -39,6 +39,9 @@
     NSLog(@"%@", _tableViewDataList);
     
     
+    UINavigationItem *item = [_navigationBar.items objectAtIndex:0];
+    item.title = _titleName;
+    
 
 }
 
@@ -51,15 +54,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    PandaBingLiHistoryTableViewCell *cell = [[[NSBundle mainBundle]loadNibNamed:@"PandaBingLiHistoryTableViewCell" owner:self options:nil] objectAtIndex:0];
-    cell.date.text = [[_tableViewDataList objectAtIndex:indexPath.row] valueForKey:ITEM_NM];
-    cell.item.text = [[_tableViewDataList objectAtIndex:indexPath.row] valueForKey:SIGNIFICANCE];
+    //PandaBingLiHistoryTableViewCell *cell = [[[NSBundle mainBundle]loadNibNamed:@"PandaBingLiHistoryTableViewCell" owner:self options:nil] objectAtIndex:0];
+    PandaHuaYanDanDetailTableViewCell *cell = [[[NSBundle mainBundle]loadNibNamed:@"PandaHuaYanDanDetailTableViewCell" owner:self options:nil] objectAtIndex:0];
+    cell.name.text = [[_tableViewDataList objectAtIndex:indexPath.row] valueForKey:ITEM_NM];
+    cell.desc.text = [[_tableViewDataList objectAtIndex:indexPath.row] valueForKey:SIGNIFICANCE];
     
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 30;
+    return 55;
 }
 
 - (void)didReceiveMemoryWarning
@@ -109,6 +113,27 @@
     
 }
 
+- (IBAction)takePic:(UIButton *)sender {
+    
+    NSLog(@"take photo..");
+    // UIImagePickerControllerCameraDeviceRear 后置摄像头
+    // UIImagePickerControllerCameraDeviceFront 前置摄像头
+    BOOL isCamera = [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear];
+    if (!isCamera) {
+        NSLog(@"没有摄像头");
+        return ;
+    }
+    
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    imagePicker.delegate = self;
+    // 编辑模式
+    //imagePicker.allowsEditing = YES;
+    
+    [self  presentViewController:imagePicker animated:YES completion:^{
+    }];
+}
+
 // 选中照片
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
@@ -121,12 +146,19 @@
     //imageView.image = image;
     
     
-    _takePhotoPreviewViewController = [[PandaTakePhotoPreviewViewController alloc]initWithNibName:nil bundle:nil];
-    //_takePhotoPreviewViewController.photoPreview.image = image;
-    _takePhotoPreviewViewController.image = image;
-    _takePhotoPreviewViewController.hidesBottomBarWhenPushed = YES;
-    _takePhotoPreviewViewController.checkItemId = _checkItemId;
-    [self.navigationController pushViewController:_takePhotoPreviewViewController animated:YES];
+//    _takePhotoPreviewViewController = [[PandaTakePhotoPreviewViewController alloc]initWithNibName:nil bundle:nil];
+//    //_takePhotoPreviewViewController.photoPreview.image = image;
+//    _takePhotoPreviewViewController.image = image;
+//    _takePhotoPreviewViewController.hidesBottomBarWhenPushed = YES;
+//    _takePhotoPreviewViewController.checkItemId = _checkItemId;
+//    [self.navigationController pushViewController:_takePhotoPreviewViewController animated:YES];
+    
+    // 那个项目的照片; 大项->小项->具体
+    PandaOCRRecongnizeViewController *controller = [[PandaOCRRecongnizeViewController alloc]initWithNibName:nil bundle:nil];
+    controller.image = image;
+    controller.checkItemId = _checkItemId;
+    [self.navigationController pushViewController:controller animated:YES];
+    
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 @end

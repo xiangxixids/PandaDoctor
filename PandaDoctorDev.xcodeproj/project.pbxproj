@@ -110,6 +110,8 @@
 		D7E8A58E19C71E5C009A3CE0 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8A58A19C71E5C009A3CE0 /* Task.m */; };
 		D7E8A59219C72C8C009A3CE0 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8A59119C72C8C009A3CE0 /* NSData+Base64.m */; };
 		D7E8A59519C72C95009A3CE0 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8A59419C72C95009A3CE0 /* NSString+Base64.m */; };
+		D7F72DB419E576D5001167DF /* PandaHuaYanDanDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F72DB219E576D5001167DF /* PandaHuaYanDanDetailTableViewCell.m */; };
+		D7F72DB519E576D5001167DF /* PandaHuaYanDanDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7F72DB319E576D5001167DF /* PandaHuaYanDanDetailTableViewCell.xib */; };
 		D7FB52E4197236B900667643 /* PandaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7FB52E3197236B900667643 /* PandaViewController.xib */; };
 /* End PBXBuildFile section */
 
@@ -276,6 +278,9 @@
 		D7E8A59119C72C8C009A3CE0 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		D7E8A59319C72C95009A3CE0 /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
 		D7E8A59419C72C95009A3CE0 /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		D7F72DB119E576D5001167DF /* PandaHuaYanDanDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaHuaYanDanDetailTableViewCell.h; sourceTree = "<group>"; };
+		D7F72DB219E576D5001167DF /* PandaHuaYanDanDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaHuaYanDanDetailTableViewCell.m; sourceTree = "<group>"; };
+		D7F72DB319E576D5001167DF /* PandaHuaYanDanDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PandaHuaYanDanDetailTableViewCell.xib; sourceTree = "<group>"; };
 		D7FB52E3197236B900667643 /* PandaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PandaViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -387,6 +392,9 @@
 				D761597F197FAEFB00ECF978 /* PandaBingLiHistoryTableViewCell.h */,
 				D7615980197FAEFB00ECF978 /* PandaBingLiHistoryTableViewCell.m */,
 				D7615981197FAEFB00ECF978 /* PandaBingLiHistoryTableViewCell.xib */,
+				D7F72DB119E576D5001167DF /* PandaHuaYanDanDetailTableViewCell.h */,
+				D7F72DB219E576D5001167DF /* PandaHuaYanDanDetailTableViewCell.m */,
+				D7F72DB319E576D5001167DF /* PandaHuaYanDanDetailTableViewCell.xib */,
 				D70D352819810A41006F431A /* PandaBingLiHistoryDetailTableViewCell.h */,
 				D70D352919810A41006F431A /* PandaBingLiHistoryDetailTableViewCell.m */,
 				D70D352A19810A41006F431A /* PandaBingLiHistoryDetailTableViewCell.xib */,
@@ -690,6 +698,7 @@
 				D70159D919911E7B004D8179 /* PandaHuaYanDanDetailViewController.xib in Resources */,
 				D7615987197FC5AB00ECF978 /* u54_line.png in Resources */,
 				D74070B8197CF105007313B1 /* PandaLoginViewController.xib in Resources */,
+				D7F72DB519E576D5001167DF /* PandaHuaYanDanDetailTableViewCell.xib in Resources */,
 				D702FF3E197E4F950076B365 /* u6_normal.png in Resources */,
 				D761597B197FA31C00ECF978 /* PandaBingLiHistoryViewController.xib in Resources */,
 			);
@@ -735,6 +744,7 @@
 				D70C28E41977702C007BEDB2 /* UtilTool.m in Sources */,
 				D7E8A58E19C71E5C009A3CE0 /* Task.m in Sources */,
 				D7E8A58D19C71E5C009A3CE0 /* ProcessingParams.m in Sources */,
+				D7F72DB419E576D5001167DF /* PandaHuaYanDanDetailTableViewCell.m in Sources */,
 				D7A30A83198CDE9200423666 /* PandaHealthJiangTangViewController.m in Sources */,
 				D7CF045619DAD58F00DE6923 /* PandaOCRTableViewCell.m in Sources */,
 				D7D2785C19876EBE00BAB90F /* PandaDatagramViewController.m in Sources */,
@@ -881,12 +891,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: guangming wan (AJ83XXX44L)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: bin xu (L499EXQ4UY)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PandaDoctorDev/PandaDoctorDev-Prefix.pch";
 				INFOPLIST_FILE = "PandaDoctorDev/PandaDoctorDev-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8de3c5e5-1591-4f62-9eda-b0e246adcab4";
+				PROVISIONING_PROFILE = "4A87A1BE-7A47-4315-9DF3-2F158DEBE56E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -896,12 +906,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: guangming wan (AJ83XXX44L)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: bin xu (L499EXQ4UY)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PandaDoctorDev/PandaDoctorDev-Prefix.pch";
 				INFOPLIST_FILE = "PandaDoctorDev/PandaDoctorDev-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8de3c5e5-1591-4f62-9eda-b0e246adcab4";
+				PROVISIONING_PROFILE = "4A87A1BE-7A47-4315-9DF3-2F158DEBE56E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

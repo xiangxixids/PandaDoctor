@@ -44,6 +44,7 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
     _textView.hidden = YES;
     
     _label.hidden = NO;
+    _label.text = @"识别中...";
     _ocrTableView.delegate = self;
     _ocrTableView.dataSource = self;
     _ocrTableView.hidden = YES;

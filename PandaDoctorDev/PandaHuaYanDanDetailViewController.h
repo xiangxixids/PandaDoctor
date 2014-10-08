@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PandaBingLiHistoryTableViewCell.h"
+#import "PandaHuaYanDanDetailTableViewCell.h"
 #import "PandaTakePhotoPreviewViewController.h"
 #import "PandaRPCInterface.h"
 
@@ -22,6 +23,7 @@
 @property PandaTakePhotoPreviewViewController *takePhotoPreviewViewController;
 
 @property NSInteger checkItemId;
+@property NSString *titleName;
 
 @property NSArray *tableViewDataList;
 
@@ -30,5 +32,6 @@
 
 - (IBAction)takePhoto:(UIBarButtonItem *)sender;
 
+- (IBAction)takePic:(UIButton *)sender;
 
 @end

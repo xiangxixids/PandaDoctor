@@ -8,7 +8,8 @@
 
 #import "PandaRPCInterface.h"
 
-static NSString *url = @"www.13xm.com";
+static NSString *url = @"192.168.2.103:8080";
+//static NSString *url = @"www.13xm.com";
 static NSString *paperSortForApp = @"paperSortForApp.html";
 static NSString *paperForApp = @"paperForApp.html";
 static NSString *checkItemsForApp = @"checkItemsForApp.html";
@@ -77,7 +78,8 @@ static NSString *loginForAPP = @"loginForAPP.html";
     NSMutableString *resultItemIds = [[NSMutableString alloc]initWithCapacity:3];
     
     for (int i=0; i<postData.count; i++) {
-        [checkItemIds appendString:[[postData objectAtIndex:i] valueForKey:RCRD_ID]];
+        NSString *str = [NSString stringWithFormat:@"%@", [[postData objectAtIndex:i] valueForKey:RCRD_ID]];
+        [checkItemIds appendString:str];
         [resultItemIds appendString:[[postData objectAtIndex:i] valueForKey:RESULT]];
         if (i<(postData.count-1)) {
             [checkItemIds appendString:@","];

@@ -26,7 +26,7 @@
                 <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hw2-dM-t3C">
                     <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                     <items>
-                        <navigationItem title="Title" id="waG-1G-FCJ">
+                        <navigationItem title="查询结果" id="waG-1G-FCJ">
                             <barButtonItem key="leftBarButtonItem" title="&lt; 返回" id="Sdf-VV-gpP">
                                 <connections>
                                     <action selector="back:" destination="-1" id="6Ge-BM-9KF"/>
