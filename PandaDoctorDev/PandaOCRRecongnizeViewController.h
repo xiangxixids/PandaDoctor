@@ -25,6 +25,7 @@
 @property NSMutableArray *postArray;
 
 - (IBAction)confirm:(UIBarButtonItem *)sender;
+- (IBAction)confirmByBtn:(UIButton *)sender;
 
 - (IBAction)back:(UIBarButtonItem *)sender;
 - (IBAction)touchDown:(UIControl *)sender;

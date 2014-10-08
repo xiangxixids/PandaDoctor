@@ -356,6 +356,26 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
     
 }
 
+- (IBAction)confirmByBtn:(UIButton *)sender {
+    
+    NSLog(@"confirming...");
+    [self.view endEditing:YES];
+    
+    PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
+    NSMutableData *data = [rpcInterface resultForApp:_checkItemId checkItemIds:_postArray];
+    NSString *datastr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    _dataList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    NSLog(@"%lu", (unsigned long)_dataList.count);
+    
+    PandaOCRResultViewController *ocrResultViewController = [[PandaOCRResultViewController alloc]initWithNibName:nil bundle:nil];
+    ocrResultViewController.postArray = _postArray;
+    ocrResultViewController.checkItemId = _checkItemId;
+    ocrResultViewController.datastr = datastr;
+    
+    [self.navigationController pushViewController:ocrResultViewController animated:YES];
+    
+}
+
 - (IBAction)back:(UIBarButtonItem *)sender {
     
     [self.navigationController popViewControllerAnimated:YES];
