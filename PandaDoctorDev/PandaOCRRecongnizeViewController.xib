@@ -61,7 +61,7 @@
             <connections>
                 <action selector="touchDown:" destination="-1" eventType="touchDown" id="qIq-wb-AvW"/>
             </connections>
-        <point key="canvasLocation" x="84" y="135"/>
+            <point key="canvasLocation" x="84" y="135"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
