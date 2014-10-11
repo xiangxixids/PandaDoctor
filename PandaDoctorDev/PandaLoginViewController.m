@@ -77,7 +77,7 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     CGRect frame = textField.frame;
-    int offset = frame.origin.y+32 - (self.view.frame.size.height - 216.0);//键盘高度216
+    int offset = frame.origin.y+32 - (self.view.frame.size.height - 250.0);//键盘高度250
     NSTimeInterval animationDuration = 0.30f;
     [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
     [UIView setAnimationDuration:animationDuration];

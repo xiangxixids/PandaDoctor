@@ -16,7 +16,7 @@
 @property NSMutableArray *postArray;
 @property NSArray *dataList;
 @property NSInteger checkItemId;
-@property NSString *datastr;
+@property NSData *data;
 
 - (IBAction)saveResult:(UIBarButtonItem *)sender;
 

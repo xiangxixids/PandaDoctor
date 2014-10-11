@@ -21,6 +21,21 @@ static NSString *REF_HIGH = @"ref_high";
 
 static NSString *RESULT = @"result";
 
+static NSString *COMPLEXRESULT = @"complexResult";
+static NSString *CNDT_VAL = @"CNDT_VAL";
+static NSString *RST_DESC = @"RST_DESC";
+static NSString *SLD_ID = @"SLD_ID";
+static NSString *CONCLUSTION = @"conclusion";
+static NSString *SUGGESTION = @"suggestion";
+static NSString *FLAG = @"flag";
+static NSString *IND_RESULT = @"indResult";
+static NSString *DEGR_NM = @"DEGR_NM";
+static NSString *RF_ID = @"RF_ID";
+static NSString *RSVAL_CEL = @"RSVAL_CEL";
+static NSString *RSVAL_FLR = @"RSVAL_FLR";
+static NSString *USERCOMPLEXRESULTLIST = @"userComplexResultList";
+
+
 @interface PandaRPCInterface : NSObject
 
 

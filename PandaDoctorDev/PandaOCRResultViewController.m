@@ -7,6 +7,7 @@
 //
 
 #import "PandaOCRResultViewController.h"
+#import "PandaRPCInterface.h"
 
 @interface PandaOCRResultViewController ()
 
@@ -18,7 +19,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    _resultTextView.text = _datastr;
+    //_resultTextView.text = _datastr;
+    
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:_data options:NSJSONReadingMutableContainers error:nil];
+    
+    NSArray *ind_result_dict = [dict valueForKey:IND_RESULT];
+    
+    NSMutableString *show_result = [[NSMutableString alloc]initWithCapacity:3];
+    
+    for (int i=0; i<ind_result_dict.count; i++) {
+        NSDictionary *dict = [ind_result_dict objectAtIndex:i];
+        NSString *strTemp = [NSString stringWithFormat:@"%d. %@\r\n\r\n",i+1,[dict valueForKey:RST_DESC]];
+        [show_result appendString:strTemp];
+    }
+    
+    
+    
+    _resultTextView.text = show_result;
     
 }
 
