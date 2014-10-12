@@ -64,7 +64,10 @@
         self.view.window.rootViewController = [storyBorad instantiateInitialViewController];
     }else{
         NSLog(@"login failed");
-        
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"登录失败" message:@"请检查用户名和密码是否正确" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [_indicatorPopup stopAnimating];
+        _hiddenView.hidden = YES;
+        [alert show];
     }
     
 }
