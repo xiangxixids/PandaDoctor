@@ -8,6 +8,7 @@
 
 #import "PandaOCRResultViewController.h"
 #import "PandaRPCInterface.h"
+#import "UtilTool.h"
 
 @interface PandaOCRResultViewController ()
 
@@ -55,6 +56,43 @@
 */
 
 - (IBAction)saveResult:(UIBarButtonItem *)sender {
+    
+    //NSMutableData *data = [rpcInterface insertUserHistory:@"13679084298" resultList:@"0,0,0,0,0,0,0,0,0,0,0,0,0" checkItem:@"5"];
+    
+    NSString *phone = [UtilTool globalDataGet:PHONE];
+    NSMutableString *result = [[NSMutableString alloc]initWithCapacity:3];
+    for (int i=0; i<_postArray.count; i++) {
+        NSDictionary *dict = [_postArray objectAtIndex:i];
+        NSString *string = [NSString stringWithFormat:@"%@",[dict valueForKey:RESULT]];
+        if (i<(_postArray.count-1)) {
+            [result appendString:string];
+            [result appendString:@","];
+        }else{
+            [result appendString:string];
+        }
+    }
+    NSString *checkItem = [NSString stringWithFormat:@"%d",_checkItemId];
+    
+    PandaRPCInterface *rpc = [[PandaRPCInterface alloc]init];
+    NSMutableData *data = [rpc insertUserHistory:phone resultList:result checkItem:checkItem];
+    NSString *string = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"string = %@", string);
+    if ([string isEqualToString:@"true"]) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"病历保存"
+                                                       message:@"成功"
+                                                      delegate:nil
+                                             cancelButtonTitle:@"OK"
+                                             otherButtonTitles:nil, nil];
+        [alert show];
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"病历保存"
+                                                       message:@"失败"
+                                                      delegate:nil
+                                             cancelButtonTitle:@"OK"
+                                             otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    
 }
 
 - (IBAction)back:(UIBarButtonItem *)sender {

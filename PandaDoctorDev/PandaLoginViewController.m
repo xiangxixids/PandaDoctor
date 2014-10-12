@@ -8,6 +8,7 @@
 
 #import "PandaLoginViewController.h"
 #import "PandaRPCInterface.h"
+#import "UtilTool.h"
 
 @interface PandaLoginViewController ()
 
@@ -34,6 +35,8 @@
     
     _tabviewBtn.hidden = YES;
     
+    _hiddenView.hidden = YES;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,18 +47,55 @@
 
 - (IBAction)loginAction:(UIButton *)sender {
     
+    NSThread *thread = [[NSThread alloc]initWithTarget:self selector:@selector(loginActionSY) object:nil];
+    _hiddenView.hidden = NO;
+    [_indicatorPopup startAnimating];
+    [thread start];
+//    PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
+//    NSMutableData *data = [rpcInterface loginForAPP:_account.text passwd:_passwd.text];
+//    NSString *result = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+//    
+//    if ([result  isEqualToString: @"true"]) {
+//        NSLog(@"login successful");
+//        
+//        [UtilTool globalDataSave:_account.text forKey:PHONE];
+//        
+//        UIStoryboard *storyBorad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        self.view.window.rootViewController = [storyBorad instantiateInitialViewController];
+//    }else{
+//        NSLog(@"login failed");
+//        
+//    }
+    
+}
+
+- (void)loginActionSY
+{
+    
     PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
+    
     NSMutableData *data = [rpcInterface loginForAPP:_account.text passwd:_passwd.text];
+    
     NSString *result = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    [_indicatorPopup stopAnimating];
     
     if ([result  isEqualToString: @"true"]) {
         NSLog(@"login successful");
+        [UtilTool globalDataSave:_account.text forKey:PHONE];
         UIStoryboard *storyBorad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        self.view.window.rootViewController = [storyBorad instantiateInitialViewController];
+            self.view.window.rootViewController = [storyBorad instantiateInitialViewController];
     }else{
         NSLog(@"login failed");
-        
+        [self performSelectorOnMainThread:@selector(loginActionFinish) withObject:nil waitUntilDone:YES];
     }
+}
+
+- (void)loginActionFinish
+{
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"登录失败" message:@"请检查用户名和密码是否正确" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [_indicatorPopup stopAnimating];
+    _hiddenView.hidden = YES;
+    [alert show];
     
 }
 

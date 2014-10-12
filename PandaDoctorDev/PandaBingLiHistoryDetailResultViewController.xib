@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PandaBingLiHistoryDetailResultViewController">
             <connections>
+                <outlet property="resultView" destination="PdO-vk-ctk" id="vl1-fU-VFt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,11 +16,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar appearanceType="aqua" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dyx-Yg-PDo">
+                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dyx-Yg-PDo">
                     <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                     <items>
                         <navigationItem title="化验结果" id="AWo-VO-rO4">
-                            <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="7OC-mI-Dwv">
+                            <barButtonItem key="leftBarButtonItem" title="&lt; 返回" id="7OC-mI-Dwv">
                                 <connections>
                                     <action selector="back:" destination="-1" id="zEF-Sh-2jy"/>
                                 </connections>
@@ -26,77 +28,20 @@
                         </navigationItem>
                     </items>
                 </navigationBar>
-                <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="各单项分析" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nia-m4-KgO">
-                    <rect key="frame" x="67" y="112" width="85" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="u308_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="QOu-Ze-WCI">
-                    <rect key="frame" x="7" y="87" width="52" height="49"/>
-                </imageView>
-                <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="u54_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="d06-Or-8H4">
-                    <rect key="frame" x="0.0" y="144" width="320" height="1"/>
-                </imageView>
-                <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="综合分析" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sh-0G-aMg">
-                    <rect key="frame" x="66" y="352" width="68" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="u308_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="nZ1-fk-fd9">
-                    <rect key="frame" x="7" y="329" width="52" height="49"/>
-                </imageView>
-                <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="u54_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pk8-vb-HFO">
-                    <rect key="frame" x="0.0" y="382" width="320" height="1"/>
-                </imageView>
-                <textView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QjV-fB-pA6">
-                    <rect key="frame" x="0.0" y="155" width="325" height="142"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PdO-vk-ctk">
+                    <rect key="frame" x="0.0" y="72" width="320" height="463"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <string key="text">1.您的乙肝表面抗原呈现阳性，说明您感染了乙肝病毒，若您正在抗病毒治疗，请隔3个月检测变化情况；若治疗过程中出现了表面抗原下降速度较快(2log10)，或能最终下降到10ng/ml以下，那么您离真正被治愈的可能性很大。
-
-    2.您的乙肝表面抗体呈现阴性，只能说明你对乙肝病毒没有抵抗力，若同时您的乙肝表面抗原呈现阳性，说明您已经感染了乙肝病毒，咨询医生决定是否抗病毒；若同时表面抗原呈现阴性，那么说明您是没有免疫力的健康人，最好及早注射疫苗，让乙肝表面抗体达到100mIu/ml，保证您的健康。
-
-    3.您的e抗原呈现阳性，通常会伴随着乙肝表面抗原阳性，具有较强的传染性，体内病毒复制活跃，病毒数量增加较快。请您咨询医生，决定是否抗病毒治疗。
-
-    4.您的乙肝e抗体呈现阴性，但此项阴性不能说明什么问题。
-
-    5.你的乙肝核心抗体阴性只能表示您可能没感染过乙肝或者以前感染了现在没有进行，只具有辅助价值，是否感染应以乙肝表面抗原为准。</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
-                </textView>
-                <textView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="您第一项乙肝表面抗原为阳性，说明体内存在乙肝病毒，第三项e抗原阳性，说明病毒在复制。 综合判断可能是急性感染早期，也有可能是携带者，但是传染性强。" translatesAutoresizingMaskIntoConstraints="NO" id="DtE-Us-MLW">
-                    <rect key="frame" x="-2" y="396" width="325" height="86"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
-                <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="u54_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="liZ-ZQ-0RO">
-                    <rect key="frame" x="0.0" y="558" width="320" height="1"/>
-                </imageView>
-                <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="结论和建议" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQV-p0-BtA">
-                    <rect key="frame" x="67" y="528" width="85" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="u308_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="8LB-XE-Blt">
-                    <rect key="frame" x="7" y="507" width="52" height="49"/>
-                </imageView>
-                <textView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="请您检测下肝功能和乙肝DNA两项，用来确认肝脏是否受到损害，病毒是否在复制；若肝功能异常或者DNA超标呈阳性，则应与正规医院医生联系，考虑是否抗病毒治疗；若各项都正常，您只需要保持心情愉悦，忌烟忌酒，健康生活即可，无需做任何处理。" translatesAutoresizingMaskIntoConstraints="NO" id="Ggt-11-5b2">
-                    <rect key="frame" x="0.0" y="580" width="325" height="96"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
-    <resources>
-        <image name="u308_normal.png" width="32" height="24"/>
-        <image name="u54_line.png" width="320" height="3"/>
-    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

@@ -7,6 +7,9 @@
 //
 
 #import "PandaBingLiHistoryViewController.h"
+#import "PandaRPCInterface.h"
+#import "UtilTool.h"
+#import "PandaBingLiHistoryDetailResultViewController.h"
 
 @interface PandaBingLiHistoryViewController ()
 
@@ -37,6 +40,11 @@
 //    [_tableView.tableFooterView setHidden:YES];
 //    _tableView.tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 115, 320, 1)];
     
+    PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
+    NSString *phone = [UtilTool globalDataGet:PHONE];
+    NSMutableData *data = [rpcInterface getUserHistory:phone];
+    NSString *datastr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    _dataList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
     
 }
 
@@ -47,7 +55,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return _dataList.count;
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -61,9 +69,11 @@
         cell = [[[NSBundle mainBundle] loadNibNamed:@"PandaBingLiHistoryTableViewCell" owner:self options:nil] objectAtIndex:0];
         
     }
-    
-    cell.date.text = @"2014/7/7";
-    cell.item.text = @"检查项目";
+    NSString *dateStr = [[_dataList objectAtIndex:indexPath.row] valueForKey:GMTCREATE];
+    dateStr = [dateStr stringByReplacingOccurrencesOfString:@"T" withString:@" "];
+    NSString *checkItemStr = [[_dataList objectAtIndex:indexPath.row] valueForKey:SLB_NM];
+    cell.date.text = dateStr;
+    cell.item.text = checkItemStr;
     
     return cell;
 }
@@ -71,10 +81,18 @@
 // Called after the user changes the selection.
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"select %d", indexPath.row);
+//    
+//    _bingliDetailViewController = [[PandaBingLiHistoryDetailViewController alloc] initWithNibName:nil bundle:nil];
+//    
+//    [self.navigationController pushViewController:_bingliDetailViewController animated:YES];
     
-    _bingliDetailViewController = [[PandaBingLiHistoryDetailViewController alloc] initWithNibName:nil bundle:nil];
-    
-    [self.navigationController pushViewController:_bingliDetailViewController animated:YES];
+    PandaBingLiHistoryDetailResultViewController *controller = [[PandaBingLiHistoryDetailResultViewController alloc]initWithNibName:nil bundle:nil];
+    NSDictionary *dict = [_dataList objectAtIndex:indexPath.row];
+    NSString *slb_id = [dict valueForKey:SLB_ID];
+    NSString *result = [dict valueForKey:RESULT];
+    controller.SLB_ID = slb_id;
+    controller.result = result;
+    [self.navigationController pushViewController:controller animated:YES];
     
 }
 

@@ -12,11 +12,13 @@
 @interface PandaLoginViewController : UIViewController<UITextFieldDelegate>
 
 @property PandaRegisterViewController *registerViewController;
+@property (weak, nonatomic) IBOutlet UIView *hiddenView;
 
 @property (strong, nonatomic) IBOutlet UITextField *account;
 @property (strong, nonatomic) IBOutlet UITextField *passwd;
 
 @property (strong, nonatomic) IBOutlet UIButton *tabviewBtn;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicatorPopup;
 
 - (IBAction)loginAction:(UIButton *)sender;
 

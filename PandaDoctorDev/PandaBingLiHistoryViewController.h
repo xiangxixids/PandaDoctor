@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property PandaBingLiHistoryDetailViewController *bingliDetailViewController;
 
+@property NSArray *dataList;
+
 
 - (IBAction)back:(UIBarButtonItem *)sender;
 @end

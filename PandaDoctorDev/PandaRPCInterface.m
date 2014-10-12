@@ -16,6 +16,12 @@ static NSString *checkItemsForApp = @"checkItemsForApp.html";
 static NSString *resultForApp = @"resultForApp.html";
 static NSString *registForApp = @"registForAPP.html";
 static NSString *loginForAPP = @"loginForAPP.html";
+static NSString *insertUserHistory = @"insertUserHistory.html";
+static NSString *getUserHistory = @"getUserHistory.html";
+static NSString *resultHistoryForApp = @"resultHisrtoryForApp.html";
+static NSString *getAllArticle = @"getAllArticle.html";
+static NSString *getArticleByIdForApp = @"getArticleByIdForApp.html";
+
 
 //?tel=13679084298&passWord=test
 
@@ -118,6 +124,82 @@ static NSString *loginForAPP = @"loginForAPP.html";
     NSError *error;
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
     NSString *string = [NSString stringWithFormat:@"http://%@/%@?tel=%@&passWord=%@", url, loginForAPP,phone,passwd];
+    NSURL *url = [NSURL URLWithString:string];
+    
+    [request setURL:url];
+    [request setHTTPMethod:@"GET"];
+    data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    
+    return data;
+}
+
+- (NSMutableData*)insertUserHistory:(NSString *)phone resultList:(NSString *)result checkItem:(NSString *)check_id
+{
+    NSMutableData *data;
+    NSURLResponse *response;
+    NSError *error;
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+    NSString *string = [NSString stringWithFormat:@"http://%@/%@?tel=%@&res=%@&SLB_ID=%@", url, insertUserHistory,phone,result,check_id];
+    NSURL *url = [NSURL URLWithString:string];
+    
+    [request setURL:url];
+    [request setHTTPMethod:@"GET"];
+    data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    
+    return data;
+}
+- (NSMutableData*)getUserHistory:(NSString*)phone
+{
+    NSMutableData *data;
+    NSURLResponse *response;
+    NSError *error;
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+    NSString *string = [NSString stringWithFormat:@"http://%@/%@?tel=%@", url, getUserHistory,phone];
+    NSURL *url = [NSURL URLWithString:string];
+    
+    [request setURL:url];
+    [request setHTTPMethod:@"GET"];
+    data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    
+    return data;
+}
+- (NSMutableData*)resultHistoryForApp:(NSString*)result checkItem:(NSString*)check_id
+{
+    NSMutableData *data;
+    NSURLResponse *response;
+    NSError *error;
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+    NSString *string = [NSString stringWithFormat:@"http://%@/%@?res=%@&SLB_ID=%@", url, resultHistoryForApp,result,check_id];
+    NSURL *url = [NSURL URLWithString:string];
+    
+    [request setURL:url];
+    [request setHTTPMethod:@"GET"];
+    data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    
+    return data;
+}
+- (NSMutableData*)getAllAriticle
+{
+    NSMutableData *data;
+    NSURLResponse *response;
+    NSError *error;
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+    NSString *string = [NSString stringWithFormat:@"http://%@/%@", url, getAllArticle];
+    NSURL *url = [NSURL URLWithString:string];
+    
+    [request setURL:url];
+    [request setHTTPMethod:@"GET"];
+    data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    
+    return data;
+}
+- (NSMutableData*)getArticleByIdForApp:(NSString*)article_id
+{
+    NSMutableData *data;
+    NSURLResponse *response;
+    NSError *error;
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+    NSString *string = [NSString stringWithFormat:@"http://%@/%@?articeId=%@", url, getArticleByIdForApp,article_id];
     NSURL *url = [NSURL URLWithString:string];
     
     [request setURL:url];

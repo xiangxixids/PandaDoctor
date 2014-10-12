@@ -131,4 +131,18 @@
     }
 }
 
++(void)globalDataSave:(NSString *)value forKey:(NSString *)key
+{
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+    [defaults setObject:value forKey:key];
+    [defaults synchronize];//用synchronize方法把数据持久化到standardUserDefaults数据库
+}
++(NSString*)globalDataGet:(NSString *)key
+{
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+    NSString *name = [defaults objectForKey:key];//根据键值取出name
+    NSLog(@"name=%@",name);
+    return name;
+}
+
 @end

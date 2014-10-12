@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface PandaBingLiHistoryDetailResultViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextView *resultView;
+
+@property NSData *data;
+@property NSString *SLB_ID;
+@property NSString *result;
 
 - (IBAction)back:(UIBarButtonItem *)sender;
 @end

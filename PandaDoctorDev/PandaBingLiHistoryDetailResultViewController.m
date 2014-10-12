@@ -7,6 +7,7 @@
 //
 
 #import "PandaBingLiHistoryDetailResultViewController.h"
+#import "PandaRPCInterface.h"
 
 @interface PandaBingLiHistoryDetailResultViewController ()
 
@@ -27,6 +28,24 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
+    NSMutableData *data = [rpcInterface resultHistoryForApp:_result checkItem:_SLB_ID];
+    NSString *string = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"string = %@", string);
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    NSArray *ind_result_dict = [dict valueForKey:IND_RESULT];
+    
+    NSMutableString *show_result = [[NSMutableString alloc]initWithCapacity:3];
+    
+    for (int i=0; i<ind_result_dict.count; i++) {
+        NSDictionary *dict = [ind_result_dict objectAtIndex:i];
+        NSString *strTemp = [NSString stringWithFormat:@"%d. %@\r\n\r\n",i+1,[dict valueForKey:RST_DESC]];
+        [show_result appendString:strTemp];
+    }
+    
+    _resultView.text = show_result;
+    
 }
 
 - (void)didReceiveMemoryWarning

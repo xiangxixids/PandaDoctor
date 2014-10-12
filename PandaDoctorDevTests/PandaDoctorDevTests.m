@@ -129,4 +129,61 @@
     return false;
 }
 
+- (void)testinsertUserHistory
+{
+    rpcInterface = [[PandaRPCInterface alloc]init];
+    NSMutableData *data = [rpcInterface insertUserHistory:@"15928807881" resultList:@"1,0,0,0,0,0,0,0,0,0,0,0,0" checkItem:@"5"];
+    NSString *string = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"string = %@", string);
+}
+
+- (void)testgetUserHistory
+{
+    rpcInterface = [[PandaRPCInterface alloc]init];
+    NSMutableData *data = [rpcInterface getUserHistory:@"15928807881"];
+    NSString *string = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"string = %@", string);
+    //result: [{"ENG_NM":"Liver_Function","SLB_ID":"5","SLB_NM":"肝功能","gmtCreate":"2014-10-12T11:01:00","id":1,"result":"0,0,0,0,0,0,0,0,0,0,0,0,0","tel":"13679084298"}]
+}
+
+- (void)testresltHistoryForApp
+{
+    rpcInterface = [[PandaRPCInterface alloc]init];
+    NSMutableData *data = [rpcInterface resultHistoryForApp:@"0,0,0,0,0,0,0,0,0,0,0,0,0" checkItem:@"5"];
+    NSString *string = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"string = %@", string);
+}
+
+- (void)testgetallariticle
+{
+    rpcInterface = [[PandaRPCInterface alloc]init];
+    NSMutableData *data = [rpcInterface getAllAriticle];
+    NSString *string = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"string = %@", string);
+}
+
+- (void)testgetArticleByIdForApp
+{
+    rpcInterface = [[PandaRPCInterface alloc]init];
+    NSMutableData *data = [rpcInterface getArticleByIdForApp:@"1"];
+    NSString *string = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"string = %@", string);
+}
+//- (NSMutableData*)getArticleByIdForApp:(NSString*)article_id;
+
+- (void)testSaveData
+{
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+    NSString *name =@"test122222";
+    [defaults setObject:name forKey:@"name"];
+    [defaults synchronize];//用synchronize方法把数据持久化到standardUserDefaults数据库
+}
+
+- (void)testGetdata
+{
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+    NSString *name = [defaults objectForKey:@"name"];//根据键值取出name
+    NSLog(@"name=%@",name);
+}
+
 @end

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+static NSString *PHONE = @"phone";
+
 @interface UtilTool : NSObject
 
 +(NSString *)getRootPath;
@@ -23,5 +25,8 @@
 +(NSData *)readFileInDocument:(NSString *)fileName;
 
 +(BOOL)validateMobile:(NSString *)mobileNum;
+
++(void)globalDataSave:(NSString *)value forKey:(NSString *)key;
++(NSString*)globalDataGet:(NSString *)key;
 
 @end

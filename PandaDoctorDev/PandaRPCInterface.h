@@ -11,6 +11,7 @@
 static NSString *RCRD_ID = @"RCRD_ID";
 static NSString *ENG_NM  = @"ENG_NM";
 static NSString *SLB_NM  = @"SLB_NM";
+static NSString *SLB_ID = @"SLB_ID";
 static NSString *ITEM_NM = @"ITEM_NM";
 static NSString *SIGNIFICANCE = @"significance";
 
@@ -18,7 +19,7 @@ static NSString *VALUE = @"VALUE";
 static NSString *UNIT = @"UNIT";
 static NSString *REF_LOW = @"ref_low";
 static NSString *REF_HIGH = @"ref_high";
-
+static NSString *GMTCREATE = @"gmtCreate";
 static NSString *RESULT = @"result";
 
 static NSString *COMPLEXRESULT = @"complexResult";
@@ -45,5 +46,11 @@ static NSString *USERCOMPLEXRESULTLIST = @"userComplexResultList";
 - (NSMutableData*)resultForApp:(int)item checkItemIds:(NSArray*)postData;
 - (NSMutableData*)registerForAPP:(NSString *)phone passwd:(NSString *)passwd confirm:(NSString *)confirmPasswd;
 - (NSMutableData*)loginForAPP:(NSString *)phone passwd:(NSString *)passwd;
+- (NSMutableData*)insertUserHistory:(NSString *)phone resultList:(NSString *)result checkItem:(NSString *)check_id;
+- (NSMutableData*)getUserHistory:(NSString*)phone;
+- (NSMutableData*)resultHistoryForApp:(NSString*)result checkItem:(NSString*)check_id;
+- (NSMutableData*)getAllAriticle;
+- (NSMutableData*)getArticleByIdForApp:(NSString*)article_id;
+
 
 @end
