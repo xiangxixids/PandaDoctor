@@ -47,25 +47,25 @@
 
 - (IBAction)loginAction:(UIButton *)sender {
     
-    NSThread *thread = [[NSThread alloc]initWithTarget:self selector:@selector(loginActionSY) object:nil];
-    _hiddenView.hidden = NO;
-    [_indicatorPopup startAnimating];
-    [thread start];
-//    PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
-//    NSMutableData *data = [rpcInterface loginForAPP:_account.text passwd:_passwd.text];
-//    NSString *result = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-//    
-//    if ([result  isEqualToString: @"true"]) {
-//        NSLog(@"login successful");
-//        
-//        [UtilTool globalDataSave:_account.text forKey:PHONE];
-//        
-//        UIStoryboard *storyBorad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//        self.view.window.rootViewController = [storyBorad instantiateInitialViewController];
-//    }else{
-//        NSLog(@"login failed");
-//        
-//    }
+//    NSThread *thread = [[NSThread alloc]initWithTarget:self selector:@selector(loginActionSY) object:nil];
+//    _hiddenView.hidden = NO;
+//    [_indicatorPopup startAnimating];
+//    [thread start];
+    PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
+    NSMutableData *data = [rpcInterface loginForAPP:_account.text passwd:_passwd.text];
+    NSString *result = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    
+    if ([result  isEqualToString: @"true"]) {
+        NSLog(@"login successful");
+        
+        [UtilTool globalDataSave:_account.text forKey:PHONE];
+        
+        UIStoryboard *storyBorad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        self.view.window.rootViewController = [storyBorad instantiateInitialViewController];
+    }else{
+        NSLog(@"login failed");
+        
+    }
     
 }
 
