@@ -7,6 +7,7 @@
 //
 
 #import "PandaHealthJiangTangViewController.h"
+#import "PandaRPCInterface.h"
 
 @interface PandaHealthJiangTangViewController ()
 
@@ -32,6 +33,14 @@
     
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    
+    PandaRPCInterface *rpc = [[PandaRPCInterface alloc]init];
+    NSMutableData *data = [rpc getAllAriticle];
+    NSString *datastr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    _articleList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    NSLog(@"%lu", (unsigned long)_articleList.count);
+
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,7 +53,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return _articleList.count;
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -53,22 +62,23 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *cellName = @"cell";
-    if (indexPath.row == 0) {
-        ScrollTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"ScrollTableViewCell" owner:self options:nil] objectAtIndex:0];
-        return cell;
-    }else{
-        
+//    if (indexPath.row == 0) {
+//        ScrollTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"ScrollTableViewCell" owner:self options:nil] objectAtIndex:0];
+//        return cell;
+//    }else{
+    
         PandaShareTableViewCell *cell = [[[NSBundle mainBundle]loadNibNamed:@"PandaShareTableViewCell" owner:self options:nil] objectAtIndex:0];
-        cell.titleLabel.text = @"宝宝如何防止近视呢?";
-        cell.hintLabel.text = @"2014-08-00";
+        NSDictionary *dict = [_articleList objectAtIndex:indexPath.row];
+        cell.titleLabel.text = [dict valueForKey:TITLE];
+        //cell.hintLabel.text = @"2014-08-00";
         return cell;
-    }
+//    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {
-        return 130;
+        return 65;
     }else{
         return 65;
     }
@@ -78,8 +88,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     NSLog(@"select cell %d", indexPath.row);
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     _jiangtangDetailViewController = [[PandaHealthJiangTangDetailViewController alloc]initWithNibName:nil bundle:nil];
+    _jiangtangDetailViewController.ariticle_id = [NSString stringWithFormat:@"%@", [[_articleList objectAtIndex:indexPath.row] valueForKey:ARTICLE_ID]];
+    _jiangtangDetailViewController.titleString = [[_articleList objectAtIndex:indexPath.row] valueForKey:TITLE];
     [self.navigationController pushViewController:_jiangtangDetailViewController animated:YES];
     
 }

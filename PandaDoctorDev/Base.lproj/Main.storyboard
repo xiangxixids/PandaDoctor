@@ -321,17 +321,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SO4-qR-kjL">
-                                <rect key="frame" x="20" y="68" width="280" height="29"/>
-                                <segments>
-                                    <segment title="热点"/>
-                                    <segment title="安全"/>
-                                    <segment title="美体"/>
-                                    <segment title="性情"/>
-                                    <segment title="身心"/>
-                                    <segment title="妇幼"/>
-                                </segments>
-                            </segmentedControl>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QN6-gb-LSQ">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <items>
@@ -342,7 +331,7 @@
                                 <rect key="frame" x="0.0" y="97" width="320" height="422"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="SMi-R4-cvk">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="422"/>
+                                        <rect key="frame" x="0.0" y="-29" width="320" height="456"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableView>
                                 </subviews>
@@ -354,7 +343,6 @@
                     <navigationItem key="navigationItem" title="健康讲堂" id="3i0-sq-RKU"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="switchSegment" destination="SO4-qR-kjL" id="n1u-wd-AXs"/>
                         <outlet property="tableView" destination="SMi-R4-cvk" id="vbF-5G-4kB"/>
                     </connections>
                 </viewController>

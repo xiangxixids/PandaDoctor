@@ -18,6 +18,8 @@
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *switchSegment;
 
+@property NSArray *articleList;
+
 @property PandaHealthJiangTangDetailViewController *jiangtangDetailViewController;
 
 

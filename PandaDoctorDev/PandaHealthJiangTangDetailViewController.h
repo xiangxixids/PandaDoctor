@@ -11,6 +11,11 @@
 @interface PandaHealthJiangTangDetailViewController : UIViewController<UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
+
+@property NSString *ariticle_id;
+@property NSString *titleString;
+
 
 - (IBAction)back:(UIBarButtonItem *)sender;
 

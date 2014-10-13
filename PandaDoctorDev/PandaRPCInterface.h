@@ -22,6 +22,10 @@ static NSString *REF_HIGH = @"ref_high";
 static NSString *GMTCREATE = @"gmtCreate";
 static NSString *RESULT = @"result";
 
+static NSString *TITLE = @"title";
+static NSString *ARTICLE_ID = @"id";
+static NSString *CONTENT = @"content";
+
 static NSString *COMPLEXRESULT = @"complexResult";
 static NSString *CNDT_VAL = @"CNDT_VAL";
 static NSString *RST_DESC = @"RST_DESC";

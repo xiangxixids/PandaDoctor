@@ -99,7 +99,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"select id: %d",  (int)indexPath.row);
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     _huaYanDanDetailViewController = [[PandaHuaYanDanDetailViewController alloc]initWithNibName:nil bundle:nil];
     _huaYanDanDetailViewController.hidesBottomBarWhenPushed = YES;
     _huaYanDanDetailViewController.checkItemId = [[[_tableViewItemList objectAtIndex:indexPath.row] valueForKey:RCRD_ID] intValue];

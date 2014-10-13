@@ -7,7 +7,7 @@
 //
 
 #import "PandaHealthJiangTangDetailViewController.h"
-
+#import "PandaRPCInterface.h"
 @interface PandaHealthJiangTangDetailViewController ()
 
 @end
@@ -29,10 +29,21 @@
     // Do any additional setup after loading the view from its nib.
     _webView.delegate = self;
     
+    UINavigationItem *item = [_navigationBar.items objectAtIndex:0];
+    item.title = _titleString;
+    
+    PandaRPCInterface *rpc = [[PandaRPCInterface alloc]init];
+    NSMutableData *data = [rpc getArticleByIdForApp:_ariticle_id];
+    NSString *datastr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    NSString *content = nil;
+    if (dict != nil) {
+        content = [dict valueForKey:CONTENT];
+    }
     NSURL *url = [NSURL URLWithString:@"http://www.baidu.com"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [_webView loadRequest:request];
-    
+    //[_webView loadRequest:request];
+    [_webView loadHTMLString:content baseURL:nil];
 }
 
 - (void)didReceiveMemoryWarning

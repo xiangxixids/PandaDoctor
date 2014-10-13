@@ -85,7 +85,7 @@
 //    _bingliDetailViewController = [[PandaBingLiHistoryDetailViewController alloc] initWithNibName:nil bundle:nil];
 //    
 //    [self.navigationController pushViewController:_bingliDetailViewController animated:YES];
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     PandaBingLiHistoryDetailResultViewController *controller = [[PandaBingLiHistoryDetailResultViewController alloc]initWithNibName:nil bundle:nil];
     NSDictionary *dict = [_dataList objectAtIndex:indexPath.row];
     NSString *slb_id = [dict valueForKey:SLB_ID];
