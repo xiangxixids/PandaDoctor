@@ -53,6 +53,13 @@
 //    [thread start];
     PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
     NSMutableData *data = [rpcInterface loginForAPP:_account.text passwd:_passwd.text];
+    if (data==nil) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"网络错误"
+                                                       message:@"联网错误, 请检查您的网络连接是否正常"
+                                                      delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        return;
+    }
     NSString *result = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
     
     if ([result  isEqualToString: @"true"]) {
@@ -78,7 +85,13 @@
     PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
     
     NSMutableData *data = [rpcInterface loginForAPP:_account.text passwd:_passwd.text];
-    
+    if (data==nil) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"网络错误"
+                                                       message:@"联网错误, 请检查您的网络连接是否正常"
+                                                      delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        return;
+    }
     NSString *result = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
     [_indicatorPopup stopAnimating];
     

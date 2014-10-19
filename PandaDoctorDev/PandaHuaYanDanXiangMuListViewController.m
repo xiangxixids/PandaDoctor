@@ -70,6 +70,13 @@
 - (NSArray *)getHuaYanDanData:(int)mid{
     PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
     NSMutableData *data = [rpcInterface paperForApp:mid];
+    if (data==nil) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"网络错误"
+                                                       message:@"联网错误, 请检查您的网络连接是否正常"
+                                                      delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        return nil;
+    }
     NSString *datastr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
     NSArray *jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
     NSLog(@"%@", jsonData);

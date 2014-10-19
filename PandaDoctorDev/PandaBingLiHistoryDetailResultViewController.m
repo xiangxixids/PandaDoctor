@@ -31,6 +31,13 @@
     
     PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
     NSMutableData *data = [rpcInterface resultHistoryForApp:_result checkItem:_SLB_ID];
+    if (data==nil) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"网络错误"
+                                                       message:@"联网错误, 请检查您的网络连接是否正常"
+                                                      delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        return;
+    }
     NSString *string = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"string = %@", string);
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];

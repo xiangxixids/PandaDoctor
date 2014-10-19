@@ -160,7 +160,7 @@ static NSString *getArticleByIdForApp = @"getArticleByIdForApp.html";
     [request setURL:url];
     [request setHTTPMethod:@"GET"];
     data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    
+
     return data;
 }
 - (NSMutableData*)resultHistoryForApp:(NSString*)result checkItem:(NSString*)check_id

@@ -51,6 +51,13 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
     
     PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
     NSMutableData *data = [rpcInterface checkItemsForApp:_checkItemId];
+    if (data==nil) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"网络错误"
+                                                       message:@"联网错误, 请检查您的网络连接是否正常"
+                                                      delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        return;
+    }
     NSString *datastr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
     _dataList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
     NSLog(@"%lu", (unsigned long)_dataList.count);
@@ -343,6 +350,13 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
     
     PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
     NSMutableData *data = [rpcInterface resultForApp:_checkItemId checkItemIds:_postArray];
+    if (data==nil) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"网络错误"
+                                                       message:@"联网错误, 请检查您的网络连接是否正常"
+                                                      delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        return;
+    }
     NSString *datastr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
     _dataList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
     NSLog(@"%lu", (unsigned long)_dataList.count);
@@ -363,6 +377,13 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
     
     PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
     NSMutableData *data = [rpcInterface resultForApp:_checkItemId checkItemIds:_postArray];
+    if (data==nil) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"网络错误"
+                                                       message:@"联网错误, 请检查您的网络连接是否正常"
+                                                      delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        return;
+    }
     NSString *datastr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
     _dataList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
     NSLog(@"%lu", (unsigned long)_dataList.count);
