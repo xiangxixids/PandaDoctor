@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fsc-6d-9e5">
-                    <rect key="frame" x="20" y="485" width="280" height="55"/>
+                    <rect key="frame" x="20" y="494" width="280" height="55"/>
                     <color key="backgroundColor" red="0.98431378599999997" green="0.16862745579999999" blue="0.019607843829999999" alpha="1" colorSpace="deviceRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="一键拍单">
@@ -30,16 +30,6 @@
                         <action selector="takePic:" destination="-1" eventType="touchUpInside" id="MvD-uz-Puo"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYm-cl-cBt">
-                    <rect key="frame" x="20" y="415" width="280" height="70"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <string key="text">温馨提醒:
-1.请尽量选择光线较好的环境；
-2.对准该化验单拍摄，保证图文清晰。</string>
-                    <color key="textColor" red="0.92156869173049927" green="0.24705883860588074" blue="0.27843138575553894" alpha="1" colorSpace="deviceRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
                 <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RMp-Vr-hEW">
                     <rect key="frame" x="0.0" y="24" width="320" height="44"/>
                     <items>
@@ -80,6 +70,16 @@
                     <rect key="frame" x="0.0" y="93" width="320" height="323"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYm-cl-cBt">
+                    <rect key="frame" x="20" y="420" width="280" height="70"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <string key="text">温馨提醒:
+1.请尽量选择光线较好的环境；
+2.对准该化验单拍摄，保证图文清晰。</string>
+                    <color key="textColor" red="0.92156869173049927" green="0.24705883860588074" blue="0.27843138575553894" alpha="1" colorSpace="deviceRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>

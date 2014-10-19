@@ -98,11 +98,11 @@
         //showSwitchValue.text = @"是";
         NSLog(@"id is %d", switchButton.mid);
         NSLog(@"switch is 1");
-        [self updatePostData:switchButton.mid value:3];
+        [self updatePostData:switchButton.mid value:1]; // 阳
     }else {
         NSLog(@"id is %d", switchButton.mid);
         NSLog(@"switch is 0");
-        [self updatePostData:switchButton.mid value:0];
+        [self updatePostData:switchButton.mid value:0]; // 阴
     }
     
 }
@@ -141,8 +141,8 @@
         return;
     }
     NSString *datastr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-    _dataList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-    NSLog(@"%lu", (unsigned long)_dataList.count);
+    NSArray *dataList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    NSLog(@"%lu", (unsigned long)dataList.count);
     
     PandaOCRResultViewController *ocrResultViewController = [[PandaOCRResultViewController alloc]initWithNibName:nil bundle:nil];
     ocrResultViewController.postArray = _postArray;

@@ -51,10 +51,12 @@
     item.title = _titleName;
     
     if ([_isOCR isEqualToString:@"1"]) {
-        _btnTakePhoto.titleLabel.text = @"一键拍单";
+//        _btnTakePhoto.titleLabel.text = @"一键拍单";
+        [_btnTakePhoto setTitle:@"一键拍单" forState:UIControlStateNormal];
         _barItemTakePhoto.title = @"拍化验单";
     }else{
-        _btnTakePhoto.titleLabel.text = @"填化验单";
+//        _btnTakePhoto.titleLabel.text = @"填化验单";
+        [_btnTakePhoto setTitle:@"填化验单" forState:UIControlStateNormal];
         _barItemTakePhoto.title = @"填化验单";
     }
 
