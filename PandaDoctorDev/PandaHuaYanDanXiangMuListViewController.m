@@ -104,6 +104,7 @@
     _huaYanDanDetailViewController.hidesBottomBarWhenPushed = YES;
     _huaYanDanDetailViewController.checkItemId = [[[_tableViewItemList objectAtIndex:indexPath.row] valueForKey:RCRD_ID] intValue];
     _huaYanDanDetailViewController.titleName = [[_tableViewItemList objectAtIndex:indexPath.row] valueForKey:SLB_NM];
+    _huaYanDanDetailViewController.isOCR = [NSString stringWithFormat:@"%@",[[_tableViewItemList objectAtIndex:indexPath.row] valueForKey:ISOCR]];
     [self.navigationController pushViewController:_huaYanDanDetailViewController animated:YES];
     
 }

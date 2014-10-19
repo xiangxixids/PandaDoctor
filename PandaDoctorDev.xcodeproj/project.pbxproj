@@ -63,6 +63,8 @@
 		D76A69841972365800D536FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76A69661972365800D536FF /* UIKit.framework */; };
 		D76A698C1972365800D536FF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D76A698A1972365800D536FF /* InfoPlist.strings */; };
 		D76A698E1972365800D536FF /* PandaDoctorDevTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D76A698D1972365800D536FF /* PandaDoctorDevTests.m */; };
+		D76C6F0F19F2B19C007323CB /* PandaHuaYanDanRadioCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D76C6F0D19F2B19C007323CB /* PandaHuaYanDanRadioCheckViewController.m */; };
+		D76C6F1019F2B19C007323CB /* PandaHuaYanDanRadioCheckViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76C6F0E19F2B19C007323CB /* PandaHuaYanDanRadioCheckViewController.xib */; };
 		D78D95EA198D0C77004F2F68 /* u47_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = D78D95E9198D0C77004F2F68 /* u47_normal.png */; };
 		D78D95ED198D109C004F2F68 /* PandaTapGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D78D95EC198D109C004F2F68 /* PandaTapGestureRecognizer.m */; };
 		D78D95EF198D38F8004F2F68 /* u76_line.png in Resources */ = {isa = PBXBuildFile; fileRef = D78D95EE198D38F8004F2F68 /* u76_line.png */; };
@@ -90,6 +92,7 @@
 		D7A91DD41987983300AE1A9A /* PandaPersonalSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A91DD21987983300AE1A9A /* PandaPersonalSettingViewController.xib */; };
 		D7A91DD81987984D00AE1A9A /* PandaModifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A91DD61987984D00AE1A9A /* PandaModifyPasswordViewController.m */; };
 		D7A91DD91987984D00AE1A9A /* PandaModifyPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A91DD71987984D00AE1A9A /* PandaModifyPasswordViewController.xib */; };
+		D7AD2DA319F38C7000C29BF0 /* PandaUISwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = D7AD2DA219F38C7000C29BF0 /* PandaUISwitch.m */; };
 		D7B7748F198FD4850094FAD4 /* PandaTableViewBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B7748E198FD4850094FAD4 /* PandaTableViewBaseCell.m */; };
 		D7C53DBA1987A3DC0063C79E /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D7C53DB91987A3DC0063C79E /* Logo.png */; };
 		D7C53DBD1987A8540063C79E /* PandaAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C53DBC1987A8540063C79E /* PandaAboutUsViewController.m */; };
@@ -101,6 +104,8 @@
 		D7CF046C19DB297500DE6923 /* PandaOCRResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7CF046A19DB297500DE6923 /* PandaOCRResultViewController.xib */; };
 		D7D2785C19876EBE00BAB90F /* PandaDatagramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D2785A19876EBE00BAB90F /* PandaDatagramViewController.m */; };
 		D7D2785D19876EBE00BAB90F /* PandaDatagramViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7D2785B19876EBE00BAB90F /* PandaDatagramViewController.xib */; };
+		D7D5904119F2AD3500F13E15 /* PandaRadioTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D5903F19F2AD3500F13E15 /* PandaRadioTableViewCell.m */; };
+		D7D5904219F2AD3500F13E15 /* PandaRadioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7D5904019F2AD3500F13E15 /* PandaRadioTableViewCell.xib */; };
 		D7E0759F19D453E2003006E3 /* PandaRPCInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E0759E19D453E2003006E3 /* PandaRPCInterface.m */; };
 		D7E8A57F19C71E41009A3CE0 /* ActivationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8A57E19C71E41009A3CE0 /* ActivationInfo.m */; };
 		D7E8A58219C71E4E009A3CE0 /* Client.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E8A58119C71E4E009A3CE0 /* Client.m */; };
@@ -205,6 +210,9 @@
 		D76A69891972365800D536FF /* PandaDoctorDevTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PandaDoctorDevTests-Info.plist"; sourceTree = "<group>"; };
 		D76A698B1972365800D536FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D76A698D1972365800D536FF /* PandaDoctorDevTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PandaDoctorDevTests.m; sourceTree = "<group>"; };
+		D76C6F0C19F2B19C007323CB /* PandaHuaYanDanRadioCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaHuaYanDanRadioCheckViewController.h; sourceTree = "<group>"; };
+		D76C6F0D19F2B19C007323CB /* PandaHuaYanDanRadioCheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaHuaYanDanRadioCheckViewController.m; sourceTree = "<group>"; };
+		D76C6F0E19F2B19C007323CB /* PandaHuaYanDanRadioCheckViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PandaHuaYanDanRadioCheckViewController.xib; sourceTree = "<group>"; };
 		D78D95E9198D0C77004F2F68 /* u47_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = u47_normal.png; sourceTree = "<group>"; };
 		D78D95EB198D109C004F2F68 /* PandaTapGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaTapGestureRecognizer.h; sourceTree = "<group>"; };
 		D78D95EC198D109C004F2F68 /* PandaTapGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaTapGestureRecognizer.m; sourceTree = "<group>"; };
@@ -242,6 +250,8 @@
 		D7A91DD51987984D00AE1A9A /* PandaModifyPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaModifyPasswordViewController.h; sourceTree = "<group>"; };
 		D7A91DD61987984D00AE1A9A /* PandaModifyPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaModifyPasswordViewController.m; sourceTree = "<group>"; };
 		D7A91DD71987984D00AE1A9A /* PandaModifyPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PandaModifyPasswordViewController.xib; sourceTree = "<group>"; };
+		D7AD2DA119F38C7000C29BF0 /* PandaUISwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaUISwitch.h; sourceTree = "<group>"; };
+		D7AD2DA219F38C7000C29BF0 /* PandaUISwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaUISwitch.m; sourceTree = "<group>"; };
 		D7B7748D198FD4850094FAD4 /* PandaTableViewBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaTableViewBaseCell.h; sourceTree = "<group>"; };
 		D7B7748E198FD4850094FAD4 /* PandaTableViewBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaTableViewBaseCell.m; sourceTree = "<group>"; };
 		D7C53DB91987A3DC0063C79E /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
@@ -260,6 +270,9 @@
 		D7D2785919876EBE00BAB90F /* PandaDatagramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaDatagramViewController.h; sourceTree = "<group>"; };
 		D7D2785A19876EBE00BAB90F /* PandaDatagramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaDatagramViewController.m; sourceTree = "<group>"; };
 		D7D2785B19876EBE00BAB90F /* PandaDatagramViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PandaDatagramViewController.xib; sourceTree = "<group>"; };
+		D7D5903E19F2AD3500F13E15 /* PandaRadioTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaRadioTableViewCell.h; sourceTree = "<group>"; };
+		D7D5903F19F2AD3500F13E15 /* PandaRadioTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaRadioTableViewCell.m; sourceTree = "<group>"; };
+		D7D5904019F2AD3500F13E15 /* PandaRadioTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PandaRadioTableViewCell.xib; sourceTree = "<group>"; };
 		D7E0759D19D453E2003006E3 /* PandaRPCInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaRPCInterface.h; sourceTree = "<group>"; };
 		D7E0759E19D453E2003006E3 /* PandaRPCInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaRPCInterface.m; sourceTree = "<group>"; };
 		D7E8A57D19C71E3C009A3CE0 /* ActivationInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivationInfo.h; sourceTree = "<group>"; };
@@ -341,6 +354,9 @@
 				D7CF046819DB297400DE6923 /* PandaOCRResultViewController.h */,
 				D7CF046919DB297400DE6923 /* PandaOCRResultViewController.m */,
 				D7CF046A19DB297500DE6923 /* PandaOCRResultViewController.xib */,
+				D76C6F0C19F2B19C007323CB /* PandaHuaYanDanRadioCheckViewController.h */,
+				D76C6F0D19F2B19C007323CB /* PandaHuaYanDanRadioCheckViewController.m */,
+				D76C6F0E19F2B19C007323CB /* PandaHuaYanDanRadioCheckViewController.xib */,
 			);
 			name = HuaYanDan;
 			sourceTree = "<group>";
@@ -386,6 +402,8 @@
 				D7CF045519DAD58F00DE6923 /* PandaOCRTableViewCell.xib */,
 				D7CF046519DB09FF00DE6923 /* PandaUITextField.h */,
 				D7CF046619DB09FF00DE6923 /* PandaUITextField.m */,
+				D7AD2DA119F38C7000C29BF0 /* PandaUISwitch.h */,
+				D7AD2DA219F38C7000C29BF0 /* PandaUISwitch.m */,
 				D7A30A6C198C9AA800423666 /* PandaShareTableViewCell.h */,
 				D7A30A6D198C9AA800423666 /* PandaShareTableViewCell.m */,
 				D7A30A6E198C9AA800423666 /* PandaShareTableViewCell.xib */,
@@ -402,6 +420,9 @@
 				D78D95EC198D109C004F2F68 /* PandaTapGestureRecognizer.m */,
 				D7B7748D198FD4850094FAD4 /* PandaTableViewBaseCell.h */,
 				D7B7748E198FD4850094FAD4 /* PandaTableViewBaseCell.m */,
+				D7D5903E19F2AD3500F13E15 /* PandaRadioTableViewCell.h */,
+				D7D5903F19F2AD3500F13E15 /* PandaRadioTableViewCell.m */,
+				D7D5904019F2AD3500F13E15 /* PandaRadioTableViewCell.xib */,
 			);
 			name = CP;
 			sourceTree = "<group>";
@@ -651,6 +672,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D76C6F1019F2B19C007323CB /* PandaHuaYanDanRadioCheckViewController.xib in Resources */,
 				D7A91DD41987983300AE1A9A /* PandaPersonalSettingViewController.xib in Resources */,
 				D70D3527198102B2006F431A /* PandaBingLiHistoryDetailViewController.xib in Resources */,
 				D745CE96197CFC32008C1082 /* PandaRegisterViewController.xib in Resources */,
@@ -684,6 +706,7 @@
 				D702FF49197E5A890076B365 /* u118_normal.png in Resources */,
 				D76A697B1972365800D536FF /* Images.xcassets in Resources */,
 				D76A696D1972365800D536FF /* InfoPlist.strings in Resources */,
+				D7D5904219F2AD3500F13E15 /* PandaRadioTableViewCell.xib in Resources */,
 				D7051DE8197D0BAF0001BA6C /* PandaGetPasswordViewController.xib in Resources */,
 				D7D2785D19876EBE00BAB90F /* PandaDatagramViewController.xib in Resources */,
 				D745CE98197D005E008C1082 /* u40_normal.png in Resources */,
@@ -733,6 +756,7 @@
 				D7A91D9519877B6800AE1A9A /* PandaBingLiHistoryDetailResultViewController.m in Sources */,
 				D7CF045219D853EE00DE6923 /* PandaAssay.m in Sources */,
 				D70D352B19810A41006F431A /* PandaBingLiHistoryDetailTableViewCell.m in Sources */,
+				D7D5904119F2AD3500F13E15 /* PandaRadioTableViewCell.m in Sources */,
 				D79DEE2C197250EA009FCAC6 /* PandaMainViewController.m in Sources */,
 				D761597E197FA39400ECF978 /* PandaBingLiViewController.m in Sources */,
 				D7CF046719DB09FF00DE6923 /* PandaUITextField.m in Sources */,
@@ -748,6 +772,7 @@
 				D7A30A83198CDE9200423666 /* PandaHealthJiangTangViewController.m in Sources */,
 				D7CF045619DAD58F00DE6923 /* PandaOCRTableViewCell.m in Sources */,
 				D7D2785C19876EBE00BAB90F /* PandaDatagramViewController.m in Sources */,
+				D76C6F0F19F2B19C007323CB /* PandaHuaYanDanRadioCheckViewController.m in Sources */,
 				D7615982197FAEFB00ECF978 /* PandaBingLiHistoryTableViewCell.m in Sources */,
 				D7E8A58B19C71E5C009A3CE0 /* HTTPOperation.m in Sources */,
 				D7051DE7197D0BAF0001BA6C /* PandaGetPasswordViewController.m in Sources */,
@@ -762,6 +787,7 @@
 				D70C28ED1977705B007BEDB2 /* PandaResponse.m in Sources */,
 				D745CE95197CFC32008C1082 /* PandaRegisterViewController.m in Sources */,
 				D70C28EC1977705B007BEDB2 /* HttpService.m in Sources */,
+				D7AD2DA319F38C7000C29BF0 /* PandaUISwitch.m in Sources */,
 				D7B7748F198FD4850094FAD4 /* PandaTableViewBaseCell.m in Sources */,
 				D7328796198E321F00064A12 /* PandaHuaYanDanXiangMuListViewController.m in Sources */,
 				D761597A197FA31C00ECF978 /* PandaBingLiHistoryViewController.m in Sources */,

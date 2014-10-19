@@ -24,6 +24,7 @@
 - (IBAction)personalSetting:(UIButton *)sender;
 - (IBAction)modifyPassword:(UIButton *)sender;
 
+- (IBAction)LogOut:(UIBarButtonItem *)sender;
 
 
 @end

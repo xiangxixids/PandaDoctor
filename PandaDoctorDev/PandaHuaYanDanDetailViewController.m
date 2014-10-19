@@ -7,6 +7,7 @@
 //
 
 #import "PandaHuaYanDanDetailViewController.h"
+#import "PandaHuaYanDanRadioCheckViewController.h"
 
 @interface PandaHuaYanDanDetailViewController ()
 
@@ -42,6 +43,13 @@
     UINavigationItem *item = [_navigationBar.items objectAtIndex:0];
     item.title = _titleName;
     
+    if ([_isOCR isEqualToString:@"1"]) {
+        _btnTakePhoto.titleLabel.text = @"一键拍单";
+        _barItemTakePhoto.title = @"拍化验单";
+    }else{
+        _btnTakePhoto.titleLabel.text = @"填化验单";
+        _barItemTakePhoto.title = @"填化验单";
+    }
 
 }
 
@@ -90,9 +98,26 @@
     
 }
 
+- (void)goToHuaYanDanRadioCheck
+{
+    NSLog(@"goToHuaYanDanRadioCheck");
+    PandaHuaYanDanRadioCheckViewController *controller = [[PandaHuaYanDanRadioCheckViewController alloc]initWithNibName:nil bundle:nil];
+    controller.checkItemId = _checkItemId;
+    
+    [self.navigationController pushViewController:controller animated:YES];
+    
+    
+}
+
 - (IBAction)takePhoto:(UIBarButtonItem *)sender {
     
     NSLog(@"take photo..");
+    
+    if (![_isOCR isEqualToString:@"1"]) {
+        NSLog(@"can not support OCR");
+        [self goToHuaYanDanRadioCheck];
+        return;
+    }
     
     // UIImagePickerControllerCameraDeviceRear 后置摄像头
     // UIImagePickerControllerCameraDeviceFront 前置摄像头
@@ -118,6 +143,13 @@
     NSLog(@"take photo..");
     // UIImagePickerControllerCameraDeviceRear 后置摄像头
     // UIImagePickerControllerCameraDeviceFront 前置摄像头
+    
+    if (![_isOCR isEqualToString:@"1"]) {
+        NSLog(@"can not support OCR");
+        [self goToHuaYanDanRadioCheck];
+        return;
+    }
+    
     BOOL isCamera = [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear];
     if (!isCamera) {
         NSLog(@"没有摄像头");

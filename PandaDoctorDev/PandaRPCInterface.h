@@ -14,6 +14,7 @@ static NSString *SLB_NM  = @"SLB_NM";
 static NSString *SLB_ID = @"SLB_ID";
 static NSString *ITEM_NM = @"ITEM_NM";
 static NSString *SIGNIFICANCE = @"significance";
+static NSString *ISOCR = @"isOCr";
 
 static NSString *VALUE = @"VALUE";
 static NSString *UNIT = @"UNIT";

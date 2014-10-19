@@ -19,11 +19,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *meaningTitle;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIButton *btnTakePhoto;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *barItemTakePhoto;
 
 @property PandaTakePhotoPreviewViewController *takePhotoPreviewViewController;
 
 @property NSInteger checkItemId;
 @property NSString *titleName;
+@property NSString *isOCR;
 
 @property NSArray *tableViewDataList;
 

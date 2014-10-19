@@ -7,6 +7,7 @@
 //
 
 #import "PandaBingLiViewController.h"
+#import "PandaHuaYanDanRadioCheckViewController.h"
 
 @interface PandaBingLiViewController ()
 
@@ -78,6 +79,14 @@
     _modifyPasswordController = [[PandaModifyPasswordViewController alloc]initWithNibName:nil bundle:nil];
     _modifyPasswordController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:_modifyPasswordController animated:YES];
+    
+}
+
+- (IBAction)LogOut:(UIBarButtonItem *)sender {
+    
+    PandaHuaYanDanRadioCheckViewController *controller = [[PandaHuaYanDanRadioCheckViewController alloc]initWithNibName:nil bundle:nil];
+    controller.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:controller animated:YES];
     
 }
 @end
