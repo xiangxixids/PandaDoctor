@@ -19,5 +19,6 @@
 - (IBAction)back:(UIBarButtonItem *)sender;
 
 - (IBAction)confirm:(UIBarButtonItem *)sender;
+- (IBAction)confirmByBtn:(UIButton *)sender;
 
 @end

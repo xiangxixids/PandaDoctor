@@ -152,4 +152,29 @@
     [self.navigationController pushViewController:ocrResultViewController animated:YES];
     
 }
+
+- (IBAction)confirmByBtn:(UIButton *)sender {
+    
+    NSLog(@"confirm");
+    NSLog(@"%@", _dataList);
+    PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
+    NSMutableData *data = [rpcInterface resultForApp:_checkItemId checkItemIds:_postArray];
+    if (data==nil) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"网络错误"
+                                                       message:@"联网错误, 请检查您的网络连接是否正常"
+                                                      delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        return;
+    }
+    NSString *datastr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    NSArray *dataList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    NSLog(@"%lu", (unsigned long)dataList.count);
+    
+    PandaOCRResultViewController *ocrResultViewController = [[PandaOCRResultViewController alloc]initWithNibName:nil bundle:nil];
+    ocrResultViewController.postArray = _postArray;
+    ocrResultViewController.checkItemId = _checkItemId;
+    ocrResultViewController.data = data;
+    
+    [self.navigationController pushViewController:ocrResultViewController animated:YES];
+}
 @end
