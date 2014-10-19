@@ -9,6 +9,7 @@
                 <outlet property="account" destination="6bE-OF-qGV" id="ixF-wt-cWr"/>
                 <outlet property="hiddenView" destination="IKn-nq-3Ux" id="1ry-BA-mVd"/>
                 <outlet property="indicatorPopup" destination="Z9Z-Fn-EKe" id="NoU-tv-718"/>
+                <outlet property="loginView" destination="i5M-Pr-FkT" id="11d-7z-Ze8"/>
                 <outlet property="passwd" destination="W7B-FH-dc7" id="FUl-UQ-Et6"/>
                 <outlet property="tabviewBtn" destination="a5s-ig-d99" id="L2o-Jq-nrd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

@@ -20,6 +20,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *tabviewBtn;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicatorPopup;
 
+@property (strong, nonatomic) IBOutlet UIView *loginView;
+
 - (IBAction)loginAction:(UIButton *)sender;
 
 - (IBAction)showRegisterView:(UIButton *)sender;

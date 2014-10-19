@@ -408,8 +408,9 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
 - (void)textFieldDidBeginEditing:(PandaUITextField *)textField
 {
     CGRect frame = textField.frame;
-    int offset = frame.origin.y+32 - (self.view.frame.size.height - 216.0);//键盘高度216
+    int offset = frame.origin.y+32 - (self.view.frame.size.height - 250.0);//键盘高度250
     NSTimeInterval animationDuration = 0.30f;
+    offset = 100;
     [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
     [UIView setAnimationDuration:animationDuration];
     
@@ -418,6 +419,13 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
         self.view.frame = CGRectMake(0.0f, -offset, self.view.frame.size.width, self.view.frame.size.height);
     
     [UIView commitAnimations];
+}
+
+//当用户按下return键或者按回车键，keyboard消失
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 - (void)textFieldDidEndEditing:(PandaUITextField *)textField
@@ -432,6 +440,7 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
     //update _postArray
     [self updatePostArray:textField.mid value:cell.OCR_value.text refLow:cell.REF_low.text refHight:cell.REF_high.text];
     [_ocrTableView reloadData];
+    self.view.frame =CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
 }
 
 - (void)updateAssResultList:(NSInteger)index value:(NSString *)value refLow:(NSString *)low refHight:(NSString *)high unit:(NSString*)unit
@@ -500,19 +509,13 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
     return YES;
 }
 
-//当用户按下return键或者按回车键，keyboard消失
--(BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [textField resignFirstResponder];
-    return YES;
-}
-
 - (IBAction)touchDown:(UIControl *)sender {
     [self.view endEditing:YES];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    self.view.frame =CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     return _assResultList.count;
 }
 
@@ -546,5 +549,6 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
 {
     return 75;
 }
+
 
 @end
