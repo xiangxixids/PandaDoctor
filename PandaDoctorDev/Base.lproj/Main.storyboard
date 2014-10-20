@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="n2U-2k-q5Z">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -371,31 +372,31 @@
                                     <navigationItem title="拍化验单" id="Ugs-kD-GIc"/>
                                 </items>
                             </navigationBar>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="u47_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="Z3y-Ip-Ymq">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="常规.png" translatesAutoresizingMaskIntoConstraints="NO" id="Z3y-Ip-Ymq">
                                 <rect key="frame" x="20" y="78" width="75" height="75"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="u47_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="PFe-ld-jTP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="肝脏.png" translatesAutoresizingMaskIntoConstraints="NO" id="PFe-ld-jTP">
                                 <rect key="frame" x="123" y="78" width="75" height="75"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="u47_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="rAQ-T0-SCa">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="肾脏.png" translatesAutoresizingMaskIntoConstraints="NO" id="rAQ-T0-SCa">
                                 <rect key="frame" x="225" y="78" width="75" height="75"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="u47_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="K0t-UI-TOt">
                                 <rect key="frame" x="20" y="183" width="75" height="75"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="u47_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="6n4-dc-ObS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="血糖血脂.png" translatesAutoresizingMaskIntoConstraints="NO" id="6n4-dc-ObS">
                                 <rect key="frame" x="123" y="183" width="75" height="75"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="u47_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="TJR-UR-pfS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="肿瘤.png" translatesAutoresizingMaskIntoConstraints="NO" id="TJR-UR-pfS">
                                 <rect key="frame" x="225" y="183" width="75" height="75"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="u47_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="lty-VM-l8l">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="生育.png" translatesAutoresizingMaskIntoConstraints="NO" id="lty-VM-l8l">
                                 <rect key="frame" x="20" y="287" width="75" height="75"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="u47_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="NFQ-JD-8yV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="优生.png" translatesAutoresizingMaskIntoConstraints="NO" id="NFQ-JD-8yV">
                                 <rect key="frame" x="123" y="287" width="75" height="75"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="u47_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="yU1-R2-MHO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="更多.png" translatesAutoresizingMaskIntoConstraints="NO" id="yU1-R2-MHO">
                                 <rect key="frame" x="225" y="287" width="75" height="75"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="三大常规" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBu-fM-aHc">
@@ -505,6 +506,14 @@
         <image name="u84_normal.png" width="25" height="25"/>
         <image name="u86_normal.png" width="25" height="22"/>
         <image name="u8_normal.png" width="26" height="23"/>
+        <image name="优生.png" width="49" height="49"/>
+        <image name="常规.png" width="49" height="49"/>
+        <image name="更多.png" width="49" height="49"/>
+        <image name="生育.png" width="49" height="49"/>
+        <image name="肝脏.png" width="49" height="49"/>
+        <image name="肾脏.png" width="49" height="49"/>
+        <image name="肿瘤.png" width="49" height="49"/>
+        <image name="血糖血脂.png" width="49" height="49"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

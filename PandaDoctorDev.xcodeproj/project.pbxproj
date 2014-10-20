@@ -93,6 +93,40 @@
 		D7A91DD81987984D00AE1A9A /* PandaModifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A91DD61987984D00AE1A9A /* PandaModifyPasswordViewController.m */; };
 		D7A91DD91987984D00AE1A9A /* PandaModifyPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A91DD71987984D00AE1A9A /* PandaModifyPasswordViewController.xib */; };
 		D7AD2DA319F38C7000C29BF0 /* PandaUISwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = D7AD2DA219F38C7000C29BF0 /* PandaUISwitch.m */; };
+		D7AD2DBE19F546F100C29BF0 /* 123_01.gif in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DA419F546F100C29BF0 /* 123_01.gif */; };
+		D7AD2DBF19F546F100C29BF0 /* 123_02.gif in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DA519F546F100C29BF0 /* 123_02.gif */; };
+		D7AD2DC019F546F100C29BF0 /* 123_03.gif in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DA619F546F100C29BF0 /* 123_03.gif */; };
+		D7AD2DC119F546F100C29BF0 /* 123_03.png in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DA719F546F100C29BF0 /* 123_03.png */; };
+		D7AD2DC219F546F100C29BF0 /* 123_04.gif in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DA819F546F100C29BF0 /* 123_04.gif */; };
+		D7AD2DC319F546F100C29BF0 /* 123_04.png in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DA919F546F100C29BF0 /* 123_04.png */; };
+		D7AD2DC419F546F100C29BF0 /* 123_05.gif in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DAA19F546F100C29BF0 /* 123_05.gif */; };
+		D7AD2DC519F546F100C29BF0 /* 123_05.png in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DAB19F546F100C29BF0 /* 123_05.png */; };
+		D7AD2DC619F546F100C29BF0 /* 123_06.gif in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DAC19F546F100C29BF0 /* 123_06.gif */; };
+		D7AD2DC719F546F100C29BF0 /* 123_06.png in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DAD19F546F100C29BF0 /* 123_06.png */; };
+		D7AD2DC819F546F100C29BF0 /* 123_07.gif in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DAE19F546F100C29BF0 /* 123_07.gif */; };
+		D7AD2DC919F546F100C29BF0 /* 123_07.png in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DAF19F546F100C29BF0 /* 123_07.png */; };
+		D7AD2DCA19F546F100C29BF0 /* 123_08.gif in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DB019F546F100C29BF0 /* 123_08.gif */; };
+		D7AD2DCB19F546F100C29BF0 /* 123_08.png in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DB119F546F100C29BF0 /* 123_08.png */; };
+		D7AD2DCC19F546F100C29BF0 /* 123_09.gif in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DB219F546F100C29BF0 /* 123_09.gif */; };
+		D7AD2DCD19F546F100C29BF0 /* 123_09.png in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DB319F546F100C29BF0 /* 123_09.png */; };
+		D7AD2DCE19F546F100C29BF0 /* 123_10.gif in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DB419F546F100C29BF0 /* 123_10.gif */; };
+		D7AD2DCF19F546F100C29BF0 /* 123_10.png in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DB519F546F100C29BF0 /* 123_10.png */; };
+		D7AD2DD019F546F100C29BF0 /* 123_11.gif in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DB619F546F100C29BF0 /* 123_11.gif */; };
+		D7AD2DD119F546F100C29BF0 /* 123_11.png in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DB719F546F100C29BF0 /* 123_11.png */; };
+		D7AD2DD219F546F100C29BF0 /* 123_12.gif in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DB819F546F100C29BF0 /* 123_12.gif */; };
+		D7AD2DD319F546F100C29BF0 /* 123_13.gif in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DB919F546F100C29BF0 /* 123_13.gif */; };
+		D7AD2DD419F546F100C29BF0 /* 123_14.gif in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DBA19F546F100C29BF0 /* 123_14.gif */; };
+		D7AD2DD519F546F100C29BF0 /* 123_15.gif in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DBB19F546F100C29BF0 /* 123_15.gif */; };
+		D7AD2DD619F546F100C29BF0 /* 123_16.gif in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DBC19F546F100C29BF0 /* 123_16.gif */; };
+		D7AD2DD719F546F100C29BF0 /* 分隔符.gif in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DBD19F546F100C29BF0 /* 分隔符.gif */; };
+		D7AD2DE019F548B100C29BF0 /* 优生.png in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DD819F548B100C29BF0 /* 优生.png */; };
+		D7AD2DE119F548B100C29BF0 /* 常规.png in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DD919F548B100C29BF0 /* 常规.png */; };
+		D7AD2DE219F548B100C29BF0 /* 更多.png in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DDA19F548B100C29BF0 /* 更多.png */; };
+		D7AD2DE319F548B100C29BF0 /* 生育.png in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DDB19F548B100C29BF0 /* 生育.png */; };
+		D7AD2DE419F548B100C29BF0 /* 肝脏.png in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DDC19F548B100C29BF0 /* 肝脏.png */; };
+		D7AD2DE519F548B100C29BF0 /* 肾脏.png in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DDD19F548B100C29BF0 /* 肾脏.png */; };
+		D7AD2DE619F548B100C29BF0 /* 肿瘤.png in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DDE19F548B100C29BF0 /* 肿瘤.png */; };
+		D7AD2DE719F548B100C29BF0 /* 血糖血脂.png in Resources */ = {isa = PBXBuildFile; fileRef = D7AD2DDF19F548B100C29BF0 /* 血糖血脂.png */; };
 		D7B7748F198FD4850094FAD4 /* PandaTableViewBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B7748E198FD4850094FAD4 /* PandaTableViewBaseCell.m */; };
 		D7C53DBA1987A3DC0063C79E /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D7C53DB91987A3DC0063C79E /* Logo.png */; };
 		D7C53DBD1987A8540063C79E /* PandaAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C53DBC1987A8540063C79E /* PandaAboutUsViewController.m */; };
@@ -252,6 +286,40 @@
 		D7A91DD71987984D00AE1A9A /* PandaModifyPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PandaModifyPasswordViewController.xib; sourceTree = "<group>"; };
 		D7AD2DA119F38C7000C29BF0 /* PandaUISwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaUISwitch.h; sourceTree = "<group>"; };
 		D7AD2DA219F38C7000C29BF0 /* PandaUISwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaUISwitch.m; sourceTree = "<group>"; };
+		D7AD2DA419F546F100C29BF0 /* 123_01.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 123_01.gif; sourceTree = "<group>"; };
+		D7AD2DA519F546F100C29BF0 /* 123_02.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 123_02.gif; sourceTree = "<group>"; };
+		D7AD2DA619F546F100C29BF0 /* 123_03.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 123_03.gif; sourceTree = "<group>"; };
+		D7AD2DA719F546F100C29BF0 /* 123_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123_03.png; sourceTree = "<group>"; };
+		D7AD2DA819F546F100C29BF0 /* 123_04.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 123_04.gif; sourceTree = "<group>"; };
+		D7AD2DA919F546F100C29BF0 /* 123_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123_04.png; sourceTree = "<group>"; };
+		D7AD2DAA19F546F100C29BF0 /* 123_05.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 123_05.gif; sourceTree = "<group>"; };
+		D7AD2DAB19F546F100C29BF0 /* 123_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123_05.png; sourceTree = "<group>"; };
+		D7AD2DAC19F546F100C29BF0 /* 123_06.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 123_06.gif; sourceTree = "<group>"; };
+		D7AD2DAD19F546F100C29BF0 /* 123_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123_06.png; sourceTree = "<group>"; };
+		D7AD2DAE19F546F100C29BF0 /* 123_07.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 123_07.gif; sourceTree = "<group>"; };
+		D7AD2DAF19F546F100C29BF0 /* 123_07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123_07.png; sourceTree = "<group>"; };
+		D7AD2DB019F546F100C29BF0 /* 123_08.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 123_08.gif; sourceTree = "<group>"; };
+		D7AD2DB119F546F100C29BF0 /* 123_08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123_08.png; sourceTree = "<group>"; };
+		D7AD2DB219F546F100C29BF0 /* 123_09.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 123_09.gif; sourceTree = "<group>"; };
+		D7AD2DB319F546F100C29BF0 /* 123_09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123_09.png; sourceTree = "<group>"; };
+		D7AD2DB419F546F100C29BF0 /* 123_10.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 123_10.gif; sourceTree = "<group>"; };
+		D7AD2DB519F546F100C29BF0 /* 123_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123_10.png; sourceTree = "<group>"; };
+		D7AD2DB619F546F100C29BF0 /* 123_11.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 123_11.gif; sourceTree = "<group>"; };
+		D7AD2DB719F546F100C29BF0 /* 123_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123_11.png; sourceTree = "<group>"; };
+		D7AD2DB819F546F100C29BF0 /* 123_12.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 123_12.gif; sourceTree = "<group>"; };
+		D7AD2DB919F546F100C29BF0 /* 123_13.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 123_13.gif; sourceTree = "<group>"; };
+		D7AD2DBA19F546F100C29BF0 /* 123_14.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 123_14.gif; sourceTree = "<group>"; };
+		D7AD2DBB19F546F100C29BF0 /* 123_15.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 123_15.gif; sourceTree = "<group>"; };
+		D7AD2DBC19F546F100C29BF0 /* 123_16.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 123_16.gif; sourceTree = "<group>"; };
+		D7AD2DBD19F546F100C29BF0 /* 分隔符.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "分隔符.gif"; sourceTree = "<group>"; };
+		D7AD2DD819F548B100C29BF0 /* 优生.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "优生.png"; sourceTree = "<group>"; };
+		D7AD2DD919F548B100C29BF0 /* 常规.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "常规.png"; sourceTree = "<group>"; };
+		D7AD2DDA19F548B100C29BF0 /* 更多.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "更多.png"; sourceTree = "<group>"; };
+		D7AD2DDB19F548B100C29BF0 /* 生育.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "生育.png"; sourceTree = "<group>"; };
+		D7AD2DDC19F548B100C29BF0 /* 肝脏.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "肝脏.png"; sourceTree = "<group>"; };
+		D7AD2DDD19F548B100C29BF0 /* 肾脏.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "肾脏.png"; sourceTree = "<group>"; };
+		D7AD2DDE19F548B100C29BF0 /* 肿瘤.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "肿瘤.png"; sourceTree = "<group>"; };
+		D7AD2DDF19F548B100C29BF0 /* 血糖血脂.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "血糖血脂.png"; sourceTree = "<group>"; };
 		D7B7748D198FD4850094FAD4 /* PandaTableViewBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaTableViewBaseCell.h; sourceTree = "<group>"; };
 		D7B7748E198FD4850094FAD4 /* PandaTableViewBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaTableViewBaseCell.m; sourceTree = "<group>"; };
 		D7C53DB91987A3DC0063C79E /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
@@ -364,6 +432,40 @@
 		D74070B9197CF1BC007313B1 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				D7AD2DD819F548B100C29BF0 /* 优生.png */,
+				D7AD2DD919F548B100C29BF0 /* 常规.png */,
+				D7AD2DDA19F548B100C29BF0 /* 更多.png */,
+				D7AD2DDB19F548B100C29BF0 /* 生育.png */,
+				D7AD2DDC19F548B100C29BF0 /* 肝脏.png */,
+				D7AD2DDD19F548B100C29BF0 /* 肾脏.png */,
+				D7AD2DDE19F548B100C29BF0 /* 肿瘤.png */,
+				D7AD2DDF19F548B100C29BF0 /* 血糖血脂.png */,
+				D7AD2DA419F546F100C29BF0 /* 123_01.gif */,
+				D7AD2DA519F546F100C29BF0 /* 123_02.gif */,
+				D7AD2DA619F546F100C29BF0 /* 123_03.gif */,
+				D7AD2DA719F546F100C29BF0 /* 123_03.png */,
+				D7AD2DA819F546F100C29BF0 /* 123_04.gif */,
+				D7AD2DA919F546F100C29BF0 /* 123_04.png */,
+				D7AD2DAA19F546F100C29BF0 /* 123_05.gif */,
+				D7AD2DAB19F546F100C29BF0 /* 123_05.png */,
+				D7AD2DAC19F546F100C29BF0 /* 123_06.gif */,
+				D7AD2DAD19F546F100C29BF0 /* 123_06.png */,
+				D7AD2DAE19F546F100C29BF0 /* 123_07.gif */,
+				D7AD2DAF19F546F100C29BF0 /* 123_07.png */,
+				D7AD2DB019F546F100C29BF0 /* 123_08.gif */,
+				D7AD2DB119F546F100C29BF0 /* 123_08.png */,
+				D7AD2DB219F546F100C29BF0 /* 123_09.gif */,
+				D7AD2DB319F546F100C29BF0 /* 123_09.png */,
+				D7AD2DB419F546F100C29BF0 /* 123_10.gif */,
+				D7AD2DB519F546F100C29BF0 /* 123_10.png */,
+				D7AD2DB619F546F100C29BF0 /* 123_11.gif */,
+				D7AD2DB719F546F100C29BF0 /* 123_11.png */,
+				D7AD2DB819F546F100C29BF0 /* 123_12.gif */,
+				D7AD2DB919F546F100C29BF0 /* 123_13.gif */,
+				D7AD2DBA19F546F100C29BF0 /* 123_14.gif */,
+				D7AD2DBB19F546F100C29BF0 /* 123_15.gif */,
+				D7AD2DBC19F546F100C29BF0 /* 123_16.gif */,
+				D7AD2DBD19F546F100C29BF0 /* 分隔符.gif */,
 				D78D95E9198D0C77004F2F68 /* u47_normal.png */,
 				D7A30A87198CE38100423666 /* IMG_1.jpg */,
 				D7A30A88198CE38100423666 /* IMG_2.jpg */,
@@ -672,33 +774,49 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7AD2DE619F548B100C29BF0 /* 肿瘤.png in Resources */,
+				D7AD2DE019F548B100C29BF0 /* 优生.png in Resources */,
 				D76C6F1019F2B19C007323CB /* PandaHuaYanDanRadioCheckViewController.xib in Resources */,
 				D7A91DD41987983300AE1A9A /* PandaPersonalSettingViewController.xib in Resources */,
 				D70D3527198102B2006F431A /* PandaBingLiHistoryDetailViewController.xib in Resources */,
+				D7AD2DD719F546F100C29BF0 /* 分隔符.gif in Resources */,
+				D7AD2DE119F548B100C29BF0 /* 常规.png in Resources */,
 				D745CE96197CFC32008C1082 /* PandaRegisterViewController.xib in Resources */,
+				D7AD2DC219F546F100C29BF0 /* 123_04.gif in Resources */,
 				D7A91D9819877C7600AE1A9A /* u308_normal.png in Resources */,
+				D7AD2DC019F546F100C29BF0 /* 123_03.gif in Resources */,
 				D7A30A80198CDE3B00423666 /* PandaHealthJiangTangDetailViewController.xib in Resources */,
 				D7328797198E321F00064A12 /* PandaHuaYanDanXiangMuListViewController.xib in Resources */,
+				D7AD2DE719F548B100C29BF0 /* 血糖血脂.png in Resources */,
+				D7AD2DE219F548B100C29BF0 /* 更多.png in Resources */,
+				D7AD2DCE19F546F100C29BF0 /* 123_10.gif in Resources */,
 				D78D95EA198D0C77004F2F68 /* u47_normal.png in Resources */,
 				D7CF046C19DB297500DE6923 /* PandaOCRResultViewController.xib in Resources */,
+				D7AD2DD119F546F100C29BF0 /* 123_11.png in Resources */,
 				D7A30A72198C9AA800423666 /* PandaShareTableViewCell.xib in Resources */,
 				D702FF46197E5A890076B365 /* u82_normal.png in Resources */,
 				D7A30A8D198CE38100423666 /* IMG_3.jpg in Resources */,
+				D7AD2DC119F546F100C29BF0 /* 123_03.png in Resources */,
 				D7A30A8C198CE38100423666 /* IMG_2.jpg in Resources */,
 				D702FF4B197E5F330076B365 /* u29_normal.png in Resources */,
 				D702FF40197E4F950076B365 /* u13_normal.png in Resources */,
 				D7A91D9619877B6800AE1A9A /* PandaBingLiHistoryDetailResultViewController.xib in Resources */,
+				D7AD2DCD19F546F100C29BF0 /* 123_09.png in Resources */,
 				D70D352C19810A41006F431A /* PandaBingLiHistoryDetailTableViewCell.xib in Resources */,
 				D74070BB197CF1D0007313B1 /* u11_normal.png in Resources */,
 				D732D43019B3279300F632C1 /* PandaOCRRecongnizeViewController.xib in Resources */,
 				D702FF41197E4F950076B365 /* u20_normal.png in Resources */,
+				D7AD2DCF19F546F100C29BF0 /* 123_10.png in Resources */,
 				D7A91DD91987984D00AE1A9A /* PandaModifyPasswordViewController.xib in Resources */,
 				D732D42B19B2F93600F632C1 /* PandaTakePhotoPreviewViewController.xib in Resources */,
+				D7AD2DC919F546F100C29BF0 /* 123_07.png in Resources */,
 				D7A30A70198C9AA800423666 /* ScrollTableViewCell.xib in Resources */,
 				D7C53DBA1987A3DC0063C79E /* Logo.png in Resources */,
 				D78D95EF198D38F8004F2F68 /* u76_line.png in Resources */,
+				D7AD2DD519F546F100C29BF0 /* 123_15.gif in Resources */,
 				D7615983197FAEFB00ECF978 /* PandaBingLiHistoryTableViewCell.xib in Resources */,
 				D74070BD197CF449007313B1 /* u22_normal.png in Resources */,
+				D7AD2DD619F546F100C29BF0 /* 123_16.gif in Resources */,
 				D7A30A8E198CE38100423666 /* IMG_4.jpg in Resources */,
 				D702FF47197E5A890076B365 /* u84_normal.png in Resources */,
 				D7A30A8B198CE38100423666 /* IMG_1.jpg in Resources */,
@@ -708,22 +826,40 @@
 				D76A696D1972365800D536FF /* InfoPlist.strings in Resources */,
 				D7D5904219F2AD3500F13E15 /* PandaRadioTableViewCell.xib in Resources */,
 				D7051DE8197D0BAF0001BA6C /* PandaGetPasswordViewController.xib in Resources */,
+				D7AD2DE319F548B100C29BF0 /* 生育.png in Resources */,
 				D7D2785D19876EBE00BAB90F /* PandaDatagramViewController.xib in Resources */,
+				D7AD2DE419F548B100C29BF0 /* 肝脏.png in Resources */,
+				D7AD2DD319F546F100C29BF0 /* 123_13.gif in Resources */,
+				D7AD2DBE19F546F100C29BF0 /* 123_01.gif in Resources */,
+				D7AD2DD019F546F100C29BF0 /* 123_11.gif in Resources */,
 				D745CE98197D005E008C1082 /* u40_normal.png in Resources */,
+				D7AD2DC319F546F100C29BF0 /* 123_04.png in Resources */,
 				D79DEE2D197250EA009FCAC6 /* PandaMainViewController.xib in Resources */,
 				D76A69761972365800D536FF /* Main.storyboard in Resources */,
+				D7AD2DCB19F546F100C29BF0 /* 123_08.png in Resources */,
 				D7CF045719DAD58F00DE6923 /* PandaOCRTableViewCell.xib in Resources */,
 				D7FB52E4197236B900667643 /* PandaViewController.xib in Resources */,
 				D702FF3F197E4F950076B365 /* u8_normal.png in Resources */,
+				D7AD2DC419F546F100C29BF0 /* 123_05.gif in Resources */,
+				D7AD2DCA19F546F100C29BF0 /* 123_08.gif in Resources */,
 				D7A30A74198CDBA200423666 /* 1.pic.jpg in Resources */,
+				D7AD2DBF19F546F100C29BF0 /* 123_02.gif in Resources */,
+				D7AD2DCC19F546F100C29BF0 /* 123_09.gif in Resources */,
 				D79DEE2819724484009FCAC6 /* 1.png in Resources */,
 				D7A30A76198CDD9800423666 /* arrow.jpg in Resources */,
 				D70159D919911E7B004D8179 /* PandaHuaYanDanDetailViewController.xib in Resources */,
+				D7AD2DC719F546F100C29BF0 /* 123_06.png in Resources */,
+				D7AD2DD419F546F100C29BF0 /* 123_14.gif in Resources */,
+				D7AD2DE519F548B100C29BF0 /* 肾脏.png in Resources */,
 				D7615987197FC5AB00ECF978 /* u54_line.png in Resources */,
+				D7AD2DC519F546F100C29BF0 /* 123_05.png in Resources */,
 				D74070B8197CF105007313B1 /* PandaLoginViewController.xib in Resources */,
 				D7F72DB519E576D5001167DF /* PandaHuaYanDanDetailTableViewCell.xib in Resources */,
 				D702FF3E197E4F950076B365 /* u6_normal.png in Resources */,
+				D7AD2DC619F546F100C29BF0 /* 123_06.gif in Resources */,
+				D7AD2DC819F546F100C29BF0 /* 123_07.gif in Resources */,
 				D761597B197FA31C00ECF978 /* PandaBingLiHistoryViewController.xib in Resources */,
+				D7AD2DD219F546F100C29BF0 /* 123_12.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

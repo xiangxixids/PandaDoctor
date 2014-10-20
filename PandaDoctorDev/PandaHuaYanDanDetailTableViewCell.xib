@@ -21,7 +21,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="肝功敏感指标，提示肝脏是否受损。肝功敏感指标，提示肝脏是否受损。" lineBreakMode="tailTruncation" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfF-Ba-l5N">
-                        <rect key="frame" x="118" y="-1" width="217" height="55"/>
+                        <rect key="frame" x="111" y="0.0" width="206" height="55"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -32,7 +32,7 @@
                 <outlet property="desc" destination="BfF-Ba-l5N" id="YBh-g6-Vea"/>
                 <outlet property="name" destination="h7f-Px-d33" id="glx-Wl-iZ1"/>
             </connections>
-            <point key="canvasLocation" x="264" y="175.5"/>
+            <point key="canvasLocation" x="264" y="174.5"/>
         </tableViewCell>
     </objects>
 </document>

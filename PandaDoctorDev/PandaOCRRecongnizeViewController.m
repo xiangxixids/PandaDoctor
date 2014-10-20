@@ -201,7 +201,7 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
         } //for (int j=0; j<assList.count; j++)
         if ([result_dict valueForKey:UNIT] == nil) {
             NSLog(@"not found the unit,set default is g/l");
-            [result_dict setValue:@"g/L" forKey:UNIT];
+            [result_dict setValue:@"" forKey:UNIT];
         }
         [_assResultList addObject:result_dict];
         
