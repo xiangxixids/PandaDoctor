@@ -410,7 +410,7 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
     CGRect frame = textField.frame;
     int offset = frame.origin.y+32 - (self.view.frame.size.height - 250.0);//键盘高度250
     NSTimeInterval animationDuration = 0.30f;
-    offset = 100;
+    //offset = 100;
     [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
     [UIView setAnimationDuration:animationDuration];
     
