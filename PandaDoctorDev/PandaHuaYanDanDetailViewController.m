@@ -8,6 +8,7 @@
 
 #import "PandaHuaYanDanDetailViewController.h"
 #import "PandaHuaYanDanRadioCheckViewController.h"
+#import "UtilTool.h"
 
 @interface PandaHuaYanDanDetailViewController ()
 
@@ -54,10 +55,12 @@
 //        _btnTakePhoto.titleLabel.text = @"一键拍单";
         [_btnTakePhoto setTitle:@"一键拍单" forState:UIControlStateNormal];
         _barItemTakePhoto.title = @"拍化验单";
+        [UtilTool globalDataSave:@"1" forKey:[NSString stringWithFormat:@"%d",_checkItemId]]; // 这里直接记录当前checkid 是否能够OCR, 在history 里面用到这个
     }else{
 //        _btnTakePhoto.titleLabel.text = @"填化验单";
         [_btnTakePhoto setTitle:@"填化验单" forState:UIControlStateNormal];
         _barItemTakePhoto.title = @"填化验单";
+        [UtilTool globalDataSave:@"0" forKey:[NSString stringWithFormat:@"%d",_checkItemId]]; // 这里也记录一下是否可以ocr
     }
 
 }
@@ -193,6 +196,37 @@
 //    _takePhotoPreviewViewController.hidesBottomBarWhenPushed = YES;
 //    _takePhotoPreviewViewController.checkItemId = _checkItemId;
 //    [self.navigationController pushViewController:_takePhotoPreviewViewController animated:YES];
+    
+    
+    // 测试照片, 先存储, 后
+//    NSData *data;
+//    if (UIImagePNGRepresentation(image) == nil) {
+//        data = UIImageJPEGRepresentation(image, 1);
+//        NSLog(@"JPEG");
+//    } else {
+//        data = UIImagePNGRepresentation(image);
+//        NSLog(@"PNG");
+//    }
+    
+//    data = UIImagePNGRepresentation(image);
+//    data = UIImageJPEGRepresentation(image, 1);
+//    [UtilTool saveFileInDocument:@"123.jpg" content:data];
+//    
+//    NSString *aPath3=[UtilTool getImagePath:@"123.jpg"];
+//    UIImage *imgFromUrl3=[[UIImage alloc]initWithContentsOfFile:aPath3];
+//    UIImageView* imageView3=[[UIImageView alloc]initWithImage:imgFromUrl3];
+//    
+//    UIImage *image1 = imgFromUrl3;
+    
+//    _takePhotoPreviewViewController = [[PandaTakePhotoPreviewViewController alloc]initWithNibName:nil bundle:nil];
+//    //_takePhotoPreviewViewController.photoPreview.image = image;
+//    _takePhotoPreviewViewController.image = image1;
+//    _takePhotoPreviewViewController.hidesBottomBarWhenPushed = YES;
+//    _takePhotoPreviewViewController.checkItemId = _checkItemId;
+//    [self.navigationController pushViewController:_takePhotoPreviewViewController animated:YES];
+//    [picker dismissViewControllerAnimated:YES completion:NULL];
+//    return;
+    //
     
     // 那个项目的照片; 大项->小项->具体
     PandaOCRRecongnizeViewController *controller = [[PandaOCRRecongnizeViewController alloc]initWithNibName:nil bundle:nil];

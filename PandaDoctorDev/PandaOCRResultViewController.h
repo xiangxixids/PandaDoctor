@@ -18,6 +18,9 @@
 @property NSInteger checkItemId;
 @property NSData *data;
 
+@property BOOL isOCR;
+@property NSString *ocrImageName;
+
 - (IBAction)saveResult:(UIBarButtonItem *)sender;
 
 - (IBAction)back:(UIBarButtonItem *)sender;

@@ -10,6 +10,7 @@
 #import "Client.h"
 #import "PandaAssay.h"
 #import "PandaOCRTableViewCell.h"
+#import "UtilTool.h"
 
 @interface PandaOCRRecongnizeViewController : UIViewController<ClientDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 static NSString *PHONE = @"phone";
+static NSString *TEMPNAME = @"temp.jpg";
 
 @interface UtilTool : NSObject
 
@@ -24,9 +25,15 @@ static NSString *PHONE = @"phone";
 +(Boolean)saveFileInDocument:(NSString *)fileName content:(NSData *)content;
 +(NSData *)readFileInDocument:(NSString *)fileName;
 
++(void)deleteFile:(NSString *)path;
++(NSString*)getImagePath:(NSString *)imageName;
+
 +(BOOL)validateMobile:(NSString *)mobileNum;
 
 +(void)globalDataSave:(NSString *)value forKey:(NSString *)key;
 +(NSString*)globalDataGet:(NSString *)key;
++(NSData*)globalImageDataGet:(NSString *)name;
++(BOOL)globalImageDataSave:(NSData *)imageData forName:(NSString *)name;
++(NSString*)createImageName:(NSString *)phone checkItem:(NSInteger)checkItem result:(NSString*)result;
 
 @end

@@ -185,5 +185,8 @@
     NSString *name = [defaults objectForKey:@"name"];//根据键值取出name
     NSLog(@"name=%@",name);
 }
-
+- (void)testCreateImageName
+{
+    //NSLog([self createImageName:@"15928807881" checkItem:@"5" result:@"0,1,0,0,1,1,1,1"]);
+}
 @end

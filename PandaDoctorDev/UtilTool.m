@@ -24,6 +24,30 @@
     return documentDirectory;
 }
 
++(void)deleteFile:(NSString *)path
+{
+    NSFileManager* fileManager=[NSFileManager defaultManager];
+    //NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+    
+    //文件名
+    //NSString *uniquePath=[[paths objectAtIndex:0] stringByAppendingPathComponent:path];
+    //BOOL blHave=[[NSFileManager defaultManager] fileExistsAtPath:uniquePath];
+    BOOL blHave=[[NSFileManager defaultManager] fileExistsAtPath:path];
+    if (!blHave) {
+        NSLog(@"no have: %@", path);
+        return;
+    }else {
+        NSLog(@"have: %@", path);
+//        BOOL blDele= [fileManager removeItemAtPath:uniquePath error:nil];
+        BOOL blDele= [fileManager removeItemAtPath:path error:nil];
+        if (blDele) {
+            NSLog(@"dele success");
+        }else {
+            NSLog(@"dele fail");
+        }
+    }
+}
+
 +(Boolean)fileExistInDocument:(NSString *)fileName
 {
     NSString *_fileName = [[NSString alloc]initWithFormat:@"%@/%@", [self getDocumentPath],fileName];
@@ -52,6 +76,7 @@
 +(Boolean)saveFileToPath:(NSString *)fileName path:(NSString *)filePath content:(NSData *)content
 {
     NSString *_file = [NSString stringWithFormat:@"%@%s%@", filePath, "/", fileName];
+    [UtilTool deleteFile:_file];
     return [content writeToFile:_file atomically:YES];
 }
 +(NSData *)readFile:(NSString *)fileName path:(NSString *)filePath
@@ -68,6 +93,7 @@
 {
     NSString *_filename = [NSString stringWithFormat:@"%@/%@", [self getDocumentPath], fileName];
     NSLog(@"filename = %@", _filename);
+    [UtilTool deleteFile:_filename];
     return [content writeToFile:_filename
                      atomically:YES];
 }
@@ -80,6 +106,12 @@
     }else{
         return nil;
     }
+}
+
++(NSString*)getImagePath:(NSString *)imageName
+{
+    NSString *imagePath = [NSString stringWithFormat:@"%@/%@.jpg",[UtilTool getDocumentPath], imageName];
+    return imagePath;
 }
 
 +(BOOL)validateMobile:(NSString *)mobileNum
@@ -143,6 +175,57 @@
     NSString *name = [defaults objectForKey:key];//根据键值取出name
     NSLog(@"name=%@",name);
     return name;
+}
++(NSData*)globalImageDataGet:(NSString *)name
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *data = [defaults objectForKey:name];
+    if (data != nil) {
+        NSLog(@"get the image data");
+    }else
+    {
+        NSLog(@"get image data failed");
+    }
+    return data;
+}
++(BOOL)globalImageDataSave:(NSData *)imageData forName:(NSString *)name
+{
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+    [defaults setObject:imageData forKey:name];
+    return [defaults synchronize];//用synchronize方法把数据持久化到standardUserDefaults数据库
+}
+
++ (NSString*)createImageName:(NSString *)phone checkItem:(NSInteger)checkItem result:(NSString*)result
+{
+    //实例化一个NSDateFormatter对象
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //设定时间格式,这里可以设置成自己需要的格式
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    //用[NSDate date]可以获取系统当前时间
+    NSString *currentDateStr = [dateFormatter stringFromDate:[NSDate date]];
+    //输出格式为：2010-10-27 10:22:13
+    NSLog(@"%@",currentDateStr);
+    NSString *result_string = [result stringByReplacingOccurrencesOfString:@"," withString:@""];
+    NSLog(@"result = %@", result_string);
+    NSString *basic_str = [NSString stringWithFormat:@"%@+%@+%d+%@.jpg",currentDateStr, phone, checkItem, result_string];
+    NSLog(@"%@", [self md5:basic_str]);
+    return [self md5:basic_str];
+    //return basic_str;
+}
+
+
++ (NSString *)md5:(NSString *)str
+{
+    const char *cStr = [str UTF8String];
+    unsigned char result[16];
+    CC_MD5(cStr, strlen(cStr), result); // This is the md5 call
+    return [NSString stringWithFormat:
+            @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
+            result[0], result[1], result[2], result[3],
+            result[4], result[5], result[6], result[7],
+            result[8], result[9], result[10], result[11],
+            result[12], result[13], result[14], result[15]
+            ];
 }
 
 @end

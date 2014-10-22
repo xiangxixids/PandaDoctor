@@ -136,6 +136,7 @@
 		D7CF046719DB09FF00DE6923 /* PandaUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CF046619DB09FF00DE6923 /* PandaUITextField.m */; };
 		D7CF046B19DB297500DE6923 /* PandaOCRResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CF046919DB297400DE6923 /* PandaOCRResultViewController.m */; };
 		D7CF046C19DB297500DE6923 /* PandaOCRResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7CF046A19DB297500DE6923 /* PandaOCRResultViewController.xib */; };
+		D7CFFB4519F7F0BA00A9FDE1 /* PandaSBBingLiHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CFFB4419F7F0BA00A9FDE1 /* PandaSBBingLiHistoryViewController.m */; };
 		D7D2785C19876EBE00BAB90F /* PandaDatagramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D2785A19876EBE00BAB90F /* PandaDatagramViewController.m */; };
 		D7D2785D19876EBE00BAB90F /* PandaDatagramViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7D2785B19876EBE00BAB90F /* PandaDatagramViewController.xib */; };
 		D7D5904119F2AD3500F13E15 /* PandaRadioTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D5903F19F2AD3500F13E15 /* PandaRadioTableViewCell.m */; };
@@ -335,6 +336,8 @@
 		D7CF046819DB297400DE6923 /* PandaOCRResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaOCRResultViewController.h; sourceTree = "<group>"; };
 		D7CF046919DB297400DE6923 /* PandaOCRResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaOCRResultViewController.m; sourceTree = "<group>"; };
 		D7CF046A19DB297500DE6923 /* PandaOCRResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PandaOCRResultViewController.xib; sourceTree = "<group>"; };
+		D7CFFB4319F7F0BA00A9FDE1 /* PandaSBBingLiHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaSBBingLiHistoryViewController.h; sourceTree = "<group>"; };
+		D7CFFB4419F7F0BA00A9FDE1 /* PandaSBBingLiHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaSBBingLiHistoryViewController.m; sourceTree = "<group>"; };
 		D7D2785919876EBE00BAB90F /* PandaDatagramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaDatagramViewController.h; sourceTree = "<group>"; };
 		D7D2785A19876EBE00BAB90F /* PandaDatagramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaDatagramViewController.m; sourceTree = "<group>"; };
 		D7D2785B19876EBE00BAB90F /* PandaDatagramViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PandaDatagramViewController.xib; sourceTree = "<group>"; };
@@ -540,6 +543,8 @@
 				D7A30A82198CDE9200423666 /* PandaHealthJiangTangViewController.m */,
 				D7A30A84198CDEB200423666 /* PandaHuaYanDanMainViewController.h */,
 				D7A30A85198CDEB200423666 /* PandaHuaYanDanMainViewController.m */,
+				D7CFFB4319F7F0BA00A9FDE1 /* PandaSBBingLiHistoryViewController.h */,
+				D7CFFB4419F7F0BA00A9FDE1 /* PandaSBBingLiHistoryViewController.m */,
 			);
 			name = StroyBoardController;
 			sourceTree = "<group>";
@@ -920,6 +925,7 @@
 				D7CF046B19DB297500DE6923 /* PandaOCRResultViewController.m in Sources */,
 				D76A69791972365800D536FF /* PandaViewController.m in Sources */,
 				D7E8A57F19C71E41009A3CE0 /* ActivationInfo.m in Sources */,
+				D7CFFB4519F7F0BA00A9FDE1 /* PandaSBBingLiHistoryViewController.m in Sources */,
 				D70C28ED1977705B007BEDB2 /* PandaResponse.m in Sources */,
 				D745CE95197CFC32008C1082 /* PandaRegisterViewController.m in Sources */,
 				D70C28EC1977705B007BEDB2 /* HttpService.m in Sources */,

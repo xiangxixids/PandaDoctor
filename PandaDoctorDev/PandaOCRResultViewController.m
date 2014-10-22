@@ -56,7 +56,6 @@
     
     
     
-    
     _resultTextView.text = show_result;
     
 }
@@ -106,6 +105,18 @@
     NSString *string = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"string = %@", string);
     if ([string isEqualToString:@"true"]) {
+        _ocrImageName = [UtilTool createImageName:phone checkItem:_checkItemId result:result];
+        
+        if (![UtilTool fileExistInDocument:_ocrImageName]) {
+            NSLog(@"we can save this image");
+            NSFileManager *defaultManager = [NSFileManager defaultManager];
+            NSString *realPath = [NSString stringWithFormat:@"%@/%@",[UtilTool getDocumentPath],_ocrImageName];
+            NSString *tempPath = [NSString stringWithFormat:@"%@/%@",[UtilTool getDocumentPath],TEMPNAME];
+            [defaultManager moveItemAtPath:tempPath toPath:realPath error:nil];
+        }else
+        {
+            NSLog(@"result image should not saved");
+        }
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"病历保存"
                                                        message:@"成功"
                                                       delegate:nil
