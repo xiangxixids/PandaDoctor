@@ -12,7 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *value;
 @property (weak, nonatomic) IBOutlet UILabel *unit;
-@property (weak, nonatomic) IBOutlet UILabel *referRange;
+@property (weak, nonatomic) IBOutlet UILabel *result;
 
 
 

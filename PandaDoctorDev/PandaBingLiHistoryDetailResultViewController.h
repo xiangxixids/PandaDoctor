@@ -12,8 +12,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *resultView;
 
 @property NSData *data;
-@property NSString *SLB_ID;
-@property NSString *result;
+@property NSString *SLB_ID; // checkItem
+@property NSString *result; // 
 
 - (IBAction)back:(UIBarButtonItem *)sender;
 @end

@@ -105,17 +105,24 @@
     NSString *string = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"string = %@", string);
     if ([string isEqualToString:@"true"]) {
-        _ocrImageName = [UtilTool createImageName:phone checkItem:_checkItemId result:result];
         
-        if (![UtilTool fileExistInDocument:_ocrImageName]) {
-            NSLog(@"we can save this image");
-            NSFileManager *defaultManager = [NSFileManager defaultManager];
-            NSString *realPath = [NSString stringWithFormat:@"%@/%@",[UtilTool getDocumentPath],_ocrImageName];
-            NSString *tempPath = [NSString stringWithFormat:@"%@/%@",[UtilTool getDocumentPath],TEMPNAME];
-            [defaultManager moveItemAtPath:tempPath toPath:realPath error:nil];
-        }else
+        if ([[UtilTool globalDataGet:[NSString stringWithFormat:@"%d",_checkItemId]] isEqualToString:@"1"]) // can ocr , here we can save the img
         {
-            NSLog(@"result image should not saved");
+            NSLog(@"this item can ocr ");
+            _ocrImageName = [UtilTool createImageName:phone checkItem:_checkItemId result:result];
+            
+            if (![UtilTool fileExistInDocument:_ocrImageName]) {
+                NSLog(@"we can save this image");
+                NSFileManager *defaultManager = [NSFileManager defaultManager];
+                NSString *realPath = [NSString stringWithFormat:@"%@/%@",[UtilTool getDocumentPath],_ocrImageName];
+                NSString *tempPath = [NSString stringWithFormat:@"%@/%@",[UtilTool getDocumentPath],TEMPNAME];
+                [defaultManager moveItemAtPath:tempPath toPath:realPath error:nil];
+            }else
+            {
+                NSLog(@"result image should not saved");
+            }
+        }else{
+            NSLog(@"this item can not ocr ");
         }
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"病历保存"
                                                        message:@"成功"

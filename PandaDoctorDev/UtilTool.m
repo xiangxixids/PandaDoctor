@@ -201,6 +201,7 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     //设定时间格式,这里可以设置成自己需要的格式
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    //NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
     //用[NSDate date]可以获取系统当前时间
     NSString *currentDateStr = [dateFormatter stringFromDate:[NSDate date]];
     //输出格式为：2010-10-27 10:22:13
@@ -209,7 +210,28 @@
     NSLog(@"result = %@", result_string);
     NSString *basic_str = [NSString stringWithFormat:@"%@+%@+%d+%@.jpg",currentDateStr, phone, checkItem, result_string];
     NSLog(@"%@", [self md5:basic_str]);
+    NSLog(@"basic_str = %@",basic_str);
     return [self md5:basic_str];
+    //return basic_str;
+}
+
++ (NSString*)createImageNameByDate:(NSString*)date phone:(NSString *)phone checkItem:(NSInteger)checkItem result:(NSString*)result
+{
+    //实例化一个NSDateFormatter对象
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //设定时间格式,这里可以设置成自己需要的格式
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    //用[NSDate date]可以获取系统当前时间
+    NSString *currentDateStr = [dateFormatter stringFromDate:[NSDate date]];
+    //输出格式为：2010-10-27 10:22:13
+    currentDateStr = date;
+    NSLog(@"%@",currentDateStr);
+    NSString *result_string = [result stringByReplacingOccurrencesOfString:@"," withString:@""];
+    NSLog(@"result = %@", result_string);
+    NSString *basic_str = [NSString stringWithFormat:@"%@+%@+%d+%@.jpg",date, phone, checkItem, result_string];
+    NSLog(@"%@", [self md5:basic_str]);
+    return [self md5:basic_str];
+    //NSLog(@"basic_str = %@",basic_str);
     //return basic_str;
 }
 

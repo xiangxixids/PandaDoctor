@@ -15,6 +15,12 @@
 
 @property PandaBingLiHistoryDetailResultViewController *bingliHistoryResultViewController;
 
+@property NSString *checkItem; // checkItem
+@property NSString *result; //  0,0,1,0,1,0,0,0,0,0,0,0,0
+
+@property NSArray *tableViewDataList;
+
+@property NSArray *checkArray; //[result replace by ,]
 
 - (IBAction)showResult:(UIBarButtonItem *)sender;
 

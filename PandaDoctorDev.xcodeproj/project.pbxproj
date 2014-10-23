@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D70083B719F938370094C964 /* PandaBingLiHistoryOCRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D70083B519F938370094C964 /* PandaBingLiHistoryOCRViewController.m */; };
+		D70083B819F938370094C964 /* PandaBingLiHistoryOCRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70083B619F938370094C964 /* PandaBingLiHistoryOCRViewController.xib */; };
 		D70159D819911E7B004D8179 /* PandaHuaYanDanDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D70159D619911E7B004D8179 /* PandaHuaYanDanDetailViewController.m */; };
 		D70159D919911E7B004D8179 /* PandaHuaYanDanDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70159D719911E7B004D8179 /* PandaHuaYanDanDetailViewController.xib */; };
 		D702FF3E197E4F950076B365 /* u6_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = D702FF3A197E4F950076B365 /* u6_normal.png */; };
@@ -166,6 +168,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D70083B419F938370094C964 /* PandaBingLiHistoryOCRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaBingLiHistoryOCRViewController.h; sourceTree = "<group>"; };
+		D70083B519F938370094C964 /* PandaBingLiHistoryOCRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaBingLiHistoryOCRViewController.m; sourceTree = "<group>"; };
+		D70083B619F938370094C964 /* PandaBingLiHistoryOCRViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PandaBingLiHistoryOCRViewController.xib; sourceTree = "<group>"; };
 		D70159D519911E7B004D8179 /* PandaHuaYanDanDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaHuaYanDanDetailViewController.h; sourceTree = "<group>"; };
 		D70159D619911E7B004D8179 /* PandaHuaYanDanDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaHuaYanDanDetailViewController.m; sourceTree = "<group>"; };
 		D70159D719911E7B004D8179 /* PandaHuaYanDanDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PandaHuaYanDanDetailViewController.xib; sourceTree = "<group>"; };
@@ -624,6 +629,9 @@
 				D70D3523198102B2006F431A /* PandaBingLiHistoryDetailViewController.h */,
 				D70D3524198102B2006F431A /* PandaBingLiHistoryDetailViewController.m */,
 				D70D3525198102B2006F431A /* PandaBingLiHistoryDetailViewController.xib */,
+				D70083B419F938370094C964 /* PandaBingLiHistoryOCRViewController.h */,
+				D70083B519F938370094C964 /* PandaBingLiHistoryOCRViewController.m */,
+				D70083B619F938370094C964 /* PandaBingLiHistoryOCRViewController.xib */,
 				D7A91D9219877B6800AE1A9A /* PandaBingLiHistoryDetailResultViewController.h */,
 				D7A91D9319877B6800AE1A9A /* PandaBingLiHistoryDetailResultViewController.m */,
 				D7A91D9419877B6800AE1A9A /* PandaBingLiHistoryDetailResultViewController.xib */,
@@ -844,6 +852,7 @@
 				D7AD2DCB19F546F100C29BF0 /* 123_08.png in Resources */,
 				D7CF045719DAD58F00DE6923 /* PandaOCRTableViewCell.xib in Resources */,
 				D7FB52E4197236B900667643 /* PandaViewController.xib in Resources */,
+				D70083B819F938370094C964 /* PandaBingLiHistoryOCRViewController.xib in Resources */,
 				D702FF3F197E4F950076B365 /* u8_normal.png in Resources */,
 				D7AD2DC419F546F100C29BF0 /* 123_05.gif in Resources */,
 				D7AD2DCA19F546F100C29BF0 /* 123_08.gif in Resources */,
@@ -895,6 +904,7 @@
 				D70D3526198102B2006F431A /* PandaBingLiHistoryDetailViewController.m in Sources */,
 				D7A91DD31987983300AE1A9A /* PandaPersonalSettingViewController.m in Sources */,
 				D7A91D9519877B6800AE1A9A /* PandaBingLiHistoryDetailResultViewController.m in Sources */,
+				D70083B719F938370094C964 /* PandaBingLiHistoryOCRViewController.m in Sources */,
 				D7CF045219D853EE00DE6923 /* PandaAssay.m in Sources */,
 				D70D352B19810A41006F431A /* PandaBingLiHistoryDetailTableViewCell.m in Sources */,
 				D7D5904119F2AD3500F13E15 /* PandaRadioTableViewCell.m in Sources */,

@@ -35,5 +35,6 @@ static NSString *TEMPNAME = @"temp.jpg";
 +(NSData*)globalImageDataGet:(NSString *)name;
 +(BOOL)globalImageDataSave:(NSData *)imageData forName:(NSString *)name;
 +(NSString*)createImageName:(NSString *)phone checkItem:(NSInteger)checkItem result:(NSString*)result;
++ (NSString*)createImageNameByDate:(NSString*)date phone:(NSString *)phone checkItem:(NSInteger)checkItem result:(NSString*)result;
 
 @end

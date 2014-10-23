@@ -7,6 +7,7 @@
 //
 
 #import "PandaBingLiHistoryDetailViewController.h"
+#import "PandaRPCInterface.h"
 
 @interface PandaBingLiHistoryDetailViewController ()
 
@@ -30,6 +31,27 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [_tableView registerClass:[PandaBingLiHistoryDetailTableViewCell class] forCellReuseIdentifier:@"cell"];
+    
+    NSLog(@"checkItem = %@", _checkItem);
+    NSLog(@"result = %@", _result);
+    
+    PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
+    NSMutableData *data = [rpcInterface checkItemsForApp:[_checkItem intValue]];
+    if (data==nil) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"网络错误"
+                                                       message:@"联网错误, 请检查您的网络连接是否正常"
+                                                      delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        return;
+    }
+    NSString *datastr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    _tableViewDataList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    NSLog(@"%@", _tableViewDataList);
+    
+    _checkArray = [_result componentsSeparatedByString:@","];
+    
+    NSLog(@"checkarray: %@", _checkArray);
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,7 +61,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return _tableViewDataList.count;
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -48,11 +70,20 @@
 - (PandaBingLiHistoryDetailTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     PandaBingLiHistoryDetailTableViewCell *cell = [[[NSBundle mainBundle]loadNibNamed:@"PandaBingLiHistoryDetailTableViewCell" owner:self options:nil] objectAtIndex:0];
-    cell.name.text = @"乙肝表面抗原";
-    cell.value.text = @"8";
-    cell.unit.text = @"umol/L";
-    cell.referRange.text = @"0.001-0.002";
+    NSDictionary *dict = [_tableViewDataList objectAtIndex:indexPath.row];
+    cell.name.text = [dict objectForKey:ITEM_NM];
+    if ([[_checkArray objectAtIndex:indexPath.row] isEqualToString:@"1"]) {
+        cell.result.text = @"+";
+    }else
+    {
+        cell.result.text = @"-";
+    }
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 33;
 }
 
 /*
@@ -69,6 +100,10 @@
 - (IBAction)showResult:(UIBarButtonItem *)sender {
     
     _bingliHistoryResultViewController = [[PandaBingLiHistoryDetailResultViewController alloc]initWithNibName:nil bundle:nil];
+    
+    _bingliHistoryResultViewController.result = _result;
+    _bingliHistoryResultViewController.SLB_ID = _checkItem;
+    
     [self.navigationController pushViewController:_bingliHistoryResultViewController animated:YES];
     
 }

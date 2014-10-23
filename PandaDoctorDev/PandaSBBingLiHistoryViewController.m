@@ -10,6 +10,8 @@
 #import "PandaRPCInterface.h"
 #import "PandaBingLiHistoryTableViewCell.h"
 #import "UtilTool.h"
+#import "PandaBingLiHistoryOCRViewController.h"
+#import "PandaBingLiHistoryDetailViewController.h"
 
 @interface PandaSBBingLiHistoryViewController ()
 
@@ -86,16 +88,26 @@
     NSDictionary *dict = [_dataList objectAtIndex:indexPath.row];
     NSString *slb_id = [dict valueForKey:SLB_ID];
     NSString *result = [dict valueForKey:RESULT];
-    NSString *data = [[dict valueForKey:GMTCREATE] componentsSeparatedByString:@"T"][0];
+    NSString *date = [[dict valueForKey:GMTCREATE] componentsSeparatedByString:@"T"][0];
     controller.SLB_ID = slb_id;
     controller.result = result;
     NSString *phone = [UtilTool globalDataGet:PHONE];
     if ([[UtilTool globalDataGet:slb_id] isEqualToString:@"1"]) {
         NSLog(@"show ocr image");
-        NSString *ocrImageName = [UtilTool createImageName:phone checkItem:[slb_id intValue] result:result];
+        //NSString *ocrImageName = [UtilTool createImageName:phone checkItem:[slb_id intValue] result:result];
+        NSString *ocrImageName = [UtilTool createImageNameByDate:date phone:phone checkItem:[slb_id intValue] result:result];
         NSLog(@"%@", ocrImageName);
         if ([UtilTool fileExistInDocument:ocrImageName]) {
             NSLog(@"file exits!!!");
+            PandaBingLiHistoryOCRViewController *controller = [[PandaBingLiHistoryOCRViewController alloc]initWithNibName:nil bundle:nil];
+            controller.checkItem = slb_id;
+            controller.result = result;
+            NSString *imgPath = [NSString stringWithFormat:@"%@/%@", [UtilTool getDocumentPath], ocrImageName];
+            UIImage *imgFromUrl3=[[UIImage alloc]initWithContentsOfFile:imgPath];
+            controller.ocrImage = imgFromUrl3;
+            controller.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:controller animated:YES];
+            return;
         }else
         {
             NSLog(@"file not there!!!");
@@ -104,6 +116,13 @@
     {
         NSLog(@"no ocr image");
     }
+    
+    PandaBingLiHistoryDetailViewController *controller1 = [[PandaBingLiHistoryDetailViewController alloc]initWithNibName:nil bundle:nil];
+    controller1.checkItem = slb_id;
+    controller1.result = result;
+    [self.navigationController pushViewController:controller1 animated:YES];
+
+    return;
     
     controller.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:controller animated:YES];
