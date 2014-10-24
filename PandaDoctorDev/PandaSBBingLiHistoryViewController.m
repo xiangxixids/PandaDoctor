@@ -88,7 +88,8 @@
     NSDictionary *dict = [_dataList objectAtIndex:indexPath.row];
     NSString *slb_id = [dict valueForKey:SLB_ID];
     NSString *result = [dict valueForKey:RESULT];
-    NSString *date = [[dict valueForKey:GMTCREATE] componentsSeparatedByString:@"T"][0];
+    //NSString *date = [[dict valueForKey:GMTCREATE] componentsSeparatedByString:@"T"][0];
+    NSString *date = [[dict valueForKey:GMTCREATE] stringByReplacingOccurrencesOfString:@"T" withString:@" "];
     controller.SLB_ID = slb_id;
     controller.result = result;
     NSString *phone = [UtilTool globalDataGet:PHONE];

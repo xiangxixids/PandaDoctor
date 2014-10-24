@@ -139,6 +139,16 @@
 		D7CF046B19DB297500DE6923 /* PandaOCRResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CF046919DB297400DE6923 /* PandaOCRResultViewController.m */; };
 		D7CF046C19DB297500DE6923 /* PandaOCRResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7CF046A19DB297500DE6923 /* PandaOCRResultViewController.xib */; };
 		D7CFFB4519F7F0BA00A9FDE1 /* PandaSBBingLiHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CFFB4419F7F0BA00A9FDE1 /* PandaSBBingLiHistoryViewController.m */; };
+		D7D17D8419FA916D00B43642 /* 肝脏项目11.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D17D7A19FA916D00B43642 /* 肝脏项目11.png */; };
+		D7D17D8519FA916D00B43642 /* 甲状腺功能11.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D17D7B19FA916D00B43642 /* 甲状腺功能11.png */; };
+		D7D17D8619FA916D00B43642 /* 其他11.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D17D7C19FA916D00B43642 /* 其他11.png */; };
+		D7D17D8719FA916D00B43642 /* 三大常规11.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D17D7D19FA916D00B43642 /* 三大常规11.png */; };
+		D7D17D8819FA916D00B43642 /* 肾脏类11.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D17D7E19FA916D00B43642 /* 肾脏类11.png */; };
+		D7D17D8919FA916D00B43642 /* 未标题-2副本11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7D17D7F19FA916D00B43642 /* 未标题-2副本11.jpg */; };
+		D7D17D8A19FA916D00B43642 /* 血糖血脂11.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D17D8019FA916D00B43642 /* 血糖血脂11.png */; };
+		D7D17D8B19FA916D00B43642 /* 优生项目11.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D17D8119FA916D00B43642 /* 优生项目11.png */; };
+		D7D17D8C19FA916D00B43642 /* 孕妇项目11.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D17D8219FA916D00B43642 /* 孕妇项目11.png */; };
+		D7D17D8D19FA916D00B43642 /* 肿瘤项目11.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D17D8319FA916D00B43642 /* 肿瘤项目11.png */; };
 		D7D2785C19876EBE00BAB90F /* PandaDatagramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D2785A19876EBE00BAB90F /* PandaDatagramViewController.m */; };
 		D7D2785D19876EBE00BAB90F /* PandaDatagramViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7D2785B19876EBE00BAB90F /* PandaDatagramViewController.xib */; };
 		D7D5904119F2AD3500F13E15 /* PandaRadioTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D5903F19F2AD3500F13E15 /* PandaRadioTableViewCell.m */; };
@@ -343,6 +353,16 @@
 		D7CF046A19DB297500DE6923 /* PandaOCRResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PandaOCRResultViewController.xib; sourceTree = "<group>"; };
 		D7CFFB4319F7F0BA00A9FDE1 /* PandaSBBingLiHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaSBBingLiHistoryViewController.h; sourceTree = "<group>"; };
 		D7CFFB4419F7F0BA00A9FDE1 /* PandaSBBingLiHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaSBBingLiHistoryViewController.m; sourceTree = "<group>"; };
+		D7D17D7A19FA916D00B43642 /* 肝脏项目11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "肝脏项目11.png"; sourceTree = "<group>"; };
+		D7D17D7B19FA916D00B43642 /* 甲状腺功能11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "甲状腺功能11.png"; sourceTree = "<group>"; };
+		D7D17D7C19FA916D00B43642 /* 其他11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "其他11.png"; sourceTree = "<group>"; };
+		D7D17D7D19FA916D00B43642 /* 三大常规11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "三大常规11.png"; sourceTree = "<group>"; };
+		D7D17D7E19FA916D00B43642 /* 肾脏类11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "肾脏类11.png"; sourceTree = "<group>"; };
+		D7D17D7F19FA916D00B43642 /* 未标题-2副本11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "未标题-2副本11.jpg"; sourceTree = "<group>"; };
+		D7D17D8019FA916D00B43642 /* 血糖血脂11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "血糖血脂11.png"; sourceTree = "<group>"; };
+		D7D17D8119FA916D00B43642 /* 优生项目11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "优生项目11.png"; sourceTree = "<group>"; };
+		D7D17D8219FA916D00B43642 /* 孕妇项目11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "孕妇项目11.png"; sourceTree = "<group>"; };
+		D7D17D8319FA916D00B43642 /* 肿瘤项目11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "肿瘤项目11.png"; sourceTree = "<group>"; };
 		D7D2785919876EBE00BAB90F /* PandaDatagramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaDatagramViewController.h; sourceTree = "<group>"; };
 		D7D2785A19876EBE00BAB90F /* PandaDatagramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaDatagramViewController.m; sourceTree = "<group>"; };
 		D7D2785B19876EBE00BAB90F /* PandaDatagramViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PandaDatagramViewController.xib; sourceTree = "<group>"; };
@@ -440,6 +460,16 @@
 		D74070B9197CF1BC007313B1 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				D7D17D7A19FA916D00B43642 /* 肝脏项目11.png */,
+				D7D17D7B19FA916D00B43642 /* 甲状腺功能11.png */,
+				D7D17D7C19FA916D00B43642 /* 其他11.png */,
+				D7D17D7D19FA916D00B43642 /* 三大常规11.png */,
+				D7D17D7E19FA916D00B43642 /* 肾脏类11.png */,
+				D7D17D7F19FA916D00B43642 /* 未标题-2副本11.jpg */,
+				D7D17D8019FA916D00B43642 /* 血糖血脂11.png */,
+				D7D17D8119FA916D00B43642 /* 优生项目11.png */,
+				D7D17D8219FA916D00B43642 /* 孕妇项目11.png */,
+				D7D17D8319FA916D00B43642 /* 肿瘤项目11.png */,
 				D7AD2DD819F548B100C29BF0 /* 优生.png */,
 				D7AD2DD919F548B100C29BF0 /* 常规.png */,
 				D7AD2DDA19F548B100C29BF0 /* 更多.png */,
@@ -797,6 +827,8 @@
 				D745CE96197CFC32008C1082 /* PandaRegisterViewController.xib in Resources */,
 				D7AD2DC219F546F100C29BF0 /* 123_04.gif in Resources */,
 				D7A91D9819877C7600AE1A9A /* u308_normal.png in Resources */,
+				D7D17D8819FA916D00B43642 /* 肾脏类11.png in Resources */,
+				D7D17D8419FA916D00B43642 /* 肝脏项目11.png in Resources */,
 				D7AD2DC019F546F100C29BF0 /* 123_03.gif in Resources */,
 				D7A30A80198CDE3B00423666 /* PandaHealthJiangTangDetailViewController.xib in Resources */,
 				D7328797198E321F00064A12 /* PandaHuaYanDanXiangMuListViewController.xib in Resources */,
@@ -815,9 +847,11 @@
 				D702FF40197E4F950076B365 /* u13_normal.png in Resources */,
 				D7A91D9619877B6800AE1A9A /* PandaBingLiHistoryDetailResultViewController.xib in Resources */,
 				D7AD2DCD19F546F100C29BF0 /* 123_09.png in Resources */,
+				D7D17D8719FA916D00B43642 /* 三大常规11.png in Resources */,
 				D70D352C19810A41006F431A /* PandaBingLiHistoryDetailTableViewCell.xib in Resources */,
 				D74070BB197CF1D0007313B1 /* u11_normal.png in Resources */,
 				D732D43019B3279300F632C1 /* PandaOCRRecongnizeViewController.xib in Resources */,
+				D7D17D8C19FA916D00B43642 /* 孕妇项目11.png in Resources */,
 				D702FF41197E4F950076B365 /* u20_normal.png in Resources */,
 				D7AD2DCF19F546F100C29BF0 /* 123_10.png in Resources */,
 				D7A91DD91987984D00AE1A9A /* PandaModifyPasswordViewController.xib in Resources */,
@@ -828,6 +862,7 @@
 				D78D95EF198D38F8004F2F68 /* u76_line.png in Resources */,
 				D7AD2DD519F546F100C29BF0 /* 123_15.gif in Resources */,
 				D7615983197FAEFB00ECF978 /* PandaBingLiHistoryTableViewCell.xib in Resources */,
+				D7D17D8B19FA916D00B43642 /* 优生项目11.png in Resources */,
 				D74070BD197CF449007313B1 /* u22_normal.png in Resources */,
 				D7AD2DD619F546F100C29BF0 /* 123_16.gif in Resources */,
 				D7A30A8E198CE38100423666 /* IMG_4.jpg in Resources */,
@@ -835,7 +870,9 @@
 				D7A30A8B198CE38100423666 /* IMG_1.jpg in Resources */,
 				D702FF48197E5A890076B365 /* u86_normal.png in Resources */,
 				D702FF49197E5A890076B365 /* u118_normal.png in Resources */,
+				D7D17D8919FA916D00B43642 /* 未标题-2副本11.jpg in Resources */,
 				D76A697B1972365800D536FF /* Images.xcassets in Resources */,
+				D7D17D8A19FA916D00B43642 /* 血糖血脂11.png in Resources */,
 				D76A696D1972365800D536FF /* InfoPlist.strings in Resources */,
 				D7D5904219F2AD3500F13E15 /* PandaRadioTableViewCell.xib in Resources */,
 				D7051DE8197D0BAF0001BA6C /* PandaGetPasswordViewController.xib in Resources */,
@@ -844,9 +881,11 @@
 				D7AD2DE419F548B100C29BF0 /* 肝脏.png in Resources */,
 				D7AD2DD319F546F100C29BF0 /* 123_13.gif in Resources */,
 				D7AD2DBE19F546F100C29BF0 /* 123_01.gif in Resources */,
+				D7D17D8D19FA916D00B43642 /* 肿瘤项目11.png in Resources */,
 				D7AD2DD019F546F100C29BF0 /* 123_11.gif in Resources */,
 				D745CE98197D005E008C1082 /* u40_normal.png in Resources */,
 				D7AD2DC319F546F100C29BF0 /* 123_04.png in Resources */,
+				D7D17D8519FA916D00B43642 /* 甲状腺功能11.png in Resources */,
 				D79DEE2D197250EA009FCAC6 /* PandaMainViewController.xib in Resources */,
 				D76A69761972365800D536FF /* Main.storyboard in Resources */,
 				D7AD2DCB19F546F100C29BF0 /* 123_08.png in Resources */,
@@ -870,6 +909,7 @@
 				D74070B8197CF105007313B1 /* PandaLoginViewController.xib in Resources */,
 				D7F72DB519E576D5001167DF /* PandaHuaYanDanDetailTableViewCell.xib in Resources */,
 				D702FF3E197E4F950076B365 /* u6_normal.png in Resources */,
+				D7D17D8619FA916D00B43642 /* 其他11.png in Resources */,
 				D7AD2DC619F546F100C29BF0 /* 123_06.gif in Resources */,
 				D7AD2DC819F546F100C29BF0 /* 123_07.gif in Resources */,
 				D761597B197FA31C00ECF978 /* PandaBingLiHistoryViewController.xib in Resources */,
