@@ -504,7 +504,7 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
         [alert show];
         return;
     }
-    [self saveTempImage];
+    //[self saveTempImage];
     NSString *datastr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
     _dataList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
     NSLog(@"%lu", (unsigned long)_dataList.count);
@@ -513,6 +513,7 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
     ocrResultViewController.postArray = _postArray;
     ocrResultViewController.checkItemId = _checkItemId;
     ocrResultViewController.data = data;
+    ocrResultViewController.ocrImage = _image;
     
     [self.navigationController pushViewController:ocrResultViewController animated:YES];
     
@@ -532,7 +533,7 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
         [alert show];
         return;
     }
-    [self saveTempImage];
+    //[self saveTempImage];  // dont save temp image here
     NSString *datastr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
     _dataList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
     NSLog(@"%lu", (unsigned long)_dataList.count);
@@ -541,6 +542,7 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
     ocrResultViewController.postArray = _postArray;
     ocrResultViewController.checkItemId = _checkItemId;
     ocrResultViewController.data = data;
+    ocrResultViewController.ocrImage = _image;
     
     [self.navigationController pushViewController:ocrResultViewController animated:YES];
     

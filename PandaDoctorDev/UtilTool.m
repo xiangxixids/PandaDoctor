@@ -205,6 +205,7 @@
     //用[NSDate date]可以获取系统当前时间
     NSString *currentDateStr = [dateFormatter stringFromDate:[NSDate date]];
     //输出格式为：2010-10-27 10:22:13
+    currentDateStr = [currentDateStr stringByReplacingOccurrencesOfString:@" " withString:@""];
     NSLog(@"%@",currentDateStr);
     NSString *result_string = [result stringByReplacingOccurrencesOfString:@"," withString:@""];
     NSLog(@"result = %@", result_string);

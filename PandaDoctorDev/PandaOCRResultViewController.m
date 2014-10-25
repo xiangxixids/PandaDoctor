@@ -9,6 +9,7 @@
 #import "PandaOCRResultViewController.h"
 #import "PandaRPCInterface.h"
 #import "UtilTool.h"
+#import "PandaNotification.h"
 
 @interface PandaOCRResultViewController ()
 
@@ -102,6 +103,10 @@
         [alert show];
         return;
     }
+    // 提交结果成功, 无论是否能保存成功图片, 都必须要保证tableview 结果要刷新.
+    
+    [[NSNotificationCenter defaultCenter]postNotificationName:HISTORY_TABLEVIEW_UPDATE object:nil];
+    
     NSString *string = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"string = %@", string);
     if ([string isEqualToString:@"true"]) {
@@ -109,18 +114,50 @@
         if ([[UtilTool globalDataGet:[NSString stringWithFormat:@"%d",_checkItemId]] isEqualToString:@"1"]) // can ocr , here we can save the img
         {
             NSLog(@"this item can ocr ");
-            _ocrImageName = [UtilTool createImageName:phone checkItem:_checkItemId result:result];
+            // 从服务器找到我们存储的result 生成的时间是什么, 时间+phone+result 组成jpg 的名字.
+            PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
+            NSString *phone = [UtilTool globalDataGet:PHONE];
+            NSMutableData *data = [rpcInterface getUserHistory:phone];
+            if (data==nil) {
+                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"网络错误"
+                                                               message:@"联网错误, 请检查您的网络连接是否正常"
+                                                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [alert show];
+                return;
+            }
+            NSString *datastr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+            _dataList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
             
-            if (![UtilTool fileExistInDocument:_ocrImageName]) {
-                NSLog(@"we can save this image");
-                NSFileManager *defaultManager = [NSFileManager defaultManager];
-                NSString *realPath = [NSString stringWithFormat:@"%@/%@",[UtilTool getDocumentPath],_ocrImageName];
-                NSString *tempPath = [NSString stringWithFormat:@"%@/%@",[UtilTool getDocumentPath],TEMPNAME];
-                [defaultManager moveItemAtPath:tempPath toPath:realPath error:nil];
+            NSDictionary *dict = [_dataList objectAtIndex:0];
+            NSString *date = [dict valueForKey:GMTCREATE];
+            //_ocrImageName = [UtilTool createImageName:phone checkItem:_checkItemId result:result];
+            _ocrImageName = [UtilTool createImageNameByDate:date phone:phone checkItem:_checkItemId result:result];
+            
+            NSData *imgData = UIImageJPEGRepresentation(_ocrImage, 1);
+            if ([UtilTool saveFileInDocument:_ocrImageName content:imgData]) {
+                NSLog(@"save %@ success",_ocrImageName);
             }else
             {
-                NSLog(@"result image should not saved");
+                NSLog(@"save failed");
             }
+            
+//            if (![UtilTool fileExistInDocument:_ocrImageName]) {
+//                NSLog(@"we can save this image");
+//                NSFileManager *defaultManager = [NSFileManager defaultManager];
+//                NSString *realPath = [NSString stringWithFormat:@"%@/%@",[UtilTool getDocumentPath],_ocrImageName];
+//                NSString *tempPath = [NSString stringWithFormat:@"%@/%@",[UtilTool getDocumentPath],TEMPNAME];
+//                if ([defaultManager moveItemAtPath:tempPath toPath:realPath error:nil])
+//                {
+//                    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"OCR 图片保存失败"
+//                                                                       message:@"无法保存到手机中"
+//                                                                      delegate:nil cancelButtonTitle:@"OK"
+//                                                             otherButtonTitles:nil, nil];
+//                    [alert show];
+//                }
+//            }else
+//            {
+//                NSLog(@"result image should not saved");
+//            }
         }else{
             NSLog(@"this item can not ocr ");
         }
@@ -137,6 +174,18 @@
                                              cancelButtonTitle:@"OK"
                                              otherButtonTitles:nil, nil];
         [alert show];
+    }
+    
+}
+
+- (void)saveImage:(NSString *)imageName
+{
+    NSData *data = UIImageJPEGRepresentation(_ocrImage, 1);
+    if ([UtilTool saveFileInDocument:imageName content:data]) {
+        NSLog(@"save temp.jpg success");
+    }else
+    {
+        NSLog(@"save failed");
     }
     
 }

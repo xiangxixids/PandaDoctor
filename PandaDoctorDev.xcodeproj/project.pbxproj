@@ -45,6 +45,7 @@
 		D745CE95197CFC32008C1082 /* PandaRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D745CE93197CFC32008C1082 /* PandaRegisterViewController.m */; };
 		D745CE96197CFC32008C1082 /* PandaRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D745CE94197CFC32008C1082 /* PandaRegisterViewController.xib */; };
 		D745CE98197D005E008C1082 /* u40_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = D745CE97197D005E008C1082 /* u40_normal.png */; };
+		D749FCF619FB8B4D004221B7 /* PandaNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = D749FCF519FB8B4D004221B7 /* PandaNotification.m */; };
 		D761597A197FA31C00ECF978 /* PandaBingLiHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7615978197FA31C00ECF978 /* PandaBingLiHistoryViewController.m */; };
 		D761597B197FA31C00ECF978 /* PandaBingLiHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7615979197FA31C00ECF978 /* PandaBingLiHistoryViewController.xib */; };
 		D761597E197FA39400ECF978 /* PandaBingLiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D761597D197FA39400ECF978 /* PandaBingLiViewController.m */; };
@@ -232,6 +233,8 @@
 		D745CE93197CFC32008C1082 /* PandaRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaRegisterViewController.m; sourceTree = "<group>"; };
 		D745CE94197CFC32008C1082 /* PandaRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PandaRegisterViewController.xib; sourceTree = "<group>"; };
 		D745CE97197D005E008C1082 /* u40_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = u40_normal.png; sourceTree = "<group>"; };
+		D749FCF419FB8B4D004221B7 /* PandaNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaNotification.h; sourceTree = "<group>"; };
+		D749FCF519FB8B4D004221B7 /* PandaNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaNotification.m; sourceTree = "<group>"; };
 		D7615977197FA31C00ECF978 /* PandaBingLiHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaBingLiHistoryViewController.h; sourceTree = "<group>"; };
 		D7615978197FA31C00ECF978 /* PandaBingLiHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaBingLiHistoryViewController.m; sourceTree = "<group>"; };
 		D7615979197FA31C00ECF978 /* PandaBingLiHistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PandaBingLiHistoryViewController.xib; sourceTree = "<group>"; };
@@ -626,6 +629,8 @@
 				D70C28E519777047007BEDB2 /* HttpService */,
 				D70C28E21977702C007BEDB2 /* UtilTool.h */,
 				D70C28E31977702C007BEDB2 /* UtilTool.m */,
+				D749FCF419FB8B4D004221B7 /* PandaNotification.h */,
+				D749FCF519FB8B4D004221B7 /* PandaNotification.m */,
 				D7CF045019D853EE00DE6923 /* PandaAssay.h */,
 				D7CF045119D853EE00DE6923 /* PandaAssay.m */,
 				D732879B198E46B300064A12 /* PandaHuaYanDanData.h */,
@@ -945,6 +950,7 @@
 				D7A91DD31987983300AE1A9A /* PandaPersonalSettingViewController.m in Sources */,
 				D7A91D9519877B6800AE1A9A /* PandaBingLiHistoryDetailResultViewController.m in Sources */,
 				D70083B719F938370094C964 /* PandaBingLiHistoryOCRViewController.m in Sources */,
+				D749FCF619FB8B4D004221B7 /* PandaNotification.m in Sources */,
 				D7CF045219D853EE00DE6923 /* PandaAssay.m in Sources */,
 				D70D352B19810A41006F431A /* PandaBingLiHistoryDetailTableViewCell.m in Sources */,
 				D7D5904119F2AD3500F13E15 /* PandaRadioTableViewCell.m in Sources */,

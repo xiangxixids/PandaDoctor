@@ -12,6 +12,7 @@
 #import "UtilTool.h"
 #import "PandaBingLiHistoryOCRViewController.h"
 #import "PandaBingLiHistoryDetailViewController.h"
+#import "PandaNotification.h"
 
 @interface PandaSBBingLiHistoryViewController ()
 
@@ -45,7 +46,34 @@
     NSString *datastr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
     _dataList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reloadTableViewData:)
+                                                 name:HISTORY_TABLEVIEW_UPDATE
+                                               object:nil];
+    
+    
 }
+
+- (void)reloadTableViewData:(NSNotification*)notification
+{
+    if (notification != nil && [notification.name isEqualToString:HISTORY_TABLEVIEW_UPDATE]) {
+        NSLog(@"history tableview update...");
+        PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
+        NSString *phone = [UtilTool globalDataGet:PHONE];
+        NSMutableData *data = [rpcInterface getUserHistory:phone];
+        if (data==nil) {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"网络错误"
+                                                           message:@"联网错误, 请检查您的网络连接是否正常"
+                                                          delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+            return;
+        }
+        NSString *datastr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+        _dataList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        [_tableView reloadData];
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -89,7 +117,7 @@
     NSString *slb_id = [dict valueForKey:SLB_ID];
     NSString *result = [dict valueForKey:RESULT];
     //NSString *date = [[dict valueForKey:GMTCREATE] componentsSeparatedByString:@"T"][0];
-    NSString *date = [[dict valueForKey:GMTCREATE] stringByReplacingOccurrencesOfString:@"T" withString:@" "];
+    NSString *date = [dict valueForKey:GMTCREATE];// no need remove the "T"
     controller.SLB_ID = slb_id;
     controller.result = result;
     NSString *phone = [UtilTool globalDataGet:PHONE];

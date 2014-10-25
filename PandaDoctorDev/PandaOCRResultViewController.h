@@ -21,6 +21,8 @@
 @property BOOL isOCR;
 @property NSString *ocrImageName;
 
+@property UIImage *ocrImage;
+
 - (IBAction)saveResult:(UIBarButtonItem *)sender;
 
 - (IBAction)back:(UIBarButtonItem *)sender;
