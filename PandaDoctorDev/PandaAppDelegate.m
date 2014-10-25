@@ -7,6 +7,7 @@
 //
 
 #import "PandaAppDelegate.h"
+#import "UtilTool.h"
 
 @implementation PandaAppDelegate
 
@@ -17,7 +18,16 @@
     self.mainViewController = [[PandaViewController alloc]initWithNibName:nil bundle:nil];
     self.loginViewController = [[PandaLoginViewController alloc]initWithNibName:nil bundle:nil];
     
-    [self initWindows:self.loginViewController];
+    if ([[UtilTool globalDataGet:LOGIN] isEqual:@"1"]) {
+        UIStoryboard *storyBorad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        self.window.rootViewController = [storyBorad instantiateInitialViewController];
+    }else{
+        [self initWindows:self.loginViewController];
+    }
+    
+    
+    
+    
     
     return YES;
 }

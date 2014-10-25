@@ -8,6 +8,7 @@
 
 #import "PandaHuaYanDanMainViewController.h"
 #import "PandaRPCInterface.h"
+#import "PandaLoginViewController.h"
 
 @interface PandaHuaYanDanMainViewController ()
 {
@@ -234,6 +235,16 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)logOut:(UIBarButtonItem *)sender
+{
+    [UtilTool globalDataSave:@"0" forKey:LOGIN];
+    
+    PandaLoginViewController *loginViewController = [[PandaLoginViewController alloc]initWithNibName:nil bundle:nil];
+    
+    self.view.window.rootViewController = loginViewController;
+    
+}
 
 - (IBAction)touchDown:(UIControl *)sender {
     NSLog(@"touch down!");

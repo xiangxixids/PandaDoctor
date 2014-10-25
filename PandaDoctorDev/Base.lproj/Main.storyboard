@@ -273,8 +273,9 @@
         <!--拍化验单-->
         <scene sceneID="kXE-q4-Wul">
             <objects>
-                <navigationController id="2rv-GS-R6Y" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="2rv-GS-R6Y" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="拍化验单" image="u8_normal.png" id="TBR-SS-8wP"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="z3y-1E-ThJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -415,12 +416,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X1z-iA-qdH">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="拍化验单" id="Ugs-kD-GIc"/>
-                                </items>
-                            </navigationBar>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="三大常规11.png" translatesAutoresizingMaskIntoConstraints="NO" id="Z3y-Ip-Ymq">
                                 <rect key="frame" x="20" y="78" width="75" height="75"/>
                             </imageView>
@@ -517,14 +512,28 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="u76_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="tVn-3e-7pN">
                                 <rect key="frame" x="210" y="66" width="1" height="315"/>
                             </imageView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X1z-iA-qdH">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="拍化验单" id="1YX-Tu-fKj">
+                                        <barButtonItem key="rightBarButtonItem" title="注销" id="Tbp-yj-jYL">
+                                            <connections>
+                                                <action selector="logOut:" destination="rt9-xK-i4B" id="204-f0-SpF"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
                             <action selector="touchDown:" destination="rt9-xK-i4B" eventType="touchDown" id="lSP-dd-qyS"/>
                         </connections>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="拍化验单" id="kZT-ag-FKI"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="fuKeImage" destination="NFQ-JD-8yV" id="UhM-Ln-M6f"/>
                         <outlet property="ganZangXiangMuImage" destination="PFe-ld-jTP" id="hZm-1z-h4F"/>

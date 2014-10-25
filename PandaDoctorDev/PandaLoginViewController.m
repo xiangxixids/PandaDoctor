@@ -66,7 +66,7 @@
         NSLog(@"login successful");
         
         [UtilTool globalDataSave:_account.text forKey:PHONE];
-        
+        [UtilTool globalDataSave:@"1" forKey:LOGIN];
         UIStoryboard *storyBorad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         self.view.window.rootViewController = [storyBorad instantiateInitialViewController];
     }else{
@@ -98,8 +98,9 @@
     if ([result  isEqualToString: @"true"]) {
         NSLog(@"login successful");
         [UtilTool globalDataSave:_account.text forKey:PHONE];
+        [UtilTool globalDataSave:@"1" forKey:LOGIN];
         UIStoryboard *storyBorad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            self.view.window.rootViewController = [storyBorad instantiateInitialViewController];
+        self.view.window.rootViewController = [storyBorad instantiateInitialViewController];
     }else{
         NSLog(@"login failed");
         [self performSelectorOnMainThread:@selector(loginActionFinish) withObject:nil waitUntilDone:YES];
@@ -124,7 +125,7 @@
     
 //    _tabViewController = [[PandaTabViewController alloc]initWithNibName:nil bundle:nil];
 //    [self.navigationController pushViewController:_tabViewController animated:YES];
-    
+    [UtilTool globalDataSave:@"1" forKey:LOGIN];
     UIStoryboard *storyBorad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     self.view.window.rootViewController = [storyBorad instantiateInitialViewController];
     

@@ -10,6 +10,7 @@
 
 static NSString *PHONE = @"phone";
 static NSString *TEMPNAME = @"temp.jpg";
+static NSString *LOGIN = @"login";
 
 @interface UtilTool : NSObject
 

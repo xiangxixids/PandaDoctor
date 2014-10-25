@@ -26,6 +26,7 @@
 
 @property PandaConstantData *huaYanDanConstData;
 
+- (IBAction)logOut:(UIBarButtonItem *)sender;
 
 - (IBAction)touchDown:(UIControl *)sender;
 
