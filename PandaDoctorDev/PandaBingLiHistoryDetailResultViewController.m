@@ -8,6 +8,8 @@
 
 #import "PandaBingLiHistoryDetailResultViewController.h"
 #import "PandaRPCInterface.h"
+#import "PandaBingLiHistoryOCRViewController.h"
+#import "PandaSBBingLiHistoryViewController.h"
 
 @interface PandaBingLiHistoryDetailResultViewController ()
 
@@ -93,7 +95,8 @@
 
 - (IBAction)back:(UIBarButtonItem *)sender {
     
-    [self.navigationController popViewControllerAnimated:YES];
-    
+    //[self.navigationController popViewControllerAnimated:YES];
+    NSArray *array = [self.navigationController viewControllers];
+    [self.navigationController popToViewController:[array objectAtIndex:0] animated:YES];
 }
 @end

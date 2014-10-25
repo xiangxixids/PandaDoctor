@@ -163,9 +163,9 @@
         }
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"病历保存"
                                                        message:@"成功"
-                                                      delegate:nil
-                                             cancelButtonTitle:@"OK"
-                                             otherButtonTitles:nil, nil];
+                                                      delegate:self
+                                             cancelButtonTitle:@"返回首页"
+                                             otherButtonTitles:@"留在这里", nil];
         [alert show];
     }else{
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"病历保存"
@@ -176,6 +176,18 @@
         [alert show];
     }
     
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"alertview click");
+    if (buttonIndex == 0) {
+        NSLog(@"back to root page");
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+    if (buttonIndex == 1) {
+        NSLog(@"stay here");
+    }
 }
 
 - (void)saveImage:(NSString *)imageName

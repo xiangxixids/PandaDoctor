@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PandaOCRResultViewController : UIViewController
+@interface PandaOCRResultViewController : UIViewController<UIAlertViewDelegate>
 
 
 @property (strong, nonatomic) IBOutlet UITextView *resultTextView;

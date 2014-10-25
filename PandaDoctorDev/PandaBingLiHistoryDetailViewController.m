@@ -105,6 +105,7 @@
     _bingliHistoryResultViewController.SLB_ID = _checkItem;
     
     [self.navigationController pushViewController:_bingliHistoryResultViewController animated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
