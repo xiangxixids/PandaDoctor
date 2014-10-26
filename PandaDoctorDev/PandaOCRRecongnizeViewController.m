@@ -583,7 +583,7 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
 {
     NSLog(@"textFieldDidEndEditing, %d : value = %@", textField.mid,textField.text);
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:textField.mid inSection:0];
-    PandaOCRTableViewCell *cell = [_ocrTableView cellForRowAtIndexPath:indexPath];
+    PandaOCRTableViewCellV1 *cell = [_ocrTableView cellForRowAtIndexPath:indexPath];
     NSLog(@"value = %@, high = %@, low = %@",cell.OCR_value.text, cell.REF_high.text, cell.REF_low.text);
     
     //update _assResultList
@@ -673,10 +673,10 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
 // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
 
-- (PandaOCRTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (PandaOCRTableViewCellV1 *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *cellName = @"cell";
-    PandaOCRTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"PandaOCRTableViewCell" owner:self options:nil] objectAtIndex:0];
+    PandaOCRTableViewCellV1 *cell = [[[NSBundle mainBundle] loadNibNamed:@"PandaOCRTableViewCellV1" owner:self options:nil] objectAtIndex:0];
     NSDictionary *dict = [_assResultList objectAtIndex:indexPath.row];
     cell.OCR_name.text = [dict valueForKey:ITEM_NM];
     cell.OCR_unit.text = [dict valueForKey:UNIT];
@@ -698,7 +698,8 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 75;
+    //return 75;
+    return 44;
 }
 
 

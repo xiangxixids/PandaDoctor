@@ -210,10 +210,10 @@
     NSString *result_string = [result stringByReplacingOccurrencesOfString:@"," withString:@""];
     NSLog(@"result = %@", result_string);
     NSString *basic_str = [NSString stringWithFormat:@"%@+%@+%d+%@.jpg",currentDateStr, phone, checkItem, result_string];
-    NSLog(@"%@", [self md5:basic_str]);
+    //NSLog(@"%@", [self md5:basic_str]);
     NSLog(@"basic_str = %@",basic_str);
-    return [self md5:basic_str];
-    //return basic_str;
+    //return [self md5:basic_str];
+    return basic_str;
 }
 
 + (NSString*)createImageNameByDate:(NSString*)date phone:(NSString *)phone checkItem:(NSInteger)checkItem result:(NSString*)result
@@ -230,10 +230,10 @@
     NSString *result_string = [result stringByReplacingOccurrencesOfString:@"," withString:@""];
     NSLog(@"result = %@", result_string);
     NSString *basic_str = [NSString stringWithFormat:@"%@+%@+%d+%@.jpg",date, phone, checkItem, result_string];
-    NSLog(@"%@", [self md5:basic_str]);
-    return [self md5:basic_str];
-    //NSLog(@"basic_str = %@",basic_str);
-    //return basic_str;
+    //NSLog(@"%@", [self md5:basic_str]);
+    //return [self md5:basic_str];
+    NSLog(@"basic_str = %@",basic_str);
+    return basic_str;
 }
 
 
@@ -241,7 +241,7 @@
 {
     const char *cStr = [str UTF8String];
     unsigned char result[16];
-    CC_MD5(cStr, strlen(cStr), result); // This is the md5 call
+    //CC_MD5(cStr, strlen(cStr), result); // This is the md5 call
     return [NSString stringWithFormat:
             @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
             result[0], result[1], result[2], result[3],
