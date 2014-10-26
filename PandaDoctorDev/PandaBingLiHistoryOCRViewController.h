@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PandaBingLiHistoryOCRViewController : UIViewController
+@interface PandaBingLiHistoryOCRViewController : UIViewController<UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *ocrImageView;
 
 @property NSString *checkItem; // checkItem
 @property NSString *result; // 0,0,1,0,1,0,0,0,0,0,0,0,0
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @property UIImage *ocrImage;
 

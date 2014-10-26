@@ -8,6 +8,7 @@
 
 #import "PandaBingLiHistoryOCRViewController.h"
 #import "PandaBingLiHistoryDetailResultViewController.h"
+#import "PandaRPCInterface.h"
 
 @interface PandaBingLiHistoryOCRViewController ()
 
@@ -23,6 +24,23 @@
     NSLog(@"result = %@", _result);
     
     _ocrImageView.image = _ocrImage;
+    _webView.delegate = self;
+    
+    PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
+    NSMutableData *data = [rpcInterface resultHistoryForApp:_result checkItem:_checkItem];
+    if (data==nil) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"网络错误"
+                                                       message:@"联网错误, 请检查您的网络连接是否正常"
+                                                      delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        return;
+    }
+    //[self saveTempImage];
+    NSString *datastr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    
+    
+    [_webView loadHTMLString:datastr baseURL:nil];
+    
     
 }
 
