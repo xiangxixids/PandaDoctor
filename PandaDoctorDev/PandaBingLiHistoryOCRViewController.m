@@ -26,6 +26,9 @@
     _ocrImageView.image = _ocrImage;
     _webView.delegate = self;
     
+    _dateTime.text = [_dateTimeString stringByReplacingOccurrencesOfString:@"T" withString:@" "];
+    _huaYanDanName.text = _huaYanDanNameString;
+    
     PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
     NSMutableData *data = [rpcInterface resultHistoryForApp:_result checkItem:_checkItem];
     if (data==nil) {

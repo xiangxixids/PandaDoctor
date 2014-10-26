@@ -16,6 +16,13 @@
 @property NSString *result; // 0,0,1,0,1,0,0,0,0,0,0,0,0
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
+@property NSString *dateTimeString;
+@property NSString *huaYanDanNameString;
+
+@property (weak, nonatomic) IBOutlet UILabel *huaYanDanName;
+@property (weak, nonatomic) IBOutlet UILabel *dateTime;
+
+
 @property UIImage *ocrImage;
 
 

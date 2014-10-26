@@ -121,6 +121,7 @@
     NSDictionary *dict = [_dataList objectAtIndex:indexPath.row];
     NSString *slb_id = [dict valueForKey:SLB_ID];
     NSString *result = [dict valueForKey:RESULT];
+    NSString *slb_name = [dict valueForKey:SLB_NM];
     //NSString *date = [[dict valueForKey:GMTCREATE] componentsSeparatedByString:@"T"][0];
     NSString *date = [dict valueForKey:GMTCREATE];// no need remove the "T"
     controller.SLB_ID = slb_id;
@@ -136,6 +137,8 @@
             PandaBingLiHistoryOCRViewController *controller = [[PandaBingLiHistoryOCRViewController alloc]initWithNibName:nil bundle:nil];
             controller.checkItem = slb_id;
             controller.result = result;
+            controller.dateTimeString = date;
+            controller.huaYanDanNameString = slb_name;
             NSString *imgPath = [NSString stringWithFormat:@"%@/%@", [UtilTool getDocumentPath], ocrImageName];
             UIImage *imgFromUrl3=[[UIImage alloc]initWithContentsOfFile:imgPath];
             controller.ocrImage = imgFromUrl3;
