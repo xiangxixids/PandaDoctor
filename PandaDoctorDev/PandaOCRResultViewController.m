@@ -21,43 +21,47 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    //_resultTextView.text = _datastr;
+    _webView.delegate = self;
     
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:_data options:NSJSONReadingMutableContainers error:nil];
+    NSString *content = [[NSString alloc]initWithData:_data encoding:NSUTF8StringEncoding];
     
-    NSArray *ind_result_dict = [dict valueForKey:IND_RESULT]; //indResult
+    [_webView loadHTMLString:content baseURL:nil];
     
-    NSMutableString *show_result = [[NSMutableString alloc]initWithCapacity:3];
-    
-    for (int i=0; i<ind_result_dict.count; i++) {
-        NSDictionary *dict = [ind_result_dict objectAtIndex:i];
-        NSString *strTemp = [NSString stringWithFormat:@"%d. %@\r\n\r\n",i+1,[dict valueForKey:RST_DESC]];
-        [show_result appendString:strTemp];
-    }
-    
-    [show_result appendString:@"综合分析:\r\n\r\n"];
-    NSArray *complex_result_array = [dict valueForKey:COMPLEXRESULT];
-    for (int i=0; i<complex_result_array.count; i++) {
-        NSDictionary *dict = [complex_result_array objectAtIndex:i];
-        if ([dict valueForKey:RST_DESC]) {// 结果有可能不存在的.
-            NSString *strTemp = [NSString stringWithFormat:@"%@\r\n\r\n", [dict valueForKey:RST_DESC]];
-            [show_result appendString:strTemp];
-        }else{
-            [show_result appendString:@"暂无结果\r\n\r\n"];
-        }
-        [show_result appendString:@"熊猫医生建议:\r\n\r\n"];
-        if ([dict valueForKey:SUGGESTION]) {// 结果有可能不存在的.
-            NSString *strTemp = [NSString stringWithFormat:@"%@\r\n\r\n", [dict valueForKey:SUGGESTION]];
-            [show_result appendString:strTemp];
-        }else{
-            [show_result appendString:@"暂无建议\r\n\r\n"];
-        }
-    }
-    
-    
-    
-    
-    _resultTextView.text = show_result;
+//    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:_data options:NSJSONReadingMutableContainers error:nil];
+//    
+//    NSArray *ind_result_dict = [dict valueForKey:IND_RESULT]; //indResult
+//    
+//    NSMutableString *show_result = [[NSMutableString alloc]initWithCapacity:3];
+//    
+//    for (int i=0; i<ind_result_dict.count; i++) {
+//        NSDictionary *dict = [ind_result_dict objectAtIndex:i];
+//        NSString *strTemp = [NSString stringWithFormat:@"%d. %@\r\n\r\n",i+1,[dict valueForKey:RST_DESC]];
+//        [show_result appendString:strTemp];
+//    }
+//    
+//    [show_result appendString:@"综合分析:\r\n\r\n"];
+//    NSArray *complex_result_array = [dict valueForKey:COMPLEXRESULT];
+//    for (int i=0; i<complex_result_array.count; i++) {
+//        NSDictionary *dict = [complex_result_array objectAtIndex:i];
+//        if ([dict valueForKey:RST_DESC]) {// 结果有可能不存在的.
+//            NSString *strTemp = [NSString stringWithFormat:@"%@\r\n\r\n", [dict valueForKey:RST_DESC]];
+//            [show_result appendString:strTemp];
+//        }else{
+//            [show_result appendString:@"暂无结果\r\n\r\n"];
+//        }
+//        [show_result appendString:@"熊猫医生建议:\r\n\r\n"];
+//        if ([dict valueForKey:SUGGESTION]) {// 结果有可能不存在的.
+//            NSString *strTemp = [NSString stringWithFormat:@"%@\r\n\r\n", [dict valueForKey:SUGGESTION]];
+//            [show_result appendString:strTemp];
+//        }else{
+//            [show_result appendString:@"暂无建议\r\n\r\n"];
+//        }
+//    }
+//    
+//    
+//    
+//    
+//    _resultTextView.text = show_result;
     
 }
 

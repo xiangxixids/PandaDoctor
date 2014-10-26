@@ -52,9 +52,6 @@
     if (dict != nil) {
         content = [dict valueForKey:CONTENT];
     }
-//    NSURL *url = [NSURL URLWithString:@"http://www.baidu.com"];
-//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    //[_webView loadRequest:request];
     [_webView loadHTMLString:datastr baseURL:nil];
     
     

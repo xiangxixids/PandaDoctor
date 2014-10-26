@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -30,7 +30,7 @@
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="UG/L" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="APt-bT-aJ4" customClass="PandaUITextField">
+                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="UG/L" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="APt-bT-aJ4" customClass="PandaUITextField">
                         <rect key="frame" x="273" y="7" width="45" height="30"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <textInputTraits key="textInputTraits"/>
@@ -46,6 +46,15 @@
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="u54_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="iSc-kS-kJI">
+                        <rect key="frame" x="115" y="31" width="30" height="1"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="u54_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="iSf-E4-dZq">
+                        <rect key="frame" x="183" y="31" width="30" height="1"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="u54_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="drZ-4J-mDd">
+                        <rect key="frame" x="234" y="31" width="30" height="1"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
@@ -58,4 +67,7 @@
             <point key="canvasLocation" x="221" y="193"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="u54_line.png" width="320" height="3"/>
+    </resources>
 </document>

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PandaOCRResultViewController : UIViewController<UIAlertViewDelegate>
+@interface PandaOCRResultViewController : UIViewController<UIAlertViewDelegate, UIWebViewDelegate>
 
 
 @property (strong, nonatomic) IBOutlet UITextView *resultTextView;
@@ -22,6 +22,7 @@
 @property NSString *ocrImageName;
 
 @property UIImage *ocrImage;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 - (IBAction)saveResult:(UIBarButtonItem *)sender;
 
