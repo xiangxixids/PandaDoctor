@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PandaBingLiHistoryOCRViewController : UIViewController<UIWebViewDelegate>
+@interface PandaBingLiHistoryOCRViewController : UIViewController<UIScrollViewDelegate,UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *ocrImageView;
 
@@ -22,6 +22,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *huaYanDanName;
 @property (weak, nonatomic) IBOutlet UILabel *dateTime;
 
+@property (strong, nonatomic) IBOutlet UIScrollView *sv;
+@property (strong, nonatomic) IBOutlet UIImageView *iv;
+@property (strong, nonatomic) IBOutlet UIView *loadingView;
+
 
 @property UIImage *ocrImage;
 
@@ -29,5 +33,7 @@
 - (IBAction)showResult:(UIBarButtonItem *)sender;
 
 - (IBAction)back:(UIBarButtonItem *)sender;
+
+- (void)loadImage:(NSString *)imageURL;
 
 @end
