@@ -19,10 +19,12 @@
     self.mainViewController = [[PandaViewController alloc]initWithNibName:nil bundle:nil];
     self.loginViewController = [[PandaLoginViewController alloc]initWithNibName:nil bundle:nil];
     
-    PandaWebViewTestViewController *controller = [[PandaWebViewTestViewController alloc]initWithNibName:nil bundle:nil];
     
-    [self initWindows:controller];
-    return YES;
+    // 以下部分, 仅供测试使用.
+//    PandaWebViewTestViewController *controller = [[PandaWebViewTestViewController alloc]initWithNibName:nil bundle:nil];
+//    
+//    [self initWindows:controller];
+//    return YES;
     
     
     if ([[UtilTool globalDataGet:LOGIN] isEqual:@"1"]) {
@@ -31,10 +33,6 @@
     }else{
         [self initWindows:self.loginViewController];
     }
-    
-    
-    
-    
     
     return YES;
 }
