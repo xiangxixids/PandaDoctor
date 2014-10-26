@@ -64,7 +64,7 @@
                 <outlet property="REF_high" destination="xBu-kY-tNv" id="OmQ-oj-HtI"/>
                 <outlet property="REF_low" destination="fPb-cr-4YE" id="0qr-HU-5OZ"/>
             </connections>
-            <point key="canvasLocation" x="221" y="193"/>
+            <point key="canvasLocation" x="256" y="70"/>
         </tableViewCell>
     </objects>
     <resources>
