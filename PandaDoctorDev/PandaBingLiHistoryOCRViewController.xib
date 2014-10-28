@@ -39,7 +39,7 @@
                         </navigationItem>
                     </items>
                 </navigationBar>
-                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K86-td-0Tf">
+                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="K86-td-0Tf">
                     <rect key="frame" x="0.0" y="72" width="132" height="104"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="化验单名称:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bx4-bc-nDM">
@@ -91,6 +91,7 @@
         </view>
     </objects>
     <resources>
+        <image name="Logo.png" width="230" height="96"/>
         <image name="u6_normal.png" width="29" height="25"/>
     </resources>
 </document>

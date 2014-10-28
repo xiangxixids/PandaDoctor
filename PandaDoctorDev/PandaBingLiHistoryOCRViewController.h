@@ -25,7 +25,7 @@
 @property (strong, nonatomic) IBOutlet UIScrollView *sv;
 @property (strong, nonatomic) IBOutlet UIImageView *iv;
 @property (strong, nonatomic) IBOutlet UIView *loadingView;
-
+@property BOOL default_img;
 
 @property UIImage *ocrImage;
 

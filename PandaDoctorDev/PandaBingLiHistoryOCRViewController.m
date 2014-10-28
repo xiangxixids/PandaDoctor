@@ -28,8 +28,9 @@
     _ocrImageView.image = _ocrImage;
     
     PandaTapGestureRecognizer *ocrSigleView = [[PandaTapGestureRecognizer alloc]initWithTarget:self action:@selector(showScrollView)];
-    [_ocrImageView addGestureRecognizer:ocrSigleView];
-    
+    if (!_default_img) {
+        [_ocrImageView addGestureRecognizer:ocrSigleView];
+    }
     _webView.delegate = self;
     
     _dateTime.text = [_dateTimeString stringByReplacingOccurrencesOfString:@"T" withString:@" "];

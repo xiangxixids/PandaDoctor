@@ -52,6 +52,24 @@
     
     NSLog(@"checkarray: %@", _checkArray);
     
+    
+    _webView.delegate = self;
+    
+    NSMutableData *webData = [rpcInterface resultHistoryForApp:_result checkItem:_checkItem];
+    if (webData==nil) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"网络错误"
+                                                       message:@"联网错误, 请检查您的网络连接是否正常"
+                                                      delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        return;
+    }
+    //[self saveTempImage];
+    NSString *webDatastr = [[NSString alloc]initWithData:webData encoding:NSUTF8StringEncoding];
+    
+    
+    [_webView loadHTMLString:webDatastr baseURL:nil];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

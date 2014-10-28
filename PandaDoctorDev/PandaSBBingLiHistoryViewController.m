@@ -127,7 +127,8 @@
     controller.SLB_ID = slb_id;
     controller.result = result;
     NSString *phone = [UtilTool globalDataGet:PHONE];
-    if ([[UtilTool globalDataGet:slb_id] isEqualToString:@"1"]) {
+    //if ([[UtilTool globalDataGet:slb_id] isEqualToString:@"1"]) {
+    if (1){
         NSLog(@"show ocr image");
         //NSString *ocrImageName = [UtilTool createImageName:phone checkItem:[slb_id intValue] result:result];
         NSString *ocrImageName = [UtilTool createImageNameByDate:date phone:phone checkItem:[slb_id intValue] result:result];
@@ -141,6 +142,7 @@
             controller.huaYanDanNameString = slb_name;
             NSString *imgPath = [NSString stringWithFormat:@"%@/%@", [UtilTool getDocumentPath], ocrImageName];
             UIImage *imgFromUrl3=[[UIImage alloc]initWithContentsOfFile:imgPath];
+            controller.default_img = NO;
             controller.ocrImage = imgFromUrl3;
             controller.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:controller animated:YES];
@@ -148,6 +150,18 @@
         }else
         {
             NSLog(@"file not there!!!");
+            PandaBingLiHistoryOCRViewController *controller = [[PandaBingLiHistoryOCRViewController alloc]initWithNibName:nil bundle:nil];
+            controller.checkItem = slb_id;
+            controller.result = result;
+            controller.dateTimeString = date;
+            controller.huaYanDanNameString = slb_name;
+            NSString *imgPath = [NSString stringWithFormat:@"%@/%@", [UtilTool getDocumentPath], ocrImageName];
+            UIImage *imgFromUrl3=[[UIImage alloc]initWithContentsOfFile:imgPath];
+            controller.default_img = YES;
+            controller.ocrImage = [UIImage imageNamed:@"Logo.png"];
+            controller.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:controller animated:YES];
+            return;
         }
     }else
     {

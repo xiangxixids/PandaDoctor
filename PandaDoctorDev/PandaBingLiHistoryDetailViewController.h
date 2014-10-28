@@ -10,10 +10,11 @@
 #import "PandaBingLiHistoryDetailTableViewCell.h"
 #import "PandaBingLiHistoryDetailResultViewController.h"
 
-@interface PandaBingLiHistoryDetailViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@interface PandaBingLiHistoryDetailViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property PandaBingLiHistoryDetailResultViewController *bingliHistoryResultViewController;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @property NSString *checkItem; // checkItem
 @property NSString *result; //  0,0,1,0,1,0,0,0,0,0,0,0,0
