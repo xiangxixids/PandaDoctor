@@ -9,6 +9,8 @@
 #import "PandaHealthJiangTangViewController.h"
 #import "PandaRPCInterface.h"
 
+#define REFRESH_HEADER_HEIGHT 52.0f
+
 @interface PandaHealthJiangTangViewController ()
 
 @end
@@ -82,6 +84,25 @@
         //cell.hintLabel.text = @"2014-08-00";
         return cell;
 //    }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+
+    NSLog(@"scrollview did end dragging");
+    NSLog(@"%f", scrollView.contentOffset.y);
+    NSLog(@"height = %f", scrollView.bounds.size.height);
+    NSLog(@"%f", scrollView.contentInset.bottom);
+    
+    //上拉刷新
+    if(scrollView.contentSize.height - (scrollView.contentOffset.y + scrollView.bounds.size.height - scrollView.contentInset.bottom) <= -REFRESH_HEADER_HEIGHT && scrollView.contentOffset.y > 0){
+        NSLog(@"start update!");
+    }
+    
+    //下拉刷新
+    if (scrollView.contentOffset.y < -50) {
+        NSLog(@"start update!");
+    }
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

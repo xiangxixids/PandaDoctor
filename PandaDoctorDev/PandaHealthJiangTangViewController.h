@@ -12,7 +12,7 @@
 #import "PandaHealthJiangTangDetailViewController.h"
 #import "PullRefreshTableViewController.h"
 @interface PandaHealthJiangTangViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
-//@interface PandaHealthJiangTangViewController : PullRefreshTableViewController
+//@interface PandaHealthJiangTangViewController : PullRefreshTableViewController<UITableViewDataSource, UITableViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

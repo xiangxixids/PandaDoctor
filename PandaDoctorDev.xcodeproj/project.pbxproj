@@ -31,6 +31,7 @@
 		D70C83EA1A06617E0061169F /* PandaNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D70C83E81A06617E0061169F /* PandaNaviViewController.m */; };
 		D70C83EB1A06617E0061169F /* PandaNaviViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70C83E91A06617E0061169F /* PandaNaviViewController.xib */; };
 		D70C83EE1A0679690061169F /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D70C83ED1A0679690061169F /* PullRefreshTableViewController.m */; };
+		D70C83F01A06893B0061169F /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D70C83EF1A06893B0061169F /* arrow.png */; };
 		D70D3526198102B2006F431A /* PandaBingLiHistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D70D3524198102B2006F431A /* PandaBingLiHistoryDetailViewController.m */; };
 		D70D3527198102B2006F431A /* PandaBingLiHistoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70D3525198102B2006F431A /* PandaBingLiHistoryDetailViewController.xib */; };
 		D70D352B19810A41006F431A /* PandaBingLiHistoryDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D70D352919810A41006F431A /* PandaBingLiHistoryDetailTableViewCell.m */; };
@@ -220,6 +221,7 @@
 		D70C83E91A06617E0061169F /* PandaNaviViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PandaNaviViewController.xib; sourceTree = "<group>"; };
 		D70C83EC1A0679690061169F /* PullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshTableViewController.h; sourceTree = "<group>"; };
 		D70C83ED1A0679690061169F /* PullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshTableViewController.m; sourceTree = "<group>"; };
+		D70C83EF1A06893B0061169F /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		D70D3523198102B2006F431A /* PandaBingLiHistoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaBingLiHistoryDetailViewController.h; sourceTree = "<group>"; };
 		D70D3524198102B2006F431A /* PandaBingLiHistoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaBingLiHistoryDetailViewController.m; sourceTree = "<group>"; };
 		D70D3525198102B2006F431A /* PandaBingLiHistoryDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PandaBingLiHistoryDetailViewController.xib; sourceTree = "<group>"; };
@@ -481,6 +483,7 @@
 		D74070B9197CF1BC007313B1 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				D70C83EF1A06893B0061169F /* arrow.png */,
 				D7D17D7A19FA916D00B43642 /* 肝脏项目11.png */,
 				D7D17D7B19FA916D00B43642 /* 甲状腺功能11.png */,
 				D7D17D7C19FA916D00B43642 /* 其他11.png */,
@@ -923,6 +926,7 @@
 				D745CE98197D005E008C1082 /* u40_normal.png in Resources */,
 				D7AD2DC319F546F100C29BF0 /* 123_04.png in Resources */,
 				D7D17D8519FA916D00B43642 /* 甲状腺功能11.png in Resources */,
+				D70C83F01A06893B0061169F /* arrow.png in Resources */,
 				D79DEE2D197250EA009FCAC6 /* PandaMainViewController.xib in Resources */,
 				D76A69761972365800D536FF /* Main.storyboard in Resources */,
 				D7AD2DCB19F546F100C29BF0 /* 123_08.png in Resources */,
