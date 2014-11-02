@@ -77,6 +77,8 @@
         PandaShareTableViewCell *cell = [[[NSBundle mainBundle]loadNibNamed:@"PandaShareTableViewCell" owner:self options:nil] objectAtIndex:0];
         NSDictionary *dict = [_articleList objectAtIndex:indexPath.row];
         cell.titleLabel.text = [dict valueForKey:TITLE];
+        cell.author.text = [[_articleList objectAtIndex:indexPath.row] valueForKey:AUTHOR];
+        cell.date.text = [[[_articleList objectAtIndex:indexPath.row] valueForKey:GMTMODIFY] componentsSeparatedByString:@"T"][0];
         //cell.hintLabel.text = @"2014-08-00";
         return cell;
 //    }
@@ -99,6 +101,10 @@
     _jiangtangDetailViewController = [[PandaHealthJiangTangDetailViewController alloc]initWithNibName:nil bundle:nil];
     _jiangtangDetailViewController.ariticle_id = [NSString stringWithFormat:@"%@", [[_articleList objectAtIndex:indexPath.row] valueForKey:ARTICLE_ID]];
     _jiangtangDetailViewController.titleString = [[_articleList objectAtIndex:indexPath.row] valueForKey:TITLE];
+    _jiangtangDetailViewController.author = [[_articleList objectAtIndex:indexPath.row] valueForKey:AUTHOR];
+    //_jiangtangDetailViewController.date = [[[_articleList objectAtIndex:indexPath.row] valueForKey:GMTMODIFY] stringByReplacingOccurrencesOfString:@"T" withString:@" "];
+    _jiangtangDetailViewController.date = [[[_articleList objectAtIndex:indexPath.row] valueForKey:GMTMODIFY] componentsSeparatedByString:@"T"][0];
+    _jiangtangDetailViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:_jiangtangDetailViewController animated:YES];
     
 }

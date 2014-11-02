@@ -10,8 +10,9 @@
 #import "ScrollTableViewCell.h"
 #import "PandaShareTableViewCell.h"
 #import "PandaHealthJiangTangDetailViewController.h"
-
+#import "PullRefreshTableViewController.h"
 @interface PandaHealthJiangTangViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+//@interface PandaHealthJiangTangViewController : PullRefreshTableViewController
 
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

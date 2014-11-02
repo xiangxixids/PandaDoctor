@@ -69,7 +69,18 @@
             return;
         }
         NSString *datastr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-        _dataList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        _tableViewList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        
+        if (_switchController.selectedSegmentIndex == 0) {
+            
+            _dataList = _tableViewList;
+            
+        }else if (_switchController.selectedSegmentIndex == 1){
+            
+            _dataList = [self sortByHuaYanDanType:_tableViewList];
+            
+        }
+        
         [_tableView reloadData];
     }
 }

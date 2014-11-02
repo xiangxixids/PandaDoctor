@@ -16,6 +16,9 @@
 @property NSString *ariticle_id;
 @property NSString *titleString;
 
+@property NSString *author;
+@property NSString *date;
+
 
 - (IBAction)back:(UIBarButtonItem *)sender;
 

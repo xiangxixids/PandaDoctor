@@ -41,6 +41,9 @@ static NSString *RSVAL_CEL = @"RSVAL_CEL";
 static NSString *RSVAL_FLR = @"RSVAL_FLR";
 static NSString *USERCOMPLEXRESULTLIST = @"userComplexResultList";
 
+static NSString *AUTHOR = @"autor";
+static NSString *GMTMODIFY = @"gmtModify";
+
 
 @interface PandaRPCInterface : NSObject
 

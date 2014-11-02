@@ -16,7 +16,6 @@
 {
     // Override point for customization after application launch.
     
-    self.mainViewController = [[PandaViewController alloc]initWithNibName:nil bundle:nil];
     self.loginViewController = [[PandaLoginViewController alloc]initWithNibName:nil bundle:nil];
     
     
@@ -43,7 +42,8 @@
     
     self.window.backgroundColor = [UIColor whiteColor];
     
-    self.navigationController = [[UINavigationController alloc]initWithRootViewController:_controller];
+    //self.navigationController = [[UINavigationController alloc]initWithRootViewController:_controller];
+    self.navigationController = [[PandaNaviViewController alloc]initWithRootViewController:_controller];
     
     [self.navigationController.navigationBar setHidden:YES];
     

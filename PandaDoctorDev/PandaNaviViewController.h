@@ -1,5 +1,5 @@
 //
-//  PandaViewController.h
+//  PandaNaviViewController.h
 //  PandaDoctorDev
 //
 //  Created by xiangxixids on 14/11/2.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PandaViewController : UINavigationController
+@interface PandaNaviViewController : UINavigationController
 
 @end

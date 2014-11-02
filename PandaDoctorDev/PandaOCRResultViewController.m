@@ -21,11 +21,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    _webView.delegate = self;
-    
+//    _webView.delegate = self;
+//    
     NSString *content = [[NSString alloc]initWithData:_data encoding:NSUTF8StringEncoding];
+//    
+//    [_webView loadHTMLString:content baseURL:nil];
     
-    [_webView loadHTMLString:content baseURL:nil];
+    CGRect rect = [[UIScreen mainScreen] bounds];
+    CGFloat screen_width  = rect.size.width;
+    CGFloat screen_height = rect.size.height;
+    UIWebView *m_webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 68, screen_width, screen_height-68)];
+    m_webView.delegate = self;
+    [m_webView loadHTMLString:content baseURL:nil];
+    [self.view addSubview:m_webView];
     
 //    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:_data options:NSJSONReadingMutableContainers error:nil];
 //    

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PandaViewController.h"
 #import "PandaLoginViewController.h"
+#import "PandaNaviViewController.h"
 
 @interface PandaAppDelegate : UIResponder <UIApplicationDelegate>
 

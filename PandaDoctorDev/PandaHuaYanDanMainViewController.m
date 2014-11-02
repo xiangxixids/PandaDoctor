@@ -167,6 +167,39 @@
     
 }
 
+//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+//{
+//    
+//    return (toInterfaceOrientation == UIInterfaceOrientationPortrait);
+//    
+//}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return NO;
+}
+
+- (BOOL)shouldAutorotate
+{
+    
+    return NO;
+    
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+
+{
+    
+    return UIInterfaceOrientationMaskPortrait;//只支持这一个方向(正常的方向)
+    
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
+}
+
+
+
 // 这几个函数, 会指明当前键盘的状态, 判断后, 用[self.view endEditing:YES] 结束隐藏键盘, 结束所有的编辑状态.
 - (void)keyboardDidShow
 {

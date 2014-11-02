@@ -1,28 +1,53 @@
 //
-//  PandaViewController.m
+//  PandaNaviViewController.m
 //  PandaDoctorDev
 //
 //  Created by xiangxixids on 14/11/2.
 //  Copyright (c) 2014年 xiangxixids. All rights reserved.
 //
 
-#import "PandaViewController.h"
+#import "PandaNaviViewController.h"
 
-@interface PandaViewController ()
+@interface PandaNaviViewController ()
 
 @end
 
-@implementation PandaViewController
+@implementation PandaNaviViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    NSLog(@"navi controller loaded");
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    
+    return (toInterfaceOrientation == UIInterfaceOrientationPortrait);
+    
+}
+
+- (BOOL)shouldAutorotate
+{
+    
+    return NO;
+    
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+
+{
+    
+    return UIInterfaceOrientationMaskPortrait;//只支持这一个方向(正常的方向)
+    
+}
+
+
 
 /*
 #pragma mark - Navigation

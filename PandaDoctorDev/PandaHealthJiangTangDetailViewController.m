@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    _webView.delegate = self;
+    
     
     UINavigationItem *item = [_navigationBar.items objectAtIndex:0];
     item.title = _titleString;
@@ -49,8 +49,23 @@
     }
     NSURL *url = [NSURL URLWithString:@"http://www.baidu.com"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    //[_webView loadRequest:request];
-    [_webView loadHTMLString:content baseURL:nil];
+    
+//    _webView.delegate = self;
+//    [_webView loadHTMLString:content baseURL:nil];
+    
+    CGRect rect = [[UIScreen mainScreen] bounds];
+    CGFloat screen_width  = rect.size.width;
+    CGFloat screen_height = rect.size.height;
+    UIWebView *m_webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 68, screen_width, screen_height-68)];
+    m_webView.delegate = self;
+    NSMutableString *content_modify = [[NSMutableString alloc]initWithCapacity:3];
+    [content_modify appendFormat:@"<p>作者: %@</p>", _author];
+    [content_modify appendFormat:@"<p>时间: %@</p>", _date];
+    [content_modify appendFormat:@"%@", content];
+    [m_webView setScalesPageToFit:NO];// YES 超级难看.
+    [m_webView loadHTMLString:content_modify baseURL:nil];
+    [self.view addSubview:m_webView];
+    
 }
 
 - (void)didReceiveMemoryWarning
