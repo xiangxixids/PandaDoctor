@@ -184,6 +184,7 @@
     PandaBingLiHistoryDetailViewController *controller1 = [[PandaBingLiHistoryDetailViewController alloc]initWithNibName:nil bundle:nil];
     controller1.checkItem = slb_id;
     controller1.result = result;
+    controller1.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:controller1 animated:YES];
 
     return;

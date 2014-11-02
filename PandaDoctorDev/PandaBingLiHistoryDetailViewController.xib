@@ -48,11 +48,6 @@
                                     <action selector="back:" destination="-1" id="PSr-z7-clO"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem key="rightBarButtonItem" id="znl-Lp-nST">
-                                <connections>
-                                    <action selector="showResult:" destination="-1" id="zS5-9y-gAE"/>
-                                </connections>
-                            </barButtonItem>
                         </navigationItem>
                     </items>
                 </navigationBar>
