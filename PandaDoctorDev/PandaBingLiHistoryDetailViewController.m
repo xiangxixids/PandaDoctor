@@ -28,9 +28,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    CGRect rect = [[UIScreen mainScreen] bounds];
+    CGFloat screen_width  = rect.size.width;
+    CGFloat screen_height = rect.size.height;
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [_tableView registerClass:[PandaBingLiHistoryDetailTableViewCell class] forCellReuseIdentifier:@"cell"];
+    
+    //_webView.frame = CGRectMake(0, 68, screen_width, 200);
     
     NSLog(@"checkItem = %@", _checkItem);
     NSLog(@"result = %@", _result);
@@ -67,7 +72,13 @@
     NSString *webDatastr = [[NSString alloc]initWithData:webData encoding:NSUTF8StringEncoding];
     
     
-    [_webView loadHTMLString:webDatastr baseURL:nil];
+//    [_webView loadHTMLString:webDatastr baseURL:nil];
+    _webView.hidden = YES;
+    
+    UIWebView *m_webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 68, screen_width, screen_height-68)];
+    m_webView.delegate = self;
+    [m_webView loadHTMLString:webDatastr baseURL:nil];
+    [self.view addSubview:m_webView];
     
     
 }
