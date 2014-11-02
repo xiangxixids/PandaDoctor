@@ -165,29 +165,42 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="30" sectionHeaderHeight="1" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zUG-IN-phR">
-                                <rect key="frame" x="0.0" y="99" width="320" height="434"/>
+                                <rect key="frame" x="0.0" y="123" width="320" height="410"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="u54_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="s0Z-7t-dpP">
-                                <rect key="frame" x="0.0" y="93" width="320" height="1"/>
+                                <rect key="frame" x="0.0" y="121" width="320" height="1"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="检查项目" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lpn-oU-sOe">
-                                <rect key="frame" x="201" y="70" width="68" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="201" y="98" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="检测时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wnq-Pu-e0M">
-                                <rect key="frame" x="19" y="70" width="68" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="19" y="98" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cFW-uO-A4e">
+                                <rect key="frame" x="20" y="65" width="280" height="29"/>
+                                <segments>
+                                    <segment title="按时间划分"/>
+                                    <segment title="按化验单划分"/>
+                                </segments>
+                                <connections>
+                                    <action selector="switchHistoryList:" destination="Elc-ZO-Lwq" eventType="valueChanged" id="xDO-mL-8Hz"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="BOr-sV-69Q"/>
                     <connections>
+                        <outlet property="labelOne" destination="Wnq-Pu-e0M" id="MIJ-Wv-hag"/>
+                        <outlet property="labelTwo" destination="Lpn-oU-sOe" id="soU-aa-BqD"/>
+                        <outlet property="switchController" destination="cFW-uO-A4e" id="Czt-Xw-d6x"/>
                         <outlet property="tableView" destination="zUG-IN-phR" id="6Zt-mR-LS8"/>
                     </connections>
                 </viewController>

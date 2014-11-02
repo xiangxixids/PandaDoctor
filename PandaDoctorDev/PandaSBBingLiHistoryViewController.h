@@ -14,8 +14,14 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property PandaBingLiHistoryDetailViewController *bingliDetailViewController;
 
-@property NSArray *dataList;
+@property (weak, nonatomic) IBOutlet UILabel *labelOne;
+@property (weak, nonatomic) IBOutlet UILabel *labelTwo;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *switchController;
 
+@property NSArray *dataList;
+@property NSArray *tableViewList;
+
+- (IBAction)switchHistoryList:(UISegmentedControl *)sender;
 
 
 @end
