@@ -11,6 +11,8 @@
 
 #define REFRESH_HEADER_HEIGHT 52.0f
 
+
+
 @interface PandaHealthJiangTangViewController ()
 
 @end
@@ -31,13 +33,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSLog(@"PandaHealthJiangTangViewController view did load");
+    _itemList = [[NSArray alloc]initWithObjects:@"tech",@"cure",@"expert",@"life",@"news", nil];
     [self.navigationController.navigationBar setHidden:YES];
     
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
     PandaRPCInterface *rpc = [[PandaRPCInterface alloc]init];
-    NSMutableData *data = [rpc getAllAriticle];
+    //NSMutableData *data = [rpc getAllAriticle];
+    NSMutableData *data = [rpc getAllAriticleByType:[_itemList objectAtIndex:0]];
     if (data==nil) {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"网络错误"
                                                        message:@"联网错误, 请检查您的网络连接是否正常"
@@ -142,4 +146,23 @@
 }
 */
 
+- (IBAction)switchArticle:(UISegmentedControl *)sender {
+    
+    NSLog(@"%d", sender.selectedSegmentIndex);
+    PandaRPCInterface *rpc = [[PandaRPCInterface alloc]init];
+    //NSMutableData *data = [rpc getAllAriticle];
+    NSMutableData *data = [rpc getAllAriticleByType:[_itemList objectAtIndex:sender.selectedSegmentIndex]];
+    if (data==nil) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"网络错误"
+                                                       message:@"联网错误, 请检查您的网络连接是否正常"
+                                                      delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        return;
+    }
+    NSString *datastr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    _articleList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    [_tableView reloadData];
+    NSLog(@"%lu", (unsigned long)_articleList.count);
+    
+}
 @end

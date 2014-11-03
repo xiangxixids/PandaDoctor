@@ -20,6 +20,7 @@ static NSString *insertUserHistory = @"insertUserHistory.html";
 static NSString *getUserHistory = @"getUserHistory.html";
 static NSString *resultHistoryForApp = @"resultHisrtoryForApp.html";
 static NSString *getAllArticle = @"getAllArticle.html";
+static NSString *getAllArticleByType = @"getAllArticleByType.html";
 static NSString *getArticleByIdForApp = @"getArticleByIdForApp.html";
 
 
@@ -193,6 +194,22 @@ static NSString *getArticleByIdForApp = @"getArticleByIdForApp.html";
     
     return data;
 }
+- (NSMutableData*)getAllAriticleByType:(NSString *)type
+{
+    NSMutableData *data;
+    NSURLResponse *response;
+    NSError *error;
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]init];
+    NSString *string = [NSString stringWithFormat:@"http://%@/%@?articleType=%@", url, getAllArticleByType, type];
+    NSURL *url = [NSURL URLWithString:string];
+    
+    [request setURL:url];
+    [request setHTTPMethod:@"GET"];
+    data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    
+    return data;
+}
+
 - (NSMutableData*)getArticleByIdForApp:(NSString*)article_id
 {
     NSMutableData *data;

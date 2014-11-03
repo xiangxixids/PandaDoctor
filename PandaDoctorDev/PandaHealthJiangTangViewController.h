@@ -20,9 +20,11 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *switchSegment;
 
 @property NSArray *articleList;
+@property NSArray *itemList;
 
 @property PandaHealthJiangTangDetailViewController *jiangtangDetailViewController;
 
 
+- (IBAction)switchArticle:(UISegmentedControl *)sender;
 
 @end

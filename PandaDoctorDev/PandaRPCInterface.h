@@ -58,6 +58,7 @@ static NSString *GMTMODIFY = @"gmtModify";
 - (NSMutableData*)getUserHistory:(NSString*)phone;
 - (NSMutableData*)resultHistoryForApp:(NSString*)result checkItem:(NSString*)check_id;
 - (NSMutableData*)getAllAriticle;
+- (NSMutableData*)getAllAriticleByType:(NSString *)type;
 - (NSMutableData*)getArticleByIdForApp:(NSString*)article_id;
 
 
