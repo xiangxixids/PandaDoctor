@@ -22,6 +22,12 @@
 @property NSArray *articleList;
 @property NSArray *itemList;
 
+@property NSMutableArray *tech;
+@property NSMutableArray *cure;
+@property NSMutableArray *expert;
+@property NSMutableArray *life;
+@property NSMutableArray *news;
+
 @property PandaHealthJiangTangDetailViewController *jiangtangDetailViewController;
 
 

@@ -39,6 +39,12 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
+    _tech = [[NSMutableArray alloc]initWithCapacity:3];
+    _cure = [[NSMutableArray alloc]initWithCapacity:3];
+    _expert = [[NSMutableArray alloc]initWithCapacity:3];
+    _life = [[NSMutableArray alloc]initWithCapacity:3];
+    _news = [[NSMutableArray alloc]initWithCapacity:3];
+    
     PandaRPCInterface *rpc = [[PandaRPCInterface alloc]init];
     //NSMutableData *data = [rpc getAllAriticle];
     NSMutableData *data = [rpc getAllAriticleByType:[_itemList objectAtIndex:0]];
@@ -80,14 +86,93 @@
 //        return cell;
 //    }else{
     
-        PandaShareTableViewCell *cell = [[[NSBundle mainBundle]loadNibNamed:@"PandaShareTableViewCell" owner:self options:nil] objectAtIndex:0];
-        NSDictionary *dict = [_articleList objectAtIndex:indexPath.row];
-        cell.titleLabel.text = [dict valueForKey:TITLE];
-        cell.author.text = [[_articleList objectAtIndex:indexPath.row] valueForKey:AUTHOR];
-        cell.date.text = [[[_articleList objectAtIndex:indexPath.row] valueForKey:GMTMODIFY] componentsSeparatedByString:@"T"][0];
-        //cell.hintLabel.text = @"2014-08-00";
-        return cell;
-//    }
+    PandaShareTableViewCell *cell = [[[NSBundle mainBundle]loadNibNamed:@"PandaShareTableViewCell" owner:self options:nil] objectAtIndex:0];
+    NSDictionary *dict = [_articleList objectAtIndex:indexPath.row];
+    cell.titleLabel.text = [dict valueForKey:TITLE];
+    cell.author.text = [[_articleList objectAtIndex:indexPath.row] valueForKey:AUTHOR];
+    cell.date.text = [[[_articleList objectAtIndex:indexPath.row] valueForKey:GMTMODIFY] componentsSeparatedByString:@"T"][0];
+    NSString *url = [[_articleList objectAtIndex:indexPath.row] valueForKey:URL];
+    NSMutableArray *array = [self getCurrentArray];
+    if (cell.headerImage.image == nil) {
+        NSLog(@"image is nil");
+        if (url != nil) {
+            if (array.count != nil && array.count > indexPath.row) { // 表明, 缓存里面, 有对应的图片.
+                NSData *imageData = (NSData*)[array objectAtIndex:indexPath.row];
+                [cell.headerImage setImage:imageData];
+                return cell;
+            }
+            NSLog(@"%@",url);
+            NSData *imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:url]];
+            UIImage *image=[[UIImage alloc] initWithData:imageData];
+            [cell.headerImage setImage:image];
+            [array addObject:image];
+//            switch (_switchSegment.selectedSegmentIndex) {
+//                case 0:
+//                    [_tech addObjectsFromArray:imageData];
+//                    break;
+//                case 1:
+//                    [_cure addObjectsFromArray:imageData];
+//                    break;
+//                case 2:
+//                    [_expert addObjectsFromArray:imageData];
+//                    break;
+//                case 3:
+//                    [_life addObjectsFromArray:imageData];
+//                    break;
+//                case 4:
+//                    [_news addObjectsFromArray:imageData];
+//                    break;
+//                default:
+//                    break;
+//            }
+        }else{
+            [cell.headerImage setImage:[UIImage imageNamed:@"1.pic.jpg"]];
+            [array addObject:[NSString stringWithFormat:@"%d", _switchSegment.selectedSegmentIndex]];
+//            switch (_switchSegment.selectedSegmentIndex) {
+//                case 0:
+//                    [_tech addObjectsFromArray:@"0"];
+//                    break;
+//                case 1:
+//                    [_cure addObjectsFromArray:@"1"];
+//                    break;
+//                case 2:
+//                    [_expert addObjectsFromArray:@"2"];
+//                    break;
+//                case 3:
+//                    [_life addObjectsFromArray:@"3"];
+//                    break;
+//                case 4:
+//                    [_news addObjectsFromArray:@"4"];
+//                    break;
+//                default:
+//                    break;
+//            }
+        }
+    }
+    
+    return cell;
+}
+
+-(NSMutableArray *)getCurrentArray
+{
+    switch (_switchSegment.selectedSegmentIndex) {
+        case 0:
+            return _tech;
+            break;
+        case 1:
+            return _cure;
+            break;
+        case 2:
+            return _expert;
+            break;
+        case 3:
+            return _life;
+            break;
+        case 4:
+            return _news;
+            break;
+    }
+    return  nil;
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {

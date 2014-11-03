@@ -43,6 +43,7 @@ static NSString *USERCOMPLEXRESULTLIST = @"userComplexResultList";
 
 static NSString *AUTHOR = @"autor";
 static NSString *GMTMODIFY = @"gmtModify";
+static NSString *URL = @"url";
 
 
 @interface PandaRPCInterface : NSObject
