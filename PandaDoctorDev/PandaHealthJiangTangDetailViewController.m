@@ -59,7 +59,7 @@
     UIWebView *m_webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 68, screen_width, screen_height-68)];
     m_webView.delegate = self;
     NSMutableString *content_modify = [[NSMutableString alloc]initWithCapacity:3];
-    [content_modify appendFormat:@"<p>作者: %@</p>", _author];
+    [content_modify appendFormat:@"<p>文章来源: %@</p>", _author];
     [content_modify appendFormat:@"<p>时间: %@</p>", _date];
     [content_modify appendFormat:@"%@", content];
     [m_webView setScalesPageToFit:NO];// YES 超级难看.
