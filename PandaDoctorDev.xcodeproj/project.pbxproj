@@ -36,6 +36,9 @@
 		D70D3527198102B2006F431A /* PandaBingLiHistoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70D3525198102B2006F431A /* PandaBingLiHistoryDetailViewController.xib */; };
 		D70D352B19810A41006F431A /* PandaBingLiHistoryDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D70D352919810A41006F431A /* PandaBingLiHistoryDetailTableViewCell.m */; };
 		D70D352C19810A41006F431A /* PandaBingLiHistoryDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70D352A19810A41006F431A /* PandaBingLiHistoryDetailTableViewCell.xib */; };
+		D71A51DA1A07C06000D21951 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D71A51D71A07C06000D21951 /* icon.png */; };
+		D71A51DB1A07C06000D21951 /* 114X114.png in Resources */ = {isa = PBXBuildFile; fileRef = D71A51D81A07C06000D21951 /* 114X114.png */; };
+		D71A51DC1A07C06000D21951 /* 120X120.png in Resources */ = {isa = PBXBuildFile; fileRef = D71A51D91A07C06000D21951 /* 120X120.png */; };
 		D7328796198E321F00064A12 /* PandaHuaYanDanXiangMuListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7328794198E321F00064A12 /* PandaHuaYanDanXiangMuListViewController.m */; };
 		D7328797198E321F00064A12 /* PandaHuaYanDanXiangMuListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7328795198E321F00064A12 /* PandaHuaYanDanXiangMuListViewController.xib */; };
 		D732879A198E452D00064A12 /* PandaConstantData.m in Sources */ = {isa = PBXBuildFile; fileRef = D7328799198E452D00064A12 /* PandaConstantData.m */; };
@@ -228,6 +231,9 @@
 		D70D352819810A41006F431A /* PandaBingLiHistoryDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaBingLiHistoryDetailTableViewCell.h; sourceTree = "<group>"; };
 		D70D352919810A41006F431A /* PandaBingLiHistoryDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaBingLiHistoryDetailTableViewCell.m; sourceTree = "<group>"; };
 		D70D352A19810A41006F431A /* PandaBingLiHistoryDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PandaBingLiHistoryDetailTableViewCell.xib; sourceTree = "<group>"; };
+		D71A51D71A07C06000D21951 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		D71A51D81A07C06000D21951 /* 114X114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114X114.png; sourceTree = "<group>"; };
+		D71A51D91A07C06000D21951 /* 120X120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120X120.png; sourceTree = "<group>"; };
 		D7328793198E321F00064A12 /* PandaHuaYanDanXiangMuListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaHuaYanDanXiangMuListViewController.h; sourceTree = "<group>"; };
 		D7328794198E321F00064A12 /* PandaHuaYanDanXiangMuListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaHuaYanDanXiangMuListViewController.m; sourceTree = "<group>"; };
 		D7328795198E321F00064A12 /* PandaHuaYanDanXiangMuListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PandaHuaYanDanXiangMuListViewController.xib; sourceTree = "<group>"; };
@@ -483,6 +489,9 @@
 		D74070B9197CF1BC007313B1 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				D71A51D71A07C06000D21951 /* icon.png */,
+				D71A51D81A07C06000D21951 /* 114X114.png */,
+				D71A51D91A07C06000D21951 /* 120X120.png */,
 				D70C83EF1A06893B0061169F /* arrow.png */,
 				D7D17D7A19FA916D00B43642 /* 肝脏项目11.png */,
 				D7D17D7B19FA916D00B43642 /* 甲状腺功能11.png */,
@@ -869,6 +878,7 @@
 				D7AD2DC019F546F100C29BF0 /* 123_03.gif in Resources */,
 				D7A30A80198CDE3B00423666 /* PandaHealthJiangTangDetailViewController.xib in Resources */,
 				D7328797198E321F00064A12 /* PandaHuaYanDanXiangMuListViewController.xib in Resources */,
+				D71A51DB1A07C06000D21951 /* 114X114.png in Resources */,
 				D7AD2DE719F548B100C29BF0 /* 血糖血脂.png in Resources */,
 				D7AD2DE219F548B100C29BF0 /* 更多.png in Resources */,
 				D7AD2DCE19F546F100C29BF0 /* 123_10.gif in Resources */,
@@ -889,6 +899,7 @@
 				D7D17D8719FA916D00B43642 /* 三大常规11.png in Resources */,
 				D70D352C19810A41006F431A /* PandaBingLiHistoryDetailTableViewCell.xib in Resources */,
 				D74070BB197CF1D0007313B1 /* u11_normal.png in Resources */,
+				D71A51DC1A07C06000D21951 /* 120X120.png in Resources */,
 				D732D43019B3279300F632C1 /* PandaOCRRecongnizeViewController.xib in Resources */,
 				D7D17D8C19FA916D00B43642 /* 孕妇项目11.png in Resources */,
 				D702FF41197E4F950076B365 /* u20_normal.png in Resources */,
@@ -934,6 +945,7 @@
 				D70083B819F938370094C964 /* PandaBingLiHistoryOCRViewController.xib in Resources */,
 				D702FF3F197E4F950076B365 /* u8_normal.png in Resources */,
 				D7AD2DC419F546F100C29BF0 /* 123_05.gif in Resources */,
+				D71A51DA1A07C06000D21951 /* icon.png in Resources */,
 				D7AD2DCA19F546F100C29BF0 /* 123_08.gif in Resources */,
 				D7A30A74198CDBA200423666 /* 1.pic.jpg in Resources */,
 				D7AD2DBF19F546F100C29BF0 /* 123_02.gif in Resources */,
