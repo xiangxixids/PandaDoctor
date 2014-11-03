@@ -267,7 +267,7 @@
 		D7615980197FAEFB00ECF978 /* PandaBingLiHistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaBingLiHistoryTableViewCell.m; sourceTree = "<group>"; };
 		D7615981197FAEFB00ECF978 /* PandaBingLiHistoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PandaBingLiHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		D7615986197FC5AB00ECF978 /* u54_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = u54_line.png; sourceTree = "<group>"; };
-		D76A695F1972365800D536FF /* PandaDoctorDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PandaDoctorDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D76A695F1972365800D536FF /* 熊猫医生.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "熊猫医生.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D76A69621972365800D536FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D76A69641972365800D536FF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D76A69661972365800D536FF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -635,7 +635,7 @@
 		D76A69601972365800D536FF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D76A695F1972365800D536FF /* PandaDoctorDev.app */,
+				D76A695F1972365800D536FF /* 熊猫医生.app */,
 				D76A69801972365800D536FF /* PandaDoctorDevTests.xctest */,
 			);
 			name = Products;
@@ -803,7 +803,7 @@
 			);
 			name = PandaDoctorDev;
 			productName = PandaDoctorDev;
-			productReference = D76A695F1972365800D536FF /* PandaDoctorDev.app */;
+			productReference = D76A695F1972365800D536FF /* 熊猫医生.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D76A697F1972365800D536FF /* PandaDoctorDevTests */ = {
@@ -1171,7 +1171,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PandaDoctorDev/PandaDoctorDev-Prefix.pch";
 				INFOPLIST_FILE = "PandaDoctorDev/PandaDoctorDev-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "熊猫医生";
 				PROVISIONING_PROFILE = "4A87A1BE-7A47-4315-9DF3-2F158DEBE56E";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1186,7 +1186,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PandaDoctorDev/PandaDoctorDev-Prefix.pch";
 				INFOPLIST_FILE = "PandaDoctorDev/PandaDoctorDev-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "熊猫医生";
 				PROVISIONING_PROFILE = "4A87A1BE-7A47-4315-9DF3-2F158DEBE56E";
 				WRAPPER_EXTENSION = app;
 			};
