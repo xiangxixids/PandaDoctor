@@ -275,8 +275,14 @@
     [UtilTool globalDataSave:@"0" forKey:LOGIN];
     
     PandaLoginViewController *loginViewController = [[PandaLoginViewController alloc]initWithNibName:nil bundle:nil];
+    UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:loginViewController];
+    self.view.window.rootViewController = navi;
     
-    self.view.window.rootViewController = loginViewController;
+//    if (self.navigationController == nil) {
+//        self.navigationController = [[UINavigationController alloc] init];
+//    }
+    
+//    self.view.window.rootViewController = self.navigationController;
     
 }
 

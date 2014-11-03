@@ -25,10 +25,10 @@
 //    [self initWindows:controller];
 //    return YES;
     
-    
     if ([[UtilTool globalDataGet:LOGIN] isEqual:@"1"]) {
         UIStoryboard *storyBorad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         self.window.rootViewController = [storyBorad instantiateInitialViewController];
+        //[self initWindows:[storyBorad instantiateInitialViewController]];
     }else{
         [self initWindows:self.loginViewController];
     }
@@ -42,8 +42,8 @@
     
     self.window.backgroundColor = [UIColor whiteColor];
     
-    //self.navigationController = [[UINavigationController alloc]initWithRootViewController:_controller];
-    self.navigationController = [[PandaNaviViewController alloc]initWithRootViewController:_controller];
+    self.navigationController = [[UINavigationController alloc]initWithRootViewController:_controller];
+    //self.navigationController = [[PandaNaviViewController alloc]initWithRootViewController:_controller];
     
     [self.navigationController.navigationBar setHidden:YES];
     
