@@ -8,6 +8,7 @@
 
 #import "PandaRegisterViewController.h"
 #import "PandaRPCInterface.h"
+#import "PandaRegisterRightViewController.h"
 
 @interface PandaRegisterViewController ()
 
@@ -108,6 +109,10 @@
 }
 
 - (IBAction)getPandaDoctorProtocl:(UIButton *)sender {
+    
+    PandaRegisterRightViewController *controller = [[PandaRegisterRightViewController alloc]initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:controller animated:YES];
+    
 }
 
 - (IBAction)submitRegister:(UIButton *)sender {
@@ -170,5 +175,9 @@
 }
 
 - (IBAction)backToLogin:(UIButton *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)backByButton:(UIButton *)sender {
 }
 @end

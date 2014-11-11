@@ -25,5 +25,6 @@
 - (IBAction)getPandaDoctorProtocl:(UIButton *)sender;
 - (IBAction)submitRegister:(UIButton *)sender;
 - (IBAction)backToLogin:(UIButton *)sender;
+- (IBAction)backByButton:(UIButton *)sender;
 
 @end

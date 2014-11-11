@@ -39,6 +39,8 @@
 		D71A51DA1A07C06000D21951 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D71A51D71A07C06000D21951 /* icon.png */; };
 		D71A51DB1A07C06000D21951 /* 114X114.png in Resources */ = {isa = PBXBuildFile; fileRef = D71A51D81A07C06000D21951 /* 114X114.png */; };
 		D71A51DC1A07C06000D21951 /* 120X120.png in Resources */ = {isa = PBXBuildFile; fileRef = D71A51D91A07C06000D21951 /* 120X120.png */; };
+		D71A51E01A125C3500D21951 /* PandaRegisterRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71A51DE1A125C3500D21951 /* PandaRegisterRightViewController.m */; };
+		D71A51E11A125C3500D21951 /* PandaRegisterRightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71A51DF1A125C3500D21951 /* PandaRegisterRightViewController.xib */; };
 		D7328796198E321F00064A12 /* PandaHuaYanDanXiangMuListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7328794198E321F00064A12 /* PandaHuaYanDanXiangMuListViewController.m */; };
 		D7328797198E321F00064A12 /* PandaHuaYanDanXiangMuListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7328795198E321F00064A12 /* PandaHuaYanDanXiangMuListViewController.xib */; };
 		D732879A198E452D00064A12 /* PandaConstantData.m in Sources */ = {isa = PBXBuildFile; fileRef = D7328799198E452D00064A12 /* PandaConstantData.m */; };
@@ -222,6 +224,9 @@
 		D71A51D71A07C06000D21951 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		D71A51D81A07C06000D21951 /* 114X114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114X114.png; sourceTree = "<group>"; };
 		D71A51D91A07C06000D21951 /* 120X120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120X120.png; sourceTree = "<group>"; };
+		D71A51DD1A125C3500D21951 /* PandaRegisterRightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaRegisterRightViewController.h; sourceTree = "<group>"; };
+		D71A51DE1A125C3500D21951 /* PandaRegisterRightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaRegisterRightViewController.m; sourceTree = "<group>"; };
+		D71A51DF1A125C3500D21951 /* PandaRegisterRightViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PandaRegisterRightViewController.xib; sourceTree = "<group>"; };
 		D7328793198E321F00064A12 /* PandaHuaYanDanXiangMuListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaHuaYanDanXiangMuListViewController.h; sourceTree = "<group>"; };
 		D7328794198E321F00064A12 /* PandaHuaYanDanXiangMuListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaHuaYanDanXiangMuListViewController.m; sourceTree = "<group>"; };
 		D7328795198E321F00064A12 /* PandaHuaYanDanXiangMuListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PandaHuaYanDanXiangMuListViewController.xib; sourceTree = "<group>"; };
@@ -660,6 +665,9 @@
 				D745CE92197CFC32008C1082 /* PandaRegisterViewController.h */,
 				D745CE93197CFC32008C1082 /* PandaRegisterViewController.m */,
 				D745CE94197CFC32008C1082 /* PandaRegisterViewController.xib */,
+				D71A51DD1A125C3500D21951 /* PandaRegisterRightViewController.h */,
+				D71A51DE1A125C3500D21951 /* PandaRegisterRightViewController.m */,
+				D71A51DF1A125C3500D21951 /* PandaRegisterRightViewController.xib */,
 				D7051DE4197D0BAF0001BA6C /* PandaGetPasswordViewController.h */,
 				D7051DE5197D0BAF0001BA6C /* PandaGetPasswordViewController.m */,
 				D7051DE6197D0BAF0001BA6C /* PandaGetPasswordViewController.xib */,
@@ -888,6 +896,7 @@
 				D7D17D8D19FA916D00B43642 /* 肿瘤项目11.png in Resources */,
 				D7AD2DD019F546F100C29BF0 /* 123_11.gif in Resources */,
 				D745CE98197D005E008C1082 /* u40_normal.png in Resources */,
+				D71A51E11A125C3500D21951 /* PandaRegisterRightViewController.xib in Resources */,
 				D7AD2DC319F546F100C29BF0 /* 123_04.png in Resources */,
 				D7D17D8519FA916D00B43642 /* 甲状腺功能11.png in Resources */,
 				D70C83F01A06893B0061169F /* arrow.png in Resources */,
@@ -944,6 +953,7 @@
 				D732879A198E452D00064A12 /* PandaConstantData.m in Sources */,
 				D732D42F19B3279300F632C1 /* PandaOCRRecongnizeViewController.m in Sources */,
 				D7A30A7F198CDE3B00423666 /* PandaHealthJiangTangDetailViewController.m in Sources */,
+				D71A51E01A125C3500D21951 /* PandaRegisterRightViewController.m in Sources */,
 				D7C3BC9A19FD12B700B57430 /* PandaWebViewTestViewController.m in Sources */,
 				D7E8A59519C72C95009A3CE0 /* NSString+Base64.m in Sources */,
 				D7C53DBD1987A8540063C79E /* PandaAboutUsViewController.m in Sources */,

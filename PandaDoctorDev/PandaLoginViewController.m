@@ -51,31 +51,79 @@
 //    _hiddenView.hidden = NO;
 //    [_indicatorPopup startAnimating];
 //    [thread start];
-    PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
-    NSMutableData *data = [rpcInterface loginForAPP:_account.text passwd:_passwd.text];
-    if (data==nil) {
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"网络错误"
-                                                       message:@"联网错误, 请检查您的网络连接是否正常"
-                                                      delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alert show];
-        return;
-    }
-    NSString *result = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
     
-    if ([result  isEqualToString: @"true"]) {
-        NSLog(@"login successful");
+    dispatch_queue_t queue = dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    _indicatorPopup.hidden = NO;
+    _hiddenView.hidden = NO;
+    [_indicatorPopup startAnimating];
+    [_indicatorPopup setHidesWhenStopped:YES];
+    dispatch_async(queue, ^{
+        NSLog(@"test result");
+        // do network job
         
-        [UtilTool globalDataSave:_account.text forKey:PHONE];
-        [UtilTool globalDataSave:@"1" forKey:LOGIN];
-        UIStoryboard *storyBorad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        self.view.window.rootViewController = [storyBorad instantiateInitialViewController];
-    }else{
-        NSLog(@"login failed");
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"登录失败" message:@"请检查用户名和密码是否正确" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [_indicatorPopup stopAnimating];
-        _hiddenView.hidden = YES;
-        [alert show];
-    }
+        PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
+        _data = [rpcInterface loginForAPP:_account.text passwd:_passwd.text];
+        
+        // tell the main thread when job done
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"main thread start");
+            [_indicatorPopup stopAnimating];
+            _hiddenView.hidden = NO;
+            if (_data==nil) {
+                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"网络错误"
+                                                                message:@"联网错误, 请检查您的网络连接是否正常"
+                                                                delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [alert show];
+                return;
+            }
+            NSString *result = [[NSString alloc]initWithData:_data encoding:NSUTF8StringEncoding];
+        
+            if ([result  isEqualToString: @"true"]) {
+                NSLog(@"login successful");
+        
+                [UtilTool globalDataSave:_account.text forKey:PHONE];
+                [UtilTool globalDataSave:@"1" forKey:LOGIN];
+                UIStoryboard *storyBorad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                self.view.window.rootViewController = [storyBorad instantiateInitialViewController];
+            }else{
+                NSLog(@"login failed");
+                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"登录失败" message:@"请检查用户名和密码是否正确" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [_indicatorPopup stopAnimating];
+                _hiddenView.hidden = YES;
+                [alert show];
+            }
+            
+            
+        });
+    });
+    
+    
+//    PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
+//    NSMutableData *data = [rpcInterface loginForAPP:_account.text passwd:_passwd.text];
+//    
+//    if (data==nil) {
+//        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"网络错误"
+//                                                       message:@"联网错误, 请检查您的网络连接是否正常"
+//                                                      delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+//        [alert show];
+//        return;
+//    }
+//    NSString *result = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+//    
+//    if ([result  isEqualToString: @"true"]) {
+//        NSLog(@"login successful");
+//        
+//        [UtilTool globalDataSave:_account.text forKey:PHONE];
+//        [UtilTool globalDataSave:@"1" forKey:LOGIN];
+//        UIStoryboard *storyBorad = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        self.view.window.rootViewController = [storyBorad instantiateInitialViewController];
+//    }else{
+//        NSLog(@"login failed");
+//        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"登录失败" message:@"请检查用户名和密码是否正确" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+//        [_indicatorPopup stopAnimating];
+//        _hiddenView.hidden = YES;
+//        [alert show];
+//    }
     
 }
 

@@ -22,6 +22,8 @@
 
 @property (strong, nonatomic) IBOutlet UIView *loginView;
 
+@property NSMutableData *data;
+
 - (IBAction)loginAction:(UIButton *)sender;
 
 - (IBAction)showRegisterView:(UIButton *)sender;
