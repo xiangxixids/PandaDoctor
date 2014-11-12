@@ -11,6 +11,7 @@
 static NSString *PHONE = @"phone";
 static NSString *TEMPNAME = @"temp.jpg";
 static NSString *LOGIN = @"login";
+static NSInteger TIMEOUTFORNETWORK = 15.0;
 
 @interface UtilTool : NSObject
 

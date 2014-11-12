@@ -57,18 +57,30 @@
     _hiddenView.hidden = NO;
     [_indicatorPopup startAnimating];
     [_indicatorPopup setHidesWhenStopped:YES];
+    
+    _ayncThreadStop = NO;
+    // 注意, 这里的timer 一定要启动在主线程.
+    _showTimer = [NSTimer scheduledTimerWithTimeInterval:TIMEOUTFORNETWORK target:self
+                                                selector:@selector(mytimeout) userInfo:nil repeats:YES];
+
+    // the following is connet networking thread
     dispatch_async(queue, ^{
         NSLog(@"test result");
-        // do network job
         
+        // do network job
         PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
         _data = [rpcInterface loginForAPP:_account.text passwd:_passwd.text];
         
         // tell the main thread when job done
+        if (_ayncThreadStop == YES) {
+            NSLog(@"aync thread should stop now");
+            return;
+        }
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"main thread start");
+            [_showTimer invalidate];
             [_indicatorPopup stopAnimating];
-            _hiddenView.hidden = NO;
+            _hiddenView.hidden = YES;
             if (_data==nil) {
                 UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"网络错误"
                                                                 message:@"联网错误, 请检查您的网络连接是否正常"
@@ -92,8 +104,6 @@
                 _hiddenView.hidden = YES;
                 [alert show];
             }
-            
-            
         });
     });
     
@@ -125,6 +135,18 @@
 //        [alert show];
 //    }
     
+}
+
+- (void)mytimeout{
+    NSLog(@"time out");
+    NSLog(@"XXXXXXXXmain thread start");
+    [_indicatorPopup stopAnimating];
+    _hiddenView.hidden = YES;
+    _ayncThreadStop = YES;
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"连接超时"
+                                                message:@"连接超时, 请检查您的网络连接是否正常"
+                                            delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alert show];
 }
 
 - (void)loginActionSY

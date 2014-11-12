@@ -290,8 +290,7 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
 	
 	[client processImage:_image withParams:params];
 	
-	_label.text = @"Uploading image...";
-    _ocrTableView.hidden = NO;
+	_label.text = @"上传照片中...";
 	
     [super viewDidAppear:animated];
     
@@ -301,20 +300,21 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
 
 - (void)clientDidFinishUpload:(Client *)sender
 {
-	_label.text = @"Processing image...";
+	_label.text = @"处理照片中...";
 }
 
 - (void)clientDidFinishProcessing:(Client *)sender
 {
-	_label.text = @"Downloading result...";
+	_label.text = @"处理结束, 下载结果...";
 }
 
 - (void)client:(Client *)sender didFinishDownloadData:(NSData *)downloadedData
 {
 	_label.hidden = YES;
     _label.text = @"Loading image...";
-	//statusIndicator.hidden = YES;
+//	statusIndicator.hidden = YES;
 	
+    _ocrTableView.hidden = NO;
 	_textView.hidden = NO;
 	
 	NSString* result = [[NSString alloc] initWithData:downloadedData encoding:NSUTF8StringEncoding];
@@ -454,6 +454,7 @@ static NSString* MyPassword = @"aYMmnhTGoIyg0zXdIhwnn9Tv";  //@"my_password";
     NSLog(@"%@", _assResultList);
     
     [self updatePostArrayALL];
+    [_ocrTableView reloadData];
     
     NSLog(@"hello here");
 }

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PandaRegisterViewController.h"
 
+
 @interface PandaLoginViewController : UIViewController<UITextFieldDelegate>
 
 @property PandaRegisterViewController *registerViewController;
@@ -23,6 +24,9 @@
 @property (strong, nonatomic) IBOutlet UIView *loginView;
 
 @property NSMutableData *data;
+@property dispatch_source_t timer;
+@property Boolean ayncThreadStop;
+@property NSTimer *showTimer;
 
 - (IBAction)loginAction:(UIButton *)sender;
 
