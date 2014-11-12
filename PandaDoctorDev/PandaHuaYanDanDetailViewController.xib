@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="barItemTakePhoto" destination="BHY-sJ-XVq" id="O9v-eH-fgj"/>
                 <outlet property="btnTakePhoto" destination="Fsc-6d-9e5" id="Ve8-nD-3A7"/>
+                <outlet property="indicatorPop" destination="K0b-9m-6rx" id="s7k-1d-uNQ"/>
                 <outlet property="navigationBar" destination="RMp-Vr-hEW" id="Kv6-Ps-kal"/>
                 <outlet property="tableView" destination="NVz-tL-Pwu" id="MzT-9j-xMD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -79,6 +80,9 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="K0b-9m-6rx">
+                    <rect key="frame" x="150" y="274" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>

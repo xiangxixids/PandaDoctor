@@ -20,6 +20,11 @@
 @property NSMutableArray *tableViewItemList;
 
 @property NSString *titleString;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicatorPop;
+
+@property Boolean ayncThreadStop;
+@property NSTimer *showTimer;
+@property NSMutableData *data;
 
 @property PandaConstantData *huaYanDanConstData;
 

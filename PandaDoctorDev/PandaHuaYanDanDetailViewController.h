@@ -24,6 +24,11 @@
 
 @property PandaTakePhotoPreviewViewController *takePhotoPreviewViewController;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicatorPop;
+@property Boolean ayncThreadStop;
+@property NSTimer *showTimer;
+@property NSMutableData *data;
+
 @property NSInteger checkItemId;
 @property NSString *titleName;
 @property NSString *isOCR;

@@ -13,7 +13,6 @@
 
 @interface PandaHuaYanDanMainViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
-
 @property (weak, nonatomic) IBOutlet UIImageView *sanDaChangGuiImage;
 @property (weak, nonatomic) IBOutlet UIImageView *ganZangXiangMuImage;
 @property (weak, nonatomic) IBOutlet UIImageView *xueTangXueZhiImage;
@@ -23,6 +22,13 @@
 @property (weak, nonatomic) IBOutlet UIImageView *youShengXiangMuImage;
 @property (weak, nonatomic) IBOutlet UIImageView *fuKeImage;
 @property (weak, nonatomic) IBOutlet UIImageView *otherImage;
+
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicatorPop;
+
+@property dispatch_source_t timer;
+@property Boolean ayncThreadStop;
+@property NSTimer *showTimer;
+@property NSMutableData *data;
 
 @property PandaConstantData *huaYanDanConstData;
 

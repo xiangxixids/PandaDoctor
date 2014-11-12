@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PandaHuaYanDanXiangMuListViewController">
             <connections>
+                <outlet property="indicatorPop" destination="NO0-t6-OZh" id="FPS-Ey-zco"/>
                 <outlet property="navigationBar" destination="7fq-h0-GDf" id="Ku6-0d-J1X"/>
                 <outlet property="tableView" destination="9SC-cN-oLg" id="LDb-s2-pEV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -33,8 +34,12 @@
                     <rect key="frame" x="0.0" y="68" width="320" height="500"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="NO0-t6-OZh">
+                    <rect key="frame" x="150" y="274" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="150" y="177"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

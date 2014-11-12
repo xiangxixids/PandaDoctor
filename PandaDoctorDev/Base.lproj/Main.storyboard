@@ -144,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1M-YJ-A84" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1268" y="-290"/>
+            <point key="canvasLocation" x="783" y="-406"/>
         </scene>
         <!--PandaSB Bing Li History View Controller-->
         <scene sceneID="xWN-Cf-o9U">
@@ -244,7 +244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MCe-tM-qdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1690" y="443"/>
+            <point key="canvasLocation" x="1212" y="-522"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="SkK-ec-aWb">
@@ -281,7 +281,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bqx-1T-HZj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1666" y="-213"/>
+            <point key="canvasLocation" x="1059" y="-406"/>
         </scene>
         <!--拍化验单-->
         <scene sceneID="kXE-q4-Wul">
@@ -551,6 +551,9 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="z2p-qf-Qkq">
+                                <rect key="frame" x="150" y="250" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
@@ -564,6 +567,7 @@
                     <connections>
                         <outlet property="fuKeImage" destination="NFQ-JD-8yV" id="UhM-Ln-M6f"/>
                         <outlet property="ganZangXiangMuImage" destination="PFe-ld-jTP" id="hZm-1z-h4F"/>
+                        <outlet property="indicatorPop" destination="z2p-qf-Qkq" id="Idu-XB-RSl"/>
                         <outlet property="jiaZhuangXianImageView" destination="6n4-dc-ObS" id="5IT-E8-XV3"/>
                         <outlet property="otherImage" destination="yU1-R2-MHO" id="I6e-Ui-Z0f"/>
                         <outlet property="sanDaChangGuiImage" destination="Z3y-Ip-Ymq" id="e8h-Mt-T6d"/>

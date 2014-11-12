@@ -59,9 +59,30 @@
     UINavigationItem *item = [_navigationBar.items objectAtIndex:0];
     item.title = _titleString;
     
-    
     //_currentData = [self getHuaYanDanData:_itemId];
-    _tableViewItemList = [self getHuaYanDanData:_itemId];
+    
+    // GCD start
+    dispatch_queue_t queue = dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    _indicatorPop.hidden = NO;
+    [_indicatorPop startAnimating];
+    [_indicatorPop setHidesWhenStopped:YES];
+    
+    _ayncThreadStop = NO;
+    _showTimer = [NSTimer scheduledTimerWithTimeInterval:TIMEOUTFORNETWORK target:self
+                                                selector:@selector(mytimeout) userInfo:nil repeats:YES];
+    
+    dispatch_async(queue, ^{
+        NSLog(@"test result");
+        
+        // do network job
+        _tableViewItemList = [self getHuaYanDanData:_itemId];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_showTimer invalidate];
+            [_indicatorPop stopAnimating];
+            [_tableView reloadData];
+        });
+    });
+    
     
     
     

@@ -34,35 +34,62 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
-    PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
-    NSMutableData *data = [rpcInterface checkItemsForApp:_checkItemId];
-    if (data==nil) {
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"网络错误"
-                                                       message:@"联网错误, 请检查您的网络连接是否正常"
-                                                      delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alert show];
-        return;
-    }
-    NSString *datastr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-    _tableViewDataList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-    NSLog(@"%@", _tableViewDataList);
     
+    // GCD start
+    dispatch_queue_t queue = dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    _indicatorPop.hidden = NO;
+    [_indicatorPop startAnimating];
+    [_indicatorPop setHidesWhenStopped:YES];
     
-    UINavigationItem *item = [_navigationBar.items objectAtIndex:0];
-    item.title = _titleName;
+    _ayncThreadStop = NO;
+    _showTimer = [NSTimer scheduledTimerWithTimeInterval:TIMEOUTFORNETWORK target:self
+                                                selector:@selector(mytimeout) userInfo:nil repeats:YES];
     
-    if ([_isOCR isEqualToString:@"1"]) {
-//        _btnTakePhoto.titleLabel.text = @"一键拍单";
-        [_btnTakePhoto setTitle:@"一键拍单" forState:UIControlStateNormal];
-        _barItemTakePhoto.title = @"拍化验单";
-        [UtilTool globalDataSave:@"1" forKey:[NSString stringWithFormat:@"%d",_checkItemId]]; // 这里直接记录当前checkid 是否能够OCR, 在history 里面用到这个
-    }else{
-//        _btnTakePhoto.titleLabel.text = @"填化验单";
-        [_btnTakePhoto setTitle:@"填化验单" forState:UIControlStateNormal];
-        _barItemTakePhoto.title = @"填化验单";
-        [UtilTool globalDataSave:@"0" forKey:[NSString stringWithFormat:@"%d",_checkItemId]]; // 这里也记录一下是否可以ocr
-    }
-
+    dispatch_async(queue, ^{
+        NSLog(@"test result");
+        
+        // do network job
+        PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
+        _data = [rpcInterface checkItemsForApp:_checkItemId];
+        
+        // tell main thread
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_showTimer invalidate];
+            [_indicatorPop stopAnimating];
+            [_tableView reloadData];
+            
+            // code replace and tableview reload data
+            if (_data==nil) {
+                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"网络错误"
+                                                               message:@"联网错误, 请检查您的网络连接是否正常"
+                                                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [alert show];
+                return;
+            }
+            
+            
+            
+            NSString *datastr = [[NSString alloc]initWithData:_data encoding:NSUTF8StringEncoding];
+            _tableViewDataList = [NSJSONSerialization JSONObjectWithData:_data options:NSJSONReadingMutableContainers error:nil];
+            NSLog(@"%@", _tableViewDataList);
+            [_tableView reloadData];
+            
+            UINavigationItem *item = [_navigationBar.items objectAtIndex:0];
+            item.title = _titleName;
+            
+            if ([_isOCR isEqualToString:@"1"]) {
+                //        _btnTakePhoto.titleLabel.text = @"一键拍单";
+                [_btnTakePhoto setTitle:@"一键拍单" forState:UIControlStateNormal];
+                _barItemTakePhoto.title = @"拍化验单";
+                [UtilTool globalDataSave:@"1" forKey:[NSString stringWithFormat:@"%d",_checkItemId]]; // 这里直接记录当前checkid 是否能够OCR, 在history 里面用到这个
+            }else{
+                //        _btnTakePhoto.titleLabel.text = @"填化验单";
+                [_btnTakePhoto setTitle:@"填化验单" forState:UIControlStateNormal];
+                _barItemTakePhoto.title = @"填化验单";
+                [UtilTool globalDataSave:@"0" forKey:[NSString stringWithFormat:@"%d",_checkItemId]]; // 这里也记录一下是否可以ocr
+            }
+        });
+    });
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

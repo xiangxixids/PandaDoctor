@@ -62,109 +62,72 @@
                           _otherImage,
                           nil];
     
-    PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
-    NSMutableData *data = [rpcInterface paperSortForApp];
-    if (data==nil) {
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"网络错误"
-                                                       message:@"联网错误, 请检查您的网络连接是否正常"
-                                                      delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alert show];
-        return;
-    }
-    NSString *datastr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    dispatch_queue_t queue = dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    _indicatorPop.hidden = NO;
+    [_indicatorPop startAnimating];
+    [_indicatorPop setHidesWhenStopped:YES];
     
-    NSArray *jsonList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-    
-    for (int i=0; i<jsonList.count; i++) {
+    _ayncThreadStop = NO;
+    _showTimer = [NSTimer scheduledTimerWithTimeInterval:TIMEOUTFORNETWORK target:self
+                                                selector:@selector(mytimeout) userInfo:nil repeats:YES];
+    dispatch_async(queue, ^{
+        NSLog(@"test result");
         
-        NSDictionary *dict = [jsonList objectAtIndex:i];
-        NSLog(@"dict name = %@", [dict valueForKey:ENG_NM]);
-        NSLog(@"dict rcedid= %@", [dict valueForKey:RCRD_ID]);
-        
-        PandaTapGestureRecognizer *singleTap=[[PandaTapGestureRecognizer alloc]initWithTarget:self action:@selector(imageTap:)];
-        singleTap.mid = [[dict valueForKey:RCRD_ID] intValue];
-        singleTap.title = [dict valueForKey:ENG_NM];
-        [[imageList objectAtIndex:i] setUserInteractionEnabled:YES];
-        [[imageList objectAtIndex:i] addGestureRecognizer:singleTap];
-    }
+        // do network job
+        PandaRPCInterface *rpcInterface = [[PandaRPCInterface alloc]init];
+        _data = [rpcInterface paperSortForApp];
+        // tell the main thread when job done
+        if (_ayncThreadStop == YES) {
+            NSLog(@"aync thread should stop now");
+            return;
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (_data==nil) {
+                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"网络错误"
+                                                               message:@"联网错误, 请检查您的网络连接是否正常"
+                                                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [alert show];
+                return;
+            }
+            [_showTimer invalidate];
+            [_indicatorPop stopAnimating];
+            NSString *datastr = [[NSString alloc]initWithData:_data encoding:NSUTF8StringEncoding];
+            
+            NSArray *jsonList = [NSJSONSerialization JSONObjectWithData:_data options:NSJSONReadingMutableContainers error:nil];
+            
+            for (int i=0; i<jsonList.count; i++) {
+                
+                NSDictionary *dict = [jsonList objectAtIndex:i];
+                NSLog(@"dict name = %@", [dict valueForKey:ENG_NM]);
+                NSLog(@"dict rcedid= %@", [dict valueForKey:RCRD_ID]);
+                
+                PandaTapGestureRecognizer *singleTap=[[PandaTapGestureRecognizer alloc]initWithTarget:self action:@selector(imageTap:)];
+                singleTap.mid = [[dict valueForKey:RCRD_ID] intValue];
+                singleTap.title = [dict valueForKey:ENG_NM];
+                [[imageList objectAtIndex:i] setUserInteractionEnabled:YES];
+                [[imageList objectAtIndex:i] addGestureRecognizer:singleTap];
+            }
+            
+            
+            // 这里记录键盘是否有弹出
+            NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+            [center addObserver:self selector:@selector(keyboardDidShow)  name:UIKeyboardDidShowNotification  object:nil];
+            [center addObserver:self selector:@selector(keyboardDidHide)  name:UIKeyboardWillHideNotification object:nil];
+            _keyboardIsVisible = NO;
+        });
+    });
     
-    
-    
-    
-    // add tap gesture recongnizer for each image
-//    PandaTapGestureRecognizer *singleTap1=[[PandaTapGestureRecognizer alloc]initWithTarget:self action:@selector(imageTap:)];
-//    singleTap1.mid = 1;
-//    singleTap1.itemList = sanDaChangGuiList;
-//    singleTap1.title = @"三大常规";
-//    _sanDaChangGuiImage.userInteractionEnabled = YES;
-//    [_sanDaChangGuiImage addGestureRecognizer:singleTap1];
-//    
-//    PandaTapGestureRecognizer *singleTap2=[[PandaTapGestureRecognizer alloc]initWithTarget:self action:@selector(imageTap:)];
-//    singleTap2.mid = 2;
-//    singleTap2.itemList = ganZangXiangMuList;
-//    singleTap2.title = @"肝脏项目";
-//    _ganZangXiangMuImage.userInteractionEnabled = YES;
-//    [_ganZangXiangMuImage addGestureRecognizer:singleTap2];
-//    
-//    PandaTapGestureRecognizer *singleTap3=[[PandaTapGestureRecognizer alloc]initWithTarget:self action:@selector(imageTap:)];
-//    singleTap3.mid = 3;
-//    singleTap3.title = @"血糖血脂";
-//    singleTap3.itemList = xueTangXueZhiList;
-//    _xueTangXueZhiImage.userInteractionEnabled = YES;
-//    [_xueTangXueZhiImage addGestureRecognizer:singleTap3];
-//    
-//    PandaTapGestureRecognizer *singleTap4=[[PandaTapGestureRecognizer alloc]initWithTarget:self action:@selector(imageTap:)];
-//    singleTap4.mid = 4;
-//    singleTap4.title = @"肾脏项目";
-//    singleTap4.itemList = shenZangXiangMuList;
-//    _shenZangXiangMuImage.userInteractionEnabled = YES;
-//    [_shenZangXiangMuImage addGestureRecognizer:singleTap4];
-//    
-//    PandaTapGestureRecognizer *singleTap5=[[PandaTapGestureRecognizer alloc]initWithTarget:self action:@selector(imageTap:)];
-//    singleTap5.mid = 5;
-//    singleTap5.title = @"甲状腺功能";
-//    singleTap5.itemList = jiaZhuangXianList;
-//    _jiaZhuangXianImageView.userInteractionEnabled = YES;
-//    [_jiaZhuangXianImageView addGestureRecognizer:singleTap5];
-//    
-//    PandaTapGestureRecognizer *singleTap6=[[PandaTapGestureRecognizer alloc]initWithTarget:self action:@selector(imageTap:)];
-//    singleTap6.mid = 6;
-//    singleTap6.title = @"肿瘤项目";
-//    singleTap6.itemList = zhongLiuXiangMuList;
-//    _zhongLiuImageView.userInteractionEnabled = YES;
-//    [_zhongLiuImageView addGestureRecognizer:singleTap6];
-//    
-//    PandaTapGestureRecognizer *singleTap7=[[PandaTapGestureRecognizer alloc]initWithTarget:self action:@selector(imageTap:)];
-//    singleTap7.mid = 7;
-//    singleTap7.title = @"优生项目";
-//    singleTap7.itemList = youShengXiangMuList;
-//    _youShengXiangMuImage.userInteractionEnabled = YES;
-//    [_youShengXiangMuImage addGestureRecognizer:singleTap7];
-//    
-//    PandaTapGestureRecognizer *singleTap8=[[PandaTapGestureRecognizer alloc]initWithTarget:self action:@selector(imageTap:)];
-//    singleTap8.mid = 8;
-//    singleTap8.title = @"妇科项目";
-//    singleTap8.itemList = fuKeXiangMuList;
-//    _fuKeImage.userInteractionEnabled = YES;
-//    [_fuKeImage addGestureRecognizer:singleTap8];
-//    
-//    PandaTapGestureRecognizer *singleTap9=[[PandaTapGestureRecognizer alloc]initWithTarget:self action:@selector(imageTap:)];
-//    singleTap9.mid = 9;
-//    singleTap9.title = @"其他项目";
-//    singleTap9.itemList = otherXiangMuList;
-//    _otherImage.userInteractionEnabled = YES;
-//    [_otherImage addGestureRecognizer:singleTap9];
-//    
-//    _huaYanDanConstData = [[PandaConstantData alloc]init];
-//    [_huaYanDanConstData initData];
-    
-    
-    // 这里记录键盘是否有弹出
-    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center addObserver:self selector:@selector(keyboardDidShow)  name:UIKeyboardDidShowNotification  object:nil];
-    [center addObserver:self selector:@selector(keyboardDidHide)  name:UIKeyboardWillHideNotification object:nil];
-    _keyboardIsVisible = NO;
-    
+}
+
+- (void)mytimeout{
+    NSLog(@"time out");
+    NSLog(@"XXXXXXXXmain thread start");
+    [_indicatorPop stopAnimating];
+    _ayncThreadStop = YES;
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"连接超时"
+                                                   message:@"连接超时, 请检查您的网络连接是否正常"
+                                                  delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alert show];
 }
 
 //- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
@@ -226,7 +189,7 @@
     }
     _huaYanDanXiangMuListViewController = [[PandaHuaYanDanXiangMuListViewController alloc]initWithNibName:nil bundle:nil];
     //_huaYanDanXiangMuListViewController.tableViewItemList = sender.itemList;
-    
+    _huaYanDanXiangMuListViewController.hidesBottomBarWhenPushed = YES;
     _huaYanDanXiangMuListViewController.titleString = sender.title;
     _huaYanDanXiangMuListViewController.itemId = sender.mid;
     _huaYanDanXiangMuListViewController.huaYanDanConstData = _huaYanDanConstData;
